@@ -1,0 +1,19 @@
+# Copyritht © 2023 Marcin Różewski MDSANIMA
+
+[build-system]
+requires = ['setuptools>=67.1.0', 'wheel>=0.38.4']
+build-backend = 'setuptools.build_meta'
+
+[tool.black]
+line-length = 79
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = 'black'
+src_paths = ['src', 'tests']
+force_single_line = true
+lines_before_imports = 2
+lines_after_imports = 2
+treat_all_comments_as_code = true
+extend_skip = ['.md', '.json']
