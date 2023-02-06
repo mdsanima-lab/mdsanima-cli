@@ -1,0 +1,82 @@
+{
+  "name": "mdsanima-cli",
+  "version": "0.1.0",
+  "private":true,
+  "description": "Command Line Tools for Processing Images.",
+  "license": "Apache-2.0",
+  "standard-version": {
+    "infile": "CHANGELOG.md",
+    "bumpFiles": [
+      {
+        "filename": "package.json",
+        "type": "json"
+      }
+    ],
+    "skip": {
+      "bump": false,
+      "changelog": false,
+      "commit": true,
+      "tag": true
+    },
+    "types": [
+      {
+        "type": "feat",
+        "section": "FEATURES",
+        "hidden": false
+      },
+      {
+        "type": "fix",
+        "section": "BUG FIXES",
+        "hidden": false
+      },
+      {
+        "type": "docs",
+        "section": "DOCUMENTATION",
+        "hidden": false
+      },
+      {
+        "type": "frontend",
+        "section": "FRONTEND",
+        "hidden": false
+      },
+      {
+        "type": "backend",
+        "section": "BACKEND",
+        "hidden": false
+      },
+      {
+        "type": "test",
+        "section": "TESTING",
+        "hidden": false
+      },
+      {
+        "type": "build",
+        "section": "BUILD SYSTEM",
+        "hidden": true
+      },
+      {
+        "type": "ci",
+        "hidden": true
+      },
+      {
+        "type": "refactor",
+        "hidden": true
+      },
+      {
+        "type": "chore",
+        "hidden": true
+      }
+    ],
+    "header": "# CHANGELOG\n\nAll notable changes to this project will be documented in this file.\n\nPlease check\n[standard-version](https://github.com/conventional-changelog/standard-version)\nand documentation for commit guidelines. Also you should check\n[conventional-changelog](https://github.com/mdsanima/conventional-changelog)\nfor more detail.\n\nDocomentation for *MDSANIMA-CLI*\nis available at this repository on `README.md` files be sure to check it.\n"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "standard-version --dry-run",
+    "release": "standard-version --commit-all --sign",
+    "release-tag": "standard-version --commit-all --sign -t engines-center-app-",
+    "alpha": "standard-version --commit-all --sign --prerelease alpha",
+    "beta": "standard-version --commit-all --sign --prerelease beta",
+    "test-skip": "npm run release -- --skip.changelog",
+    "test-first": "npm run release -- --first-release"
+  }
+}
