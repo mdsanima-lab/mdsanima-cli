@@ -3,6 +3,24 @@
 Command line tools for images processing, generating pixelart, adding logo to
 images and many more.
 
+## Installation
+
+Install latest version:
+
+```bash
+python3 -m pip install mdsanima-cli
+```
+
+## Terminal Commands
+
+Now you can use this command in terminal:
+
+```bash
+mdsanima
+```
+
+The response is simple `Hello World` for now.
+
 ## Development Setup
 
 Instruction step how to setup development environent is here on this
