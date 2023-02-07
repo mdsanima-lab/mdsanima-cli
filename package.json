@@ -1,5 +1,5 @@
 {
-  "name": "mdsanima-cli",
+  "name": "mdsanima_cli",
   "version": "0.1.0",
   "private":true,
   "description": "Command Line Tools for Processing Images.",
