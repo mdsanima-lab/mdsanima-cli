@@ -272,3 +272,6 @@ yarn-error.log*
 # mdsanima folder
 tmp
 temp
+
+# setuptools_scm
+_version.py
