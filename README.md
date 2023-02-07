@@ -1,6 +1,7 @@
 # mdsanima-cli
 
-Command Line Tools for Processing Images.
+Command line tools for images processing, generating pixelart, adding logo to
+images and many more.
 
 ## Development Setup
 
@@ -45,4 +46,20 @@ Finally you can run this command:
 
 ```bash
 python -m mdsanima_cli.pixelart
+```
+
+### Extracts Version Package
+
+This `setuptools-scm` tools allow to extract **Python** package version from
+`git` instead declaring them as the version argument.
+
+Check the `pyproject.toml` file and this
+[instruction](https://pypi.org/project/setuptools-scm/) for more info.
+
+If you need to confirm which version string is being generated or debug the
+configuration, you can install `setuptools-scm` directly in your working
+environment `pip install setuptools-scm` and run:
+
+```bash
+python -m setuptools_scm
 ```
