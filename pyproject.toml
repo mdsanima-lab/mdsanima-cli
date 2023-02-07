@@ -64,8 +64,8 @@ classifiers = [
     'Topic :: Utilities',
 ]
 dependencies = [
-    'Pillow>=9.4.0',
-    'mdsanima-dev>=0.1.1',
+    # 'Pillow==9.4.0',
+    'mdsanima-dev==0.1.1',
 ]
 dynamic = ['version']
 
@@ -75,8 +75,9 @@ documentation = 'https://github.com/mdsanima-lab/mdsanima-cli#readme'
 repository = 'https://github.com/mdsanima-lab/mdsanima-cli.git'
 changelog = 'https://github.com/mdsanima-lab/mdsanima-cli/blob/main/CHANGELOG.md'
 
-#[project.scripts]
+[project.scripts]
 #mdsanima-cli = 'mdsanima_cli:main_cli'
+mdsanima = 'mdsanima_cli:hello_world'
 
 #[project.entry-points.'mdsanima_cli.pixelart']
 #pixel = 'mdsanima_cli:main_pixel'
