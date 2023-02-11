@@ -76,11 +76,7 @@ repository = 'https://github.com/mdsanima-lab/mdsanima-cli.git'
 changelog = 'https://github.com/mdsanima-lab/mdsanima-cli/blob/main/CHANGELOG.md'
 
 [project.scripts]
-#mdsanima-cli = 'mdsanima_cli:main_cli'
-mdsanima = 'mdsanima_cli:hello_world'
-
-#[project.entry-points.'mdsanima_cli.pixelart']
-#pixel = 'mdsanima_cli:main_pixel'
+mdsanima = 'mdsanima_cli:main_cli'
 
 [tool.black]
 line-length = 79

@@ -1,13 +1,13 @@
 # Copyritht © 2023 Marcin Różewski MDSANIMA
 
 
-"""Main module for command line tools."""
+"""Main entry point for command line tools."""
 
 
 from __future__ import annotations
 
-from . import hello_world
+from . import main_cli
 
 
 if __name__ == "__main__":
-    hello_world()
+    main_cli()
