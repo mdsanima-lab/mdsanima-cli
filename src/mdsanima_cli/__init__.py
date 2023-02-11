@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import argparse
+from mdsanima_dev.colors import get_complex_color
 
 
 def create_parser():
@@ -25,8 +26,9 @@ def create_parser():
 def main_cli():
     parser = create_parser()
     args = parser.parse_args()
+    mprint = get_complex_color
 
     if args.command == "pixelart":
-        print("Hello from pixelart")
+        mprint("Hello from pixelart", 46)
     elif args.command == "gifmaker":
-        print("Hello from gifmaker")
+        mprint("Hello from gifmaker", 46)
