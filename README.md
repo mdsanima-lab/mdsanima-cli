@@ -19,7 +19,7 @@ Now you can use this command in terminal:
 mdsanima
 ```
 
-The response is simple `Hello World` for now.
+The response is printing help.
 
 ## Development Setup
 
