@@ -66,6 +66,12 @@ Finally you can run this command:
 python -m mdsanima_cli.pixelart
 ```
 
+Also you can run this command before you build and install:
+
+```bash
+python3 src/mdsanima_cli/pixelart.py
+```
+
 ### Extracts Version Package
 
 This `setuptools-scm` tools allow to extract **Python** package version from
