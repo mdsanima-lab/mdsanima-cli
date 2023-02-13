@@ -1,6 +1,6 @@
 # mdsanima-cli
 
-Command line tools for images processing, generating pixelart, adding logo to
+Command line tools for images processing, generating pixel art, adding logo to
 images and many more.
 
 ## Installation
@@ -19,7 +19,19 @@ Now you can use this command in terminal:
 mdsanima
 ```
 
-The response is printing help.
+The response is printing help how to use this command line tools.
+
+### CLI
+
+Avaiable command for this package.
+
+```bash
+mdsanima pixelart
+```
+
+This command works in folder that have only `.png` images and convert this
+image to pixel art with creating new file with append suffix `pixelart` to
+original file name.
 
 ## Development Setup
 
@@ -34,6 +46,7 @@ install requirements, type in terminal:
 virtualenv --pip 23.0 .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 ### Build Package
