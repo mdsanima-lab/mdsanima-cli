@@ -130,7 +130,7 @@ type in terminal:
 
 ```bash
 git tag 0.1.2
-git push origin --tag
+git push origin && git push origin --tag
 ```
 
 Checking the extracts version, type in terminal:
