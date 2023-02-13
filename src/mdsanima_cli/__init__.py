@@ -19,9 +19,8 @@ def main_cli():
 
     try:
         if args.command == "pixelart":
-            mprint("generating pixelart", 40)
             compute_pixelart()
         elif args.command == "gifmaker":
-            mprint("hello from gifmaker", 40)
+            mprint("hello from gifmaker", 12)
     except AttributeError:
         parser.print_help()
