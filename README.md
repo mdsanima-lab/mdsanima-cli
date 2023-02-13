@@ -11,6 +11,12 @@ Install latest version:
 python3 -m pip install mdsanima-cli
 ```
 
+Updating to latest version:
+
+```bash
+python3 -m pip install --upgrade mdsanima-cli
+```
+
 ## Terminal Commands
 
 Now you can use this command in terminal:
