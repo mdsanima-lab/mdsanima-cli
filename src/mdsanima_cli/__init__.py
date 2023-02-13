@@ -9,6 +9,7 @@ from __future__ import annotations
 from mdsanima_dev.colors import get_complex_color
 
 from .parser import create_parser
+from .pixelart import compute_pixelart
 
 
 def main_cli():
@@ -18,8 +19,9 @@ def main_cli():
 
     try:
         if args.command == "pixelart":
-            mprint("hello from pixelart", 46)
+            mprint("generating pixelart", 40)
+            compute_pixelart()
         elif args.command == "gifmaker":
-            mprint("hello from gifmaker", 46)
+            mprint("hello from gifmaker", 40)
     except AttributeError:
         parser.print_help()

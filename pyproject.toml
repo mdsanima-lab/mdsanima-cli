@@ -64,7 +64,7 @@ classifiers = [
     'Topic :: Utilities',
 ]
 dependencies = [
-    # 'Pillow==9.4.0',
+    'Pillow==9.4.0',
     'mdsanima-dev==0.1.1',
 ]
 dynamic = ['version']
