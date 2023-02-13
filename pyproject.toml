@@ -1,19 +1,19 @@
 # Copyritht © 2023 Marcin Różewski MDSANIMA
 
 [build-system]
-requires = ['setuptools>=67.1.0', 'wheel>=0.38.4', 'pip>=23.0', 'setuptools_scm[toml]>=7.1']
+requires = ['setuptools>=67.1.0', 'wheel>=0.38.4', 'pip>=23.0', 'setuptools_scm[toml]>=7.1.0']
 build-backend = 'setuptools.build_meta'
 
 [project]
 name = 'mdsanima_cli'
 authors = [{name = 'Marcin Różewski', email = 'marcinrozewski@gmail.com'}]
-description = 'Command line tools for images processing, generating pixelart, adding logo to images and many more.'
+description = 'Command line tools for images processing, generating pixel art, adding logo to images and many more.'
 readme = 'README.md'
 license = {file = 'LICENSE'}
 requires-python = '>=3.10'
 keywords = [
     'cli',
-    'command line',
+    'command-line',
     'console-app',
     'console-application',
     'exif metadata',
