@@ -100,3 +100,53 @@ environment `pip install setuptools-scm` and run:
 ```bash
 python -m setuptools_scm
 ```
+
+### Creating Release
+
+This is a steps for creating release version.
+
+First add new code to the package and test this. Second steps is commit change
+like this command `git commit -m "feat: new feature generating pixelart"` and
+next is type this in terminal:
+
+```bash
+standard-version
+```
+
+This command create the new version and generate `CHANGELOG.md` file.
+
+Next is a add this changes to git, type in terminal:
+
+```bash
+git commit -am "chore(release): 0.1.2"
+```
+
+The version abowe is a from `standard-version` command and this is a only
+example version. The version must always be changed when a new version is
+released.
+
+The next steps is a creating a tag and pushing the change to origin with tag,
+type in terminal:
+
+```bash
+git tag 0.1.2
+git push origin --tag
+```
+
+Checking the extracts version, type in terminal:
+
+```bash
+python -m setuptools_scm
+```
+
+Finally create the build and update to
+[test.pypi.org](https://test.pypi.org/project/mdsanima-cli/) and
+[pypi.org](https://pypi.org/project/mdsanima-cli/) first you can check and then
+update.
+
+```bash
+python -m build
+twine check dist/*
+twine upload -r testpypi dist/*
+twine upload dist/*
+```
