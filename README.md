@@ -111,15 +111,20 @@ python -m setuptools_scm
 
 This is a steps for creating release version.
 
-First add new code to the package and test this. Second steps is commit change
-like this command `git commit -m "feat: new feature generating pixelart"` and
-next is type this in terminal:
+First add new code to the package and test this functionality.
+
+Second steps is commit this change like this, type in terminal:
+
+```bash
+git commit -m "feat: new feature generating pixelart"
+```
+
+The next step is bumping version on `package.json` file and generate
+`CHANGELOG.md` file with new release information, type in terminal:
 
 ```bash
 standard-version
 ```
-
-This command create the new version and generate `CHANGELOG.md` file.
 
 Next is a add this changes to git, type in terminal:
 
@@ -145,10 +150,9 @@ Checking the extracts version, type in terminal:
 python -m setuptools_scm
 ```
 
-Finally create the build and update to
+Finally create the build and update this build to
 [test.pypi.org](https://test.pypi.org/project/mdsanima-cli/) and
-[pypi.org](https://pypi.org/project/mdsanima-cli/) first you can check and then
-update.
+[pypi.org](https://pypi.org/project/mdsanima-cli/) but first you must check and then update.
 
 ```bash
 python -m build
