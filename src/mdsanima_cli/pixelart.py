@@ -37,8 +37,9 @@ def compute_pixelart() -> None:
     mprint(f"[MDSANIMA-CLI] -> compute pixelart 32px", 12)
     mprint(f"[DIRECTORY PATH] -> {info['real_path']}", 40)
     mprint(f"   [FILES COUNT] -> {info['files_count']}", 40)
-    mprint(f"     [IMAGE PNG] -> {info['image_png_count']}", 40)
-    mprint(f"     [IMAGE JPG] -> {info['image_jpg_count']}", 40)
+    mprint(f"           [PNG] -> {info['image_png_count']}", 40)
+    mprint(f"           [JPG] -> {info['image_jpg_count']}", 40)
+    mprint(f"          [WEBP] -> {info['image_webp_count']}", 40)
     mprint(f"         [OTHER] -> {info['other_file_count']}", 40)
 
     for image_file in directory:
@@ -49,5 +50,9 @@ def compute_pixelart() -> None:
             mprint(f"{image_file} -> {image_new_name}", 25)
         if extension == ".jpg":
             image_new_name = image_file[:-4] + "_pixelart.jpg"
+            generate_pixelart(image_file, image_new_name, 32)
+            mprint(f"{image_file} -> {image_new_name}", 25)
+        if extension == ".webp":
+            image_new_name = image_file[:-5] + "_pixelart.webp"
             generate_pixelart(image_file, image_new_name, 32)
             mprint(f"{image_file} -> {image_new_name}", 25)

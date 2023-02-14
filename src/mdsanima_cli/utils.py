@@ -19,6 +19,7 @@ def get_directory_info() -> dict:
     files_count = len(directory)
     image_png_count = 0
     image_jpg_count = 0
+    image_webp_count = 0
     other_file_count = 0
 
     for file in directory:
@@ -27,6 +28,8 @@ def get_directory_info() -> dict:
             image_png_count += 1
         elif extension == ".jpg":
             image_jpg_count += 1
+        elif extension == ".webp":
+            image_webp_count += 1
         else:
             other_file_count += 1
 
@@ -35,6 +38,7 @@ def get_directory_info() -> dict:
         "files_count": files_count,
         "image_png_count": image_png_count,
         "image_jpg_count": image_jpg_count,
+        "image_webp_count": image_webp_count,
         "other_file_count": other_file_count,
     }
 
