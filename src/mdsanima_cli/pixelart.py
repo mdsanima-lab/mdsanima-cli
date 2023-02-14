@@ -38,7 +38,8 @@ def compute_pixelart() -> None:
     mprint(f"[DIRECTORY PATH] -> {info['real_path']}", 40)
     mprint(f"   [FILES COUNT] -> {info['files_count']}", 40)
     mprint(f"     [IMAGE PNG] -> {info['image_png_count']}", 40)
-    mprint(f"     [IMAGE JPG] -> {info['image_png_count']}", 40)
+    mprint(f"     [IMAGE JPG] -> {info['image_jpg_count']}", 40)
+    mprint(f"         [OTHER] -> {info['other_file_count']}", 40)
 
     for image_file in directory:
         extension = os.path.splitext(image_file)[-1].lower()

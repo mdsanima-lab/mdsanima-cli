@@ -19,19 +19,23 @@ def get_directory_info() -> dict:
     files_count = len(directory)
     image_png_count = 0
     image_jpg_count = 0
+    other_file_count = 0
 
     for file in directory:
         extension = os.path.splitext(file)[-1].lower()
         if extension == ".png":
             image_png_count += 1
-        if extension == ".jpg":
+        elif extension == ".jpg":
             image_jpg_count += 1
+        else:
+            other_file_count += 1
 
     directory_info = {
         "real_path": real_path,
         "files_count": files_count,
         "image_png_count": image_png_count,
         "image_jpg_count": image_jpg_count,
+        "other_file_count": other_file_count,
     }
 
     return directory_info
