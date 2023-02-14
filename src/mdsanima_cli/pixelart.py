@@ -32,6 +32,7 @@ def generate_pixelart(image_path: str, new_name: str, res: int) -> None:
 def compute_pixelart() -> None:
     """Compute all images in folder and save with new append name."""
     info = get_directory_info()
+    directory = os.listdir()
 
     mprint(f"[MDSANIMA-CLI] -> compute pixelart 32px", 12)
     mprint(f"[DIRECTORY PATH] -> {info['real_path']}", 40)
@@ -39,7 +40,13 @@ def compute_pixelart() -> None:
     mprint(f"     [IMAGE PNG] -> {info['image_png_count']}", 40)
     mprint(f"     [IMAGE JPG] -> {info['image_png_count']}", 40)
 
-    for image_file_name in os.listdir():
-        image_new_name = image_file_name[:-4] + "_pixelart.png"
-        generate_pixelart(image_file_name, image_new_name, 32)
-        mprint(f"{image_file_name} -> {image_new_name}", 25)
+    for image_file in directory:
+        extension = os.path.splitext(image_file)[-1].lower()
+        if extension == ".png":
+            image_new_name = image_file[:-4] + "_pixelart.png"
+            generate_pixelart(image_file, image_new_name, 32)
+            mprint(f"{image_file} -> {image_new_name}", 25)
+        if extension == ".jpg":
+            image_new_name = image_file[:-4] + "_pixelart.jpg"
+            generate_pixelart(image_file, image_new_name, 32)
+            mprint(f"{image_file} -> {image_new_name}", 25)
