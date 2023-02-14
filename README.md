@@ -152,7 +152,8 @@ python -m setuptools_scm
 
 Finally create the build and update this build to
 [test.pypi.org](https://test.pypi.org/project/mdsanima-cli/) and
-[pypi.org](https://pypi.org/project/mdsanima-cli/) but first you must check and then update.
+[pypi.org](https://pypi.org/project/mdsanima-cli/) but first you must check and
+then update.
 
 ```bash
 python -m build
