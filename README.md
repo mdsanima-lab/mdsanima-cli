@@ -1,7 +1,6 @@
 # mdsanima-cli
 
-Command line tools for images processing, generating pixel art, adding logo to
-images and many more.
+Command line tools for images processing, generating pixel art, adding logo to images and many more.
 
 ## Installation
 
@@ -29,24 +28,25 @@ The response is printing help how to use this command line tools.
 
 ### CLI
 
-Avaiable command for this package.
+Avaiable command for this package:
 
-```bash
-mdsanima pixelart
-```
+- `mdsanima` main command showing help
+- `mdsanima pixelart` enerate pixelart
 
-This command works in folder that have only `.png` images and convert this
-image to pixel art with creating new file with append suffix `pixelart` to
-original file name.
+The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
+art with creating the new file and appending the suffix `pixelart` to original file name.
+
+After executing this command, all image files in the folder you are in will be processed.
+The command does not delete any files in the folder, it only adds new ones and showing the directory
+info.
 
 ## Development Setup
 
 Instruction step how to setup development environent is here on this
-[workflow](https://mdsanima-dev.github.io/mdsanima-dev/development/workflow/)
-instruction.
+[workflow](https://mdsanima-dev.github.io/mdsanima-dev/development/workflow/) instruction.
 
-Creating isolated environment with specific pip version then activate and
-install requirements, type in terminal:
+Creating isolated environment with specific pip version then activate and install requirements, type
+in terminal:
 
 ```bash
 virtualenv --pip 23.0 .venv
@@ -57,7 +57,7 @@ pip install -r requirements-dev.txt
 
 ### Build Package
 
-Install buil tools for creating distribution, type in terminal:
+Install build tools for creating distribution, type in terminal:
 
 ```bash
 pip install --upgrade build
@@ -93,15 +93,14 @@ python3 src/mdsanima_cli/pixelart.py
 
 ### Extracts Version Package
 
-This `setuptools-scm` tools allow to extract **Python** package version from
-`git` instead declaring them as the version argument.
+This `setuptools-scm` tools allow to extract **Python** package version from `git` instead declaring
+them as the version argument.
 
 Check the `pyproject.toml` file and this
 [instruction](https://pypi.org/project/setuptools-scm/) for more info.
 
-If you need to confirm which version string is being generated or debug the
-configuration, you can install `setuptools-scm` directly in your working
-environment `pip install setuptools-scm` and run:
+If you need to confirm which version string is being generated or debug the configuration, you can
+install `setuptools-scm` directly in your working environment `pip install setuptools-scm` and run:
 
 ```bash
 python -m setuptools_scm
@@ -109,18 +108,29 @@ python -m setuptools_scm
 
 ### Creating Release
 
-This is a steps for creating release version.
+Here are the steps to create a release version:
 
-First add new code to the package and test this functionality.
+- Add new code to the package.
+- Test new functionality.
+- Commit the change.
+- Bump the package version.
+- Generate CHANGELOG.md file.
+- Commit the release.
+- Add and push new tag.
+- Update pypi.
 
-Second steps is commit this change like this, type in terminal:
+Important steps is commit the change like this, type in terminal:
 
 ```bash
 git commit -m "feat: new feature generating pixelart"
 ```
 
-The next step is bumping version on `package.json` file and generate
-`CHANGELOG.md` file with new release information, type in terminal:
+Always use this format for commiting to git, becouse this allows to generate changelog from the
+commit message. Check the `package.json` file on `standard-version` section and types lists for
+fist string thats you can type in commit message.
+
+The next step is bumping version on `package.json` file and generate `CHANGELOG.md` file with new
+release information, type in terminal:
 
 ```bash
 standard-version
@@ -132,12 +142,10 @@ Next is a add this changes to git, type in terminal:
 git commit -am "chore(release): 0.1.2"
 ```
 
-The version abowe is a from `standard-version` command and this is a only
-example version. The version must always be changed when a new version is
-released.
+The version abowe is a from `standard-version` command and this is a only example version.
+The version must always be changed when a new version is released.
 
-The next steps is a creating a tag and pushing the change to origin with tag,
-type in terminal:
+The next steps is a creating a tag and pushing the change to origin with tag, type in terminal:
 
 ```bash
 git tag 0.1.2
@@ -152,8 +160,7 @@ python -m setuptools_scm
 
 Finally create the build and update this build to
 [test.pypi.org](https://test.pypi.org/project/mdsanima-cli/) and
-[pypi.org](https://pypi.org/project/mdsanima-cli/) but first you must check and
-then update.
+[pypi.org](https://pypi.org/project/mdsanima-cli/) but first you must check and then update.
 
 ```bash
 python -m build
