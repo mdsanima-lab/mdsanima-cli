@@ -1,13 +1,13 @@
-# Copyritht © 2023 Marcin Różewski MDSANIMA
+# Copyright © 2023 Marcin Różewski MDSANIMA
 
 [build-system]
-requires = ['setuptools>=67.1.0', 'wheel>=0.38.4', 'pip>=23.0', 'setuptools_scm[toml]>=7.1.0']
+requires = ['setuptools>=67.1.0', 'wheel>=0.38.4', 'pip>=23.0.1', 'setuptools_scm[toml]>=7.1.0']
 build-backend = 'setuptools.build_meta'
 
 [project]
 name = 'mdsanima_cli'
 authors = [{name = 'Marcin Różewski', email = 'marcinrozewski@gmail.com'}]
-description = 'Command line tools for images processing, generating pixel art, adding logo to images and many more.'
+description = 'The package will provide command-line tools for image processing, generating pixel art, adding logos to images, and much more.'
 readme = 'README.md'
 license = {file = 'LICENSE'}
 requires-python = '>=3.10'
@@ -20,10 +20,11 @@ keywords = [
     'image-processing',
     'images',
     'mdsanima command line',
-    'mdsanima-cli',
+    'mdsanima command-line',
     'mdsanima-dev',
     'mdsanima',
     'meta information',
+    'pixel art',
     'pixelart',
     'python-library',
     'python',
@@ -31,7 +32,7 @@ keywords = [
     'shell-script',
 ]
 classifiers = [
-    'Development Status :: 1 - Planning',
+    'Development Status :: 2 - Pre-Alpha',
     'Environment :: Console',
     'Environment :: Plugins',
     'Intended Audience :: Developers',
@@ -54,14 +55,25 @@ classifiers = [
     'Topic :: Documentation :: Sphinx',
     'Topic :: Education :: Testing',
     'Topic :: Multimedia',
+    'Topic :: Multimedia :: Graphics',
+    'Topic :: Multimedia :: Graphics :: Editors',
     'Topic :: Scientific/Engineering :: Image Processing',
+    'Topic :: Scientific/Engineering :: Information Analysis',
+    'Topic :: Software Development',
     'Topic :: Software Development :: Libraries :: Python Modules',
+    'Topic :: System',
     'Topic :: System :: Console Fonts',
+    'Topic :: System :: Filesystems',
+    'Topic :: System :: Logging',
+    'Topic :: System :: Operating System',
     'Topic :: System :: Shells',
     'Topic :: System :: System Shells',
+    'Topic :: System :: Systems Administration',
+    'Topic :: System :: Systems Administration :: Authentication/Directory',
     'Topic :: Terminals',
     'Topic :: Text Processing',
     'Topic :: Utilities',
+    'Typing :: Typed',
 ]
 dependencies = [
     'Pillow==9.4.0',
