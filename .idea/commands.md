@@ -17,3 +17,6 @@ Here are some ideas for commands that we need to implement in this package.
 - [ ] `mdsanima logo` adding a logo
 - [ ] `mdsanima caption` adding caption
 - [ ] `mdsanima bg` adding background
+- [ ] `mdsanima filter` adding filter
+- [ ] `mdsanima resize` resizing image
+- [ ] `mdsanima crop` cropping image
