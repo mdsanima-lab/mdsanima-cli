@@ -1,18 +1,19 @@
 # mdsanima-cli
 
-Command line tools for images processing, generating pixel art, adding logo to images and many more.
+The package will provide command-line tools for image processing, generating pixel art, adding logos
+to images, and much more.
 
 ## Installation
 
 Install latest version:
 
-```bash
+```shell
 python3 -m pip install mdsanima-cli
 ```
 
 Updating to latest version:
 
-```bash
+```shell
 python3 -m pip install --upgrade mdsanima-cli
 ```
 
@@ -20,18 +21,19 @@ python3 -m pip install --upgrade mdsanima-cli
 
 Now you can use this command in terminal:
 
-```bash
+```shell
 mdsanima
 ```
 
-The response is printing help how to use this command line tools.
+The response is printing help how to use this command-line tools.
 
 ### CLI
 
 Avaiable command for this package:
 
 - `mdsanima` main command showing help
-- `mdsanima pixelart` enerate pixelart
+- `mdsanima check` directory info
+- `mdsanima pixelart` generate pixel art
 
 The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
 art with creating the new file and appending the suffix `pixelart` to original file name.
@@ -48,8 +50,8 @@ Instruction step how to setup development environent is here on this
 Creating isolated environment with specific pip version then activate and install requirements, type
 in terminal:
 
-```bash
-virtualenv --pip 23.0 .venv
+```shell
+virtualenv --pip 23.0.1 .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
@@ -59,13 +61,13 @@ pip install -r requirements-dev.txt
 
 Install build tools for creating distribution, type in terminal:
 
-```bash
+```shell
 pip install --upgrade build
 ```
 
 Now you can run:
 
-```bash
+```shell
 python -m build
 ```
 
@@ -73,7 +75,7 @@ python -m build
 
 Now you can run:
 
-```bash
+```shell
 pip install --force-reinstall dist/mdsanima_cli-0.1.0-py3-none-any.whl
 ```
 
@@ -81,13 +83,13 @@ pip install --force-reinstall dist/mdsanima_cli-0.1.0-py3-none-any.whl
 
 Finally you can run this command:
 
-```bash
+```shell
 python -m mdsanima_cli.pixelart
 ```
 
 Also you can run this command before you build and install:
 
-```bash
+```shell
 python3 src/mdsanima_cli/pixelart.py
 ```
 
@@ -102,7 +104,7 @@ Check the `pyproject.toml` file and this
 If you need to confirm which version string is being generated or debug the configuration, you can
 install `setuptools-scm` directly in your working environment `pip install setuptools-scm` and run:
 
-```bash
+```shell
 python -m setuptools_scm
 ```
 
@@ -121,8 +123,8 @@ Here are the steps to create a release version:
 
 Important steps is commit the change like this, type in terminal:
 
-```bash
-git commit -m "feat: new feature generating pixelart"
+```shell
+git commit -m "feat: generating pixel art command"
 ```
 
 Always use this format for commiting to git, becouse this allows to generate changelog from the
@@ -132,13 +134,13 @@ fist string thats you can type in commit message.
 The next step is bumping version on `package.json` file and generate `CHANGELOG.md` file with new
 release information, type in terminal:
 
-```bash
+```shell
 standard-version
 ```
 
 Next is a add this changes to git, type in terminal:
 
-```bash
+```shell
 git commit -am "chore(release): 0.1.2"
 ```
 
@@ -147,14 +149,14 @@ The version must always be changed when a new version is released.
 
 The next steps is a creating a tag and pushing the change to origin with tag, type in terminal:
 
-```bash
+```shell
 git tag 0.1.2
 git push origin && git push origin --tag
 ```
 
 Checking the extracts version, type in terminal:
 
-```bash
+```shell
 python -m setuptools_scm
 ```
 
@@ -162,7 +164,7 @@ Finally create the build and update this build to
 [test.pypi.org](https://test.pypi.org/project/mdsanima-cli/) and
 [pypi.org](https://pypi.org/project/mdsanima-cli/) but first you must check and then update.
 
-```bash
+```shell
 python -m build
 twine check dist/*
 twine upload -r testpypi dist/*

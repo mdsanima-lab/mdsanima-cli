@@ -2,7 +2,7 @@
   "name": "mdsanima_cli",
   "version": "0.1.3",
   "private": true,
-  "description": "Command line tools for images processing, generating pixel art, adding logo to images and many more.",
+  "description": "The package will provide command-line tools for image processing, generating pixel art, adding logos to images, and much more.",
   "standard-version": {
     "infile": "CHANGELOG.md",
     "skip": {
