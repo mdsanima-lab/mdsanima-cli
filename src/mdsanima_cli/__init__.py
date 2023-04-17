@@ -9,6 +9,9 @@ from __future__ import annotations
 from mdsanima_dev.colors import get_complex_color
 
 from .parser import create_parser
+from .utils import check_system_dependencies
+from .utils import hello_mdsanima_asci
+
 from .cli_check import print_directory_check
 from .cli_pixelart import compute_pixelart
 
@@ -23,12 +26,19 @@ def main_cli():
     args = parser.parse_args()
     mprint = get_complex_color
 
-    # Checking argument parser and execute function for it.
+    # Checking system dependencies.
+    check_system_dependencies("figlet")
+    check_system_dependencies("toilet")
+
+    # Print nice asci text.
+    hello_mdsanima_asci()
+
     try:
+        # Check argument parser and execute function for it.
         if args.command == "check":
-            print_directory_check("directory info stats")
+            print_directory_check("DIRECTORY INFO STATS")
         if args.command == "pixelart":
-            print_directory_check("compute pixel art 32px")
+            print_directory_check("COMPUTE PIXEL ART 32PX")
             compute_pixelart()
         if args.command == "gif":
             mprint("hello from gif", 12)

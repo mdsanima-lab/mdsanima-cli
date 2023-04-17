@@ -9,6 +9,10 @@ tools. The module is intended for use in development.
 from __future__ import annotations
 
 import os
+import subprocess
+import sys
+
+from mdsanima_dev.colors import get_complex_color
 
 
 def get_directory_info() -> dict:
@@ -62,3 +66,42 @@ def get_directory_info() -> dict:
     }
 
     return directory_info
+
+
+def check_system_dependencies(dpkg_package: str) -> None:
+    """Checking system dependencies packages is already installed, if not print
+    the warning info and exit the program.
+    """
+
+    # Color print variable.
+    mprint = get_complex_color
+
+    try:
+        # Check if package is already installed.
+        subprocess.check_output([dpkg_package, "-v"])
+    except FileNotFoundError:
+        # If not print color info and exit program.
+        mprint("[", 197, "")
+        mprint("MDSANIMA-CLI", 161, "")
+        mprint("]", 197, " -> ")
+        mprint("SYSTEM DEPENDENCIES WARNING", 209)
+        mprint("[", 197, "")
+        mprint("WARNING", 161, "")
+        mprint("]", 197, " ")
+        mprint("To use", 255, " ")
+        mprint("mdsanima-cli", 46, " ")
+        mprint("properly, you need to install the", 255, " ")
+        mprint(dpkg_package, 12, " ")
+        mprint("package on your system.", 255)
+        mprint("[", 197, "")
+        mprint("WARNING", 161, "")
+        mprint("]", 197, " ")
+        mprint("Run", 255, " ")
+        mprint(f"sudo apt install {dpkg_package}", 42, " ")
+        mprint("to install the package!", 255)
+        sys.exit()
+
+
+def hello_mdsanima_asci() -> None:
+    """Print ASCII text in color and with a border from the toilet package."""
+    os.system("toilet -f future -F metal -F border '   mdsanima-cli   '")
