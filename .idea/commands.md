@@ -3,7 +3,7 @@
 Here are some ideas for commands that we need to implement in this package.
 
 - [x] `mdsanima` main command showing help
-- [ ] `mdsanima check` directory info
+- [x] `mdsanima check` directory info
 - [x] `mdsanima pixelart` generate pixel art
 - [ ] `mdsanima thumb` generate thumbnail
 - [ ] `mdsanima grid` generate grid
