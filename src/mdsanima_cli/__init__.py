@@ -9,8 +9,8 @@ from __future__ import annotations
 from mdsanima_dev.colors import get_complex_color
 
 from .parser import create_parser
-from .check import print_directory_check
-from .pixelart import compute_pixelart
+from .cli_check import print_directory_check
+from .cli_pixelart import compute_pixelart
 
 
 def main_cli():
