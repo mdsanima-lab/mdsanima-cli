@@ -1,7 +1,7 @@
-# Copyritht © 2023 Marcin Różewski MDSANIMA
+# Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""Main entry point for command line tools."""
+"""Main entry point for command-line tools."""
 
 
 from __future__ import annotations
