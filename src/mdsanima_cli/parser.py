@@ -1,28 +1,43 @@
-# Copyritht © 2023 Marcin Różewski MDSANIMA
+# Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This is a arguments parser functionality for command line tools."""
+"""This is a functionality for parsing arguments in command-line tools."""
 
 
 from __future__ import annotations
 
+import argparse
+
 from ._version import __version__
 
-import argparse
+
+AP_TOP_PROG = "mdsanima"
+AP_TOP_DESC = "Command-line tools for image processing."
+AP_TOP_EPIL = "Copyright \U000000A9 2023 Marcin Różewski MDSANIMA"
+
+CP_PROG = "check"
+CP_DESC = "Displaying info about all images in the current directory."
+CP_HELP = "printing info about all images inside the current directory"
+
+PP_PROG = "pixelart"
+PP_DESC = "Generating pixel art from all images in the current directory."
+PP_HELP = "generate pixel art from all images in the current directory"
+
+GP_PROG = "gif"
+GP_DESC = "Generating GIF from pixel art images in the current directory."
+GP_HELP = "generate gif from all pixel art images in the current directory"
 
 
 def create_parser() -> None:
-    """This function is for creating arguments parser for all the function on
-    this package that's available in command line tools.
+    """This function creates an argument parser for all available functions in
+    this package, which can be used in command-line tools.
     """
-    AP_DESCRIPTION = "Command line tools for images processing."
-    AP_EPILOG = "Copyritht \U000000A9 2023 Marcin Różewski MDSANIMA"
 
-    # Create top level argument parser.
+    # Create top level parser for mdsanima command.
     parser = argparse.ArgumentParser(
-        prog="mdsanima",
-        description=AP_DESCRIPTION,
-        epilog=AP_EPILOG,
+        prog=AP_TOP_PROG,
+        description=AP_TOP_DESC,
+        epilog=AP_TOP_EPIL,
         formatter_class=argparse.RawTextHelpFormatter,
     )
     parser.add_argument(
@@ -33,22 +48,31 @@ def create_parser() -> None:
     )
     subparsers = parser.add_subparsers()
 
-    # Create subparser for pixelart.
-    pixelart_parser = subparsers.add_parser(
-        "pixelart",
-        description="Generating pixelart from images.",
-        help="computing all images in folder",
-        epilog=AP_EPILOG,
+    # Create subparser for check command.
+    check_parser = subparsers.add_parser(
+        CP_PROG,
+        description=CP_DESC,
+        help=CP_HELP,
+        epilog=AP_TOP_EPIL,
     )
-    pixelart_parser.set_defaults(command="pixelart")
+    check_parser.set_defaults(command=CP_PROG)
 
-    # Create subparser for gifmaker.
-    gifmaker_parser = subparsers.add_parser(
-        "gifmaker",
-        description="Generating gif from pixelart images.",
-        help="computing gif from one pixelart image",
-        epilog=AP_EPILOG,
+    # Create subparser for pixelart command.
+    pixelart_parser = subparsers.add_parser(
+        PP_PROG,
+        description=PP_DESC,
+        help=PP_HELP,
+        epilog=AP_TOP_EPIL,
     )
-    gifmaker_parser.set_defaults(command="gifmaker")
+    pixelart_parser.set_defaults(command=PP_PROG)
+
+    # Create subparser for gif command.
+    gif_parser = subparsers.add_parser(
+        GP_PROG,
+        description=GP_DESC,
+        help=GP_HELP,
+        epilog=AP_TOP_EPIL,
+    )
+    gif_parser.set_defaults(command=GP_PROG)
 
     return parser
