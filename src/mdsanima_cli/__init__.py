@@ -10,6 +10,7 @@ from mdsanima_dev.colors import get_complex_color
 
 from .parser import create_parser
 from .utils import check_system_dependencies
+from .utils import hello_mdsanima_asci
 
 from .cli_check import print_directory_check
 from .cli_pixelart import compute_pixelart
@@ -28,6 +29,9 @@ def main_cli():
     # Checking system dependencies.
     check_system_dependencies("figlet")
     check_system_dependencies("toilet")
+
+    # Print nice asci text.
+    hello_mdsanima_asci()
 
     try:
         # Check argument parser and execute function for it.

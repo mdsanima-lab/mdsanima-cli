@@ -100,3 +100,8 @@ def check_system_dependencies(dpkg_package: str) -> None:
         mprint(f"sudo apt install {dpkg_package}", 42, " ")
         mprint("to install the package!", 255)
         sys.exit()
+
+
+def hello_mdsanima_asci() -> None:
+    """Print ASCII text in color and with a border from the toilet package."""
+    os.system("toilet -f future -F metal -F border '   mdsanima-cli   '")
