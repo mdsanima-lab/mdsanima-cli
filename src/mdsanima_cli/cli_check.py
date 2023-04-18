@@ -8,8 +8,8 @@ the current directory.
 
 from __future__ import annotations
 
-from mdsanima_dev.colors import get_complex_color
-
+from .mprints import print_cli_info
+from .mprints import print_cli_data
 from .utils import get_directory_info
 
 
@@ -18,16 +18,15 @@ def print_directory_check(cli_cmd_info: str) -> None:
 
     # Get directory stats info and color print.
     info = get_directory_info()
-    mprint = get_complex_color
 
     # Print color info stats.
-    mprint(f"[MDSANIMA-CLI] -> {cli_cmd_info}", 12)
-    mprint(f"[DIRECTORY PATH] -> {info['real_path']}", 40)
-    mprint(f"     [ALL FILES] -> {info['all_files_count']}", 40)
-    mprint(f"       [FOLDERS] -> {info['folders_count']}", 40)
-    mprint(f"         [FILES] -> {info['files_count']}", 40)
-    mprint(f"        [IMAGES] -> {info['images_count']}", 40)
-    mprint(f"           [PNG] -> {info['png_count']}", 40)
-    mprint(f"           [JPG] -> {info['jpg_count']}", 40)
-    mprint(f"          [WEBP] -> {info['webp_count']}", 40)
-    mprint(f"        [OTHERS] -> {info['others_count']}", 40)
+    print_cli_info("MDSANIMA-CLI", cli_cmd_info, 40, 34, 12)
+    print_cli_data("REAL PATH", info["real_path"], 34, 26, 38)
+    print_cli_data("ALL FILES", info["all_files_count"], 34, 24, 52)
+    print_cli_data("FOLDERS", info["folders_count"], 34, 24, 52)
+    print_cli_data("FILES", info["files_count"], 34, 24, 52)
+    print_cli_data("IMAGES", info["images_count"], 34, 24, 52)
+    print_cli_data("PNG", info["png_count"], 34, 24, 52)
+    print_cli_data("JPG", info["jpg_count"], 34, 24, 52)
+    print_cli_data("WEBP", info["webp_count"], 34, 24, 52)
+    print_cli_data("OTHERS", info["others_count"], 34, 24, 52)
