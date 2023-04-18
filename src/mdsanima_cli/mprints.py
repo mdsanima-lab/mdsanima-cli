@@ -16,24 +16,27 @@ mprint = get_complex_color
 
 
 def print_cli_info(
-    key: str, info: str, key_color: int, info_color: int, bracket_color: int
+    key: str, info: str, bracket_color: int, key_color: int, info_color: int
 ) -> None:
     """Helper for printing multiple colors info in one line."""
 
     # Print multiple colors one line.
     mprint("[", bracket_color, "")
-    mprint(key, key_color, "")
+    mprint(str(key), key_color, "")
     mprint("]", bracket_color, " -> ")
-    mprint(info, info_color)
+    mprint(str(info), info_color)
 
 
 def print_cli_data(
-    key: str, data: str, key_color: int, data_color: int, bracket_color: int
+    key: str, data: str, bracket_color: int, key_color: int, data_color: int
 ) -> None:
     """Helper for printing multiple colors data in one line."""
 
+    # Calculating align spaces.
+    align = len(key) + 1
+
     # Print multiple colors one line.
-    mprint("[", bracket_color, "")
-    mprint(key, key_color, "")
+    mprint("[".rjust(14 - align), bracket_color, "")
+    mprint(str(key), key_color, "")
     mprint("]", bracket_color, " ")
-    mprint(data, data_color)
+    mprint(str(data), data_color)
