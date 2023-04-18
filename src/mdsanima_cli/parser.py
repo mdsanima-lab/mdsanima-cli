@@ -12,7 +12,7 @@ from ._version import __version__
 
 
 AP_TOP_PROG = "mdsanima"
-AP_TOP_DESC = "Command-line tools for image processing."
+AP_TOP_DESC = "MDSANIMA CLI is a command-line interface for image processing."
 AP_TOP_EPIL = "Copyright \U000000A9 2023 Marcin Różewski MDSANIMA"
 
 CP_PROG = "check"
@@ -28,7 +28,7 @@ GP_DESC = "Generating GIF from pixel art images in the current directory."
 GP_HELP = "generate gif from all pixel art images in the current directory"
 
 
-def create_parser() -> None:
+def create_argument_parser() -> None:
     """This function creates an argument parser for all available functions in
     this package, which can be used in command-line tools.
     """
