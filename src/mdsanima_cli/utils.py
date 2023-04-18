@@ -19,53 +19,88 @@ def get_directory_info() -> dict:
     """Checking the current directory and returning details info about it."""
 
     # Real path of directory.
-    real_path = os.path.realpath(os.curdir)
+    path = os.path.realpath(os.curdir)
     directory = os.listdir()
 
     # Directory stats count variables.
-    all_files_count = len(directory)
-    folders_count = 0
-    files_count = 0
-    images_count = 0
-    png_count = 0
-    jpg_count = 0
-    webp_count = 0
-    others_count = 0
+    total = len(directory)
+    folders = 0
+    files = 0
+    images = 0
+    png = 0
+    jpg = 0
+    webp = 0
+    gif = 0
+    other = 0
 
-    # Loop for checking stats.
+    # Loop for checking each files in direcotry..
     for filename in directory:
-        if os.path.isdir(os.path.join(real_path, filename)):
-            folders_count += 1
+        if os.path.isdir(os.path.join(path, filename)):
+            folders += 1
         elif filename.endswith(".png"):
-            png_count += 1
-            files_count += 1
-            images_count += 1
+            png += 1
+            files += 1
+            images += 1
         elif filename.endswith(".jpg"):
-            jpg_count += 1
-            files_count += 1
-            images_count += 1
+            jpg += 1
+            files += 1
+            images += 1
         elif filename.endswith(".webp"):
-            webp_count += 1
-            files_count += 1
-            images_count += 1
+            webp += 1
+            files += 1
+            images += 1
+        elif filename.endswith(".gif"):
+            gif += 1
+            files += 1
         else:
-            files_count += 1
-            others_count += 1
+            files += 1
+            other += 1
 
-    # Dictionary stats info.
+    # Dictionary for directory info.
     directory_info = {
-        "real_path": real_path,
-        "all_files_count": all_files_count,
-        "folders_count": folders_count,
-        "files_count": files_count,
-        "images_count": images_count,
-        "png_count": png_count,
-        "jpg_count": jpg_count,
-        "webp_count": webp_count,
-        "others_count": others_count,
+        "path": path,
+        "total": total,
+        "folders": folders,
+        "files": files,
+        "images": images,
+        "png": png,
+        "jpg": jpg,
+        "webp": webp,
+        "gif": gif,
+        "other": other,
     }
 
     return directory_info
+
+
+def get_images_count() -> dict:
+    """This function is intended for counting only the images in the current
+    directory. Instead of using a loop, we will use a Linux command for this
+    and pipe it to another command.
+    """
+
+    # Linux terminal commands variable for counting.
+    cmd_png = "ls -i *.png | wc -l"
+    cmd_jpg = "ls -i *.jpg | wc -l"
+    cmd_webp = "ls -i *.webp | wc -l"
+
+    # Run the command and read the value.
+    png = int(os.popen(cmd_png).read())
+    jpg = int(os.popen(cmd_jpg).read())
+    webp = int(os.popen(cmd_webp).read())
+
+    # Calculating total images in directory.
+    total = png + jpg + webp
+
+    # Dictionary images count.
+    images_count = {
+        "total": total,
+        "png": png,
+        "jpg": jpg,
+        "webp": webp,
+    }
+
+    return images_count
 
 
 def check_system_dependencies(dpkg_package: str) -> None:
@@ -82,7 +117,7 @@ def check_system_dependencies(dpkg_package: str) -> None:
     except FileNotFoundError:
         # If not print color info and exit program.
         mprint("[", 197, "")
-        mprint("MDSANIMA-CLI", 161, "")
+        mprint("MDSANIMA CLI", 161, "")
         mprint("]", 197, " -> ")
         mprint("SYSTEM DEPENDENCIES WARNING", 209)
         mprint("[", 197, "")
