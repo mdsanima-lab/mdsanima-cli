@@ -10,7 +10,7 @@ from mdsanima_dev.colors import get_complex_color
 
 from .parser import create_parser
 from .utils import check_system_dependencies
-from .utils import hello_mdsanima_asci
+from .utils import asci_metal_border_text
 
 from .cli_check import print_directory_check
 from .cli_pixelart import compute_pixelart
@@ -31,7 +31,7 @@ def main_cli():
     check_system_dependencies("toilet")
 
     # Print nice asci text.
-    hello_mdsanima_asci()
+    asci_metal_border_text("mdsanima-cli")
 
     try:
         # Check argument parser and execute function for it.

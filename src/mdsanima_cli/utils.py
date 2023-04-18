@@ -102,6 +102,6 @@ def check_system_dependencies(dpkg_package: str) -> None:
         sys.exit()
 
 
-def hello_mdsanima_asci() -> None:
+def asci_metal_border_text(text: str) -> None:
     """Print ASCII text in color and with a border from the toilet package."""
-    os.system("toilet -f future -F metal -F border '   mdsanima-cli   '")
+    os.system("toilet -f future -F metal -F border '   '" + text + "'   '")
