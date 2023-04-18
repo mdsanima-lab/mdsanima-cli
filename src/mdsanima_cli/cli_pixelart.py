@@ -16,6 +16,8 @@ from PIL import Image
 
 from mdsanima_dev.colors import get_complex_color
 
+from .cli_check import print_directory_check
+
 
 def generate_pixelart(image_path: str, new_name: str, res: int) -> None:
     """Generate pixel art for one image, then save the result with a new
@@ -52,3 +54,9 @@ def compute_pixelart() -> None:
             image_new_name = filename[:-5] + "_pixelart.webp"
             generate_pixelart(filename, image_new_name, 32)
             mprint(f"{filename} -> {image_new_name}", 25)
+
+
+def cli_pixelart() -> None:
+    """Main function for `pixelart` command."""
+    print_directory_check("PIXELART", "COMPUTE PIXEL ART 32PX")
+    compute_pixelart()

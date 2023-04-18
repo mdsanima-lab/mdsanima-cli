@@ -6,14 +6,12 @@
 
 from __future__ import annotations
 
-from mdsanima_dev.colors import get_complex_color
-
-from .parser import create_parser
+from .parser import create_argument_parser
 from .utils import check_system_dependencies
 from .utils import asci_metal_border_text
 
-from .cli_check import print_directory_check
-from .cli_pixelart import compute_pixelart
+from .cli_check import cli_check
+from .cli_pixelart import cli_pixelart
 
 
 def main_cli():
@@ -22,25 +20,23 @@ def main_cli():
     """
 
     # Argument parser and color print.
-    parser = create_parser()
+    parser = create_argument_parser()
     args = parser.parse_args()
-    mprint = get_complex_color
 
     # Checking system dependencies.
     check_system_dependencies("figlet")
     check_system_dependencies("toilet")
 
     # Print nice asci text.
-    asci_metal_border_text("mdsanima-cli")
+    asci_metal_border_text("mdsanima cli")
 
     try:
         # Check argument parser and execute function for it.
         if args.command == "check":
-            print_directory_check("DIRECTORY INFO STATS")
+            cli_check()
         if args.command == "pixelart":
-            print_directory_check("COMPUTE PIXEL ART 32PX")
-            compute_pixelart()
+            cli_pixelart()
         if args.command == "gif":
-            mprint("hello from gif", 12)
+            print("hello from gif", 12)
     except AttributeError:
         parser.print_help()
