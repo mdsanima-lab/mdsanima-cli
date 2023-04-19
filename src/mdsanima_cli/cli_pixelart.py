@@ -14,7 +14,8 @@ from __future__ import annotations
 import os
 from PIL import Image
 
-from mdsanima_dev.colors import get_complex_color
+from .mprints import print_cli_proc
+from .utils import asci_metal_border_text
 
 from .cli_check import print_directory_check
 
@@ -38,25 +39,29 @@ def compute_pixelart() -> None:
 
     # Get directory stats info.
     directory = os.listdir()
-    mprint = get_complex_color
+    count = 1
 
     # Checking extension and generate pixel art for all images in directory.
     for filename in directory:
         if filename.endswith(".png"):
-            image_new_name = filename[:-4] + "_pixelart.png"
-            generate_pixelart(filename, image_new_name, 32)
-            mprint(f"{filename} -> {image_new_name}", 25)
+            new_name = filename[:-4] + "_pixelart.png"
+            generate_pixelart(filename, new_name, 32)
+            print_cli_proc("COMPUTE", str(count).zfill(4), filename, new_name)
+            count += 1
         if filename.endswith(".jpg"):
-            image_new_name = filename[:-4] + "_pixelart.jpg"
-            generate_pixelart(filename, image_new_name, 32)
-            mprint(f"{filename} -> {image_new_name}", 25)
+            new_name = filename[:-4] + "_pixelart.jpg"
+            generate_pixelart(filename, new_name, 32)
+            print_cli_proc("COMPUTE", str(count).zfill(4), filename, new_name)
+            count += 1
         if filename.endswith(".webp"):
-            image_new_name = filename[:-5] + "_pixelart.webp"
-            generate_pixelart(filename, image_new_name, 32)
-            mprint(f"{filename} -> {image_new_name}", 25)
+            new_name = filename[:-5] + "_pixelart.webp"
+            generate_pixelart(filename, new_name, 32)
+            print_cli_proc("COMPUTE", str(count).zfill(4), filename, new_name)
+            count += 1
 
 
 def cli_pixelart() -> None:
     """Main function for `pixelart` command."""
     print_directory_check("PIXELART", "COMPUTE PIXEL ART 32PX")
+    asci_metal_border_text("processing")
     compute_pixelart()
