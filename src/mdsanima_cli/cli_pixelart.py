@@ -41,22 +41,28 @@ def compute_pixelart() -> None:
     directory = os.listdir()
     count = 1
 
+    # New file name end for generated files.
+    suffix = "_pixelart"
+    png = ".png"
+    jpg = ".jpg"
+    webp = ".webp"
+
     # Checking extension and generate pixel art for all images in directory.
-    for filename in directory:
-        if filename.endswith(".png"):
-            new_name = filename[:-4] + "_pixelart.png"
-            generate_pixelart(filename, new_name, 32)
-            print_cli_proc("COMPUTE", str(count).zfill(4), filename, new_name)
+    for file in directory:
+        if file.endswith(png) and not file.endswith(suffix + png):
+            new_name = file[:-4] + suffix + png
+            generate_pixelart(file, new_name, 32)
+            print_cli_proc("COMPUTE", str(count).zfill(4), file, new_name)
             count += 1
-        if filename.endswith(".jpg"):
-            new_name = filename[:-4] + "_pixelart.jpg"
-            generate_pixelart(filename, new_name, 32)
-            print_cli_proc("COMPUTE", str(count).zfill(4), filename, new_name)
+        if file.endswith(jpg) and not file.endswith(suffix + jpg):
+            new_name = file[:-4] + suffix + jpg
+            generate_pixelart(file, new_name, 32)
+            print_cli_proc("COMPUTE", str(count).zfill(4), file, new_name)
             count += 1
-        if filename.endswith(".webp"):
-            new_name = filename[:-5] + "_pixelart.webp"
-            generate_pixelart(filename, new_name, 32)
-            print_cli_proc("COMPUTE", str(count).zfill(4), filename, new_name)
+        if file.endswith(webp) and not file.endswith(suffix + webp):
+            new_name = file[:-5] + suffix + webp
+            generate_pixelart(file, new_name, 32)
+            print_cli_proc("COMPUTE", str(count).zfill(4), file, new_name)
             count += 1
 
 
