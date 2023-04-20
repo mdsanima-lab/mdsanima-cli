@@ -34,6 +34,7 @@ Avaiable command for this package:
 - `mdsanima` main command showing help
 - `mdsanima check` directory info
 - `mdsanima pixelart` generate pixel art
+- `mdsanima uuid` rename image file to uuid
 
 The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
 art with creating the new file and appending the suffix `pixelart` to original file name.
