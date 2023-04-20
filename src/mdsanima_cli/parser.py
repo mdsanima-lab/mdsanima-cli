@@ -23,9 +23,17 @@ PP_PROG = "pixelart"
 PP_DESC = "Generating pixel art from all images in the current directory."
 PP_HELP = "generate pixel art from all images in the current directory"
 
-GP_PROG = "gif"
-GP_DESC = "Generating GIF from pixel art images in the current directory."
-GP_HELP = "generate gif from all pixel art images in the current directory"
+UP_PROG = "uuid"
+UP_DESC = "Change the file name to UUID in the current directory."
+UP_HELP = "changing all file names to UUID in the current directory"
+
+NP_PROG = "number"
+NP_DESC = "Rename files to sequential numbers in current directory."
+NP_HELP = "renaming all file to sequential numbers in the current directory"
+
+LP_PROG = "logo"
+LP_DESC = "Add a logo to all images in the current directory."
+LP_HELP = "adding a logo to all images in the current directory"
 
 
 def create_argument_parser() -> None:
@@ -66,13 +74,31 @@ def create_argument_parser() -> None:
     )
     pixelart_parser.set_defaults(command=PP_PROG)
 
-    # Create subparser for gif command.
-    gif_parser = subparsers.add_parser(
-        GP_PROG,
-        description=GP_DESC,
-        help=GP_HELP,
+    # Create subparser for uuid command.
+    uuid_parser = subparsers.add_parser(
+        UP_PROG,
+        description=UP_DESC,
+        help=UP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    gif_parser.set_defaults(command=GP_PROG)
+    uuid_parser.set_defaults(command=UP_PROG)
+
+    # Create subparser for number command.
+    number_parser = subparsers.add_parser(
+        NP_PROG,
+        description=NP_DESC,
+        help=NP_HELP,
+        epilog=AP_TOP_EPIL,
+    )
+    number_parser.set_defaults(command=NP_PROG)
+
+    # Create subparser for logo command.
+    logo_parser = subparsers.add_parser(
+        LP_PROG,
+        description=LP_DESC,
+        help=LP_HELP,
+        epilog=AP_TOP_EPIL,
+    )
+    logo_parser.set_defaults(command=LP_PROG)
 
     return parser

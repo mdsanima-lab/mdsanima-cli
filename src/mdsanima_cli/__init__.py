@@ -31,7 +31,11 @@ def main_cli():
             cli_check()
         if args.command == "pixelart":
             cli_pixelart()
-        if args.command == "gif":
-            print("hello from gif", 12)
+        if args.command == "uuid":
+            print("hello from uuid")
+        if args.command == "number":
+            print("hello from number")
+        if args.command == "logo":
+            print("hello from logo")
     except AttributeError:
         parser.print_help()
