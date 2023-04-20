@@ -14,8 +14,8 @@ from __future__ import annotations
 import os
 from PIL import Image
 
+from .ascii import ascii_title
 from .mprints import print_cli_proc
-from .utils import asci_metal_border_text
 
 from .cli_check import print_directory_check
 
@@ -69,5 +69,5 @@ def compute_pixelart() -> None:
 def cli_pixelart() -> None:
     """Main function for `pixelart` command."""
     print_directory_check("PIXELART", "COMPUTE PIXEL ART 32PX")
-    asci_metal_border_text("processing")
+    ascii_title("processing")
     compute_pixelart()
