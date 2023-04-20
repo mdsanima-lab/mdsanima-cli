@@ -24,12 +24,12 @@ PP_DESC = "Generating pixel art from all images in the current directory."
 PP_HELP = "generate pixel art from all images in the current directory"
 
 UP_PROG = "uuid"
-UP_DESC = "Change the file name to UUID in the current directory."
-UP_HELP = "changing all file names to UUID in the current directory"
+UP_DESC = "Rename image files to UUID in the current directory."
+UP_HELP = "renaming all images file to UUID in the current directory"
 
 NP_PROG = "number"
-NP_DESC = "Rename files to sequential numbers in current directory."
-NP_HELP = "renaming all file to sequential numbers in the current directory"
+NP_DESC = "Rename image files to sequential numbers in current directory."
+NP_HELP = "renaming all images file to seq numbers in the current directory"
 
 LP_PROG = "logo"
 LP_DESC = "Add a logo to all images in the current directory."

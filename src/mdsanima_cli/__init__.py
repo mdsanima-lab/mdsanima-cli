@@ -11,6 +11,7 @@ from .parser import create_argument_parser
 
 from .cli_check import cli_check
 from .cli_pixelart import cli_pixelart
+from .cli_uuid import cli_uuid
 
 
 def main_cli():
@@ -32,7 +33,7 @@ def main_cli():
         if args.command == "pixelart":
             cli_pixelart()
         if args.command == "uuid":
-            print("hello from uuid")
+            cli_uuid()
         if args.command == "number":
             print("hello from number")
         if args.command == "logo":
