@@ -53,7 +53,7 @@ Creating isolated environment with specific pip version then activate and instal
 in terminal:
 
 ```shell
-virtualenv --pip 23.0.1 .venv
+virtualenv --setuptools 67.7.2 --wheel 0.40.0 --pip 23.1.1 .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
