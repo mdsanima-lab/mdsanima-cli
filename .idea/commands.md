@@ -6,7 +6,7 @@ Here are some ideas for commands that we need to implement in this package.
 - [x] `mdsanima check` directory info
 - [x] `mdsanima pixelart` generate pixel art
 - [x] `mdsanima uuid` rename image file to uuid
-- [ ] `mdsanima number` rename image file to number
+- [x] `mdsanima number` rename image file to number
 - [ ] `mdsanima logo` adding a logo
 - [ ] `mdsanima thumb` generate thumbnail
 - [ ] `mdsanima grid` generate grid
