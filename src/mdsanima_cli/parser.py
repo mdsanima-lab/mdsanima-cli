@@ -20,8 +20,8 @@ CP_DESC = "Displaying info about all images in the current directory."
 CP_HELP = "printing info about all images inside the current directory"
 
 PP_PROG = "pixelart"
-PP_DESC = "Generating pixel art from all images in the current directory."
-PP_HELP = "generate pixel art from all images in the current directory"
+PP_DESC = "Generate pixel art from all images in the current directory."
+PP_HELP = "generating pixel art from all images in the current directory"
 
 UP_PROG = "uuid"
 UP_DESC = "Rename image files to UUID in the current directory."
@@ -32,8 +32,8 @@ NP_DESC = "Rename image files to sequential numbers in current directory."
 NP_HELP = "renaming all images file to seq numbers in the current directory"
 
 LP_PROG = "logo"
-LP_DESC = "Add a logo to all images in the current directory."
-LP_HELP = "adding a logo to all images in the current directory"
+LP_DESC = "Append a logo to all images in the current directory."
+LP_HELP = "appending a logo to all images in the current directory"
 
 
 def create_argument_parser() -> None:
