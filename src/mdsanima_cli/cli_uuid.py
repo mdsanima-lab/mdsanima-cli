@@ -19,7 +19,10 @@ from .cli_check import print_directory_check
 
 
 def rename_uuid() -> None:
-    """Renaming all images file to UUID in the current directory."""
+    """Renaming all images file to UUID in the current directory.
+
+    Example file name: `9c569045-a69f-4a26-b0b5-c3b06dd9052c.jpg`
+    """
 
     # Get directory stats info.
     directory = os.listdir()
@@ -36,18 +39,16 @@ def rename_uuid() -> None:
         if file.endswith(png):
             new_name = uuidv4 + png
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", str(count).zfill(4), file, new_name)
-            count += 1
+            print_cli_proc("RENAME", count, file, new_name)
         if file.endswith(jpg):
             new_name = uuidv4 + jpg
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", str(count).zfill(4), file, new_name)
-            count += 1
+            print_cli_proc("RENAME", count, file, new_name)
         if file.endswith(webp):
             new_name = uuidv4 + webp
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", str(count).zfill(4), file, new_name)
-            count += 1
+            print_cli_proc("RENAME", count, file, new_name)
+        count += 1
 
 
 def cli_uuid() -> None:

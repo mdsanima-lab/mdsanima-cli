@@ -20,6 +20,7 @@ from .cli_check import print_directory_check
 def rename_number() -> None:
     """Renaming all images file to sequential number in the current directory.
     Starting from 1.
+
     Example file name: `00001.jpg`
     """
 
@@ -37,15 +38,15 @@ def rename_number() -> None:
         if file.endswith(png):
             new_name = str(count).zfill(5) + png
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", str(count).zfill(4), file, new_name)
+            print_cli_proc("RENAME", count, file, new_name)
         if file.endswith(jpg):
             new_name = str(count).zfill(5) + jpg
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", str(count).zfill(4), file, new_name)
+            print_cli_proc("RENAME", count, file, new_name)
         if file.endswith(webp):
             new_name = str(count).zfill(5) + webp
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", str(count).zfill(4), file, new_name)
+            print_cli_proc("RENAME", count, file, new_name)
         count += 1
 
 

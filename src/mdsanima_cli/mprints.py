@@ -57,18 +57,18 @@ def print_cli_data(
     mprint(str(data), data_color)
 
 
-def print_cli_proc(process: str, count: str, old: str, new: str) -> None:
+def print_cli_proc(process: str, count: int, old: str, new: str) -> None:
     """Helper for printing multiple colors processing info in one line. The
     colors have already been selected, you can configure only the text without
     changing the colors.
 
-    Example look: `[COMPUTING 0001] image.png -> image_pixelart.png`
+    Example look: `[COMPUTING 00001] image.png -> image_pixelart.png`
     """
 
     # Print multiple colors in one line.
     mprint("[", 50, "")
     mprint(str(process), 37, " ")
-    mprint(str(count), 24, "")
+    mprint(str(count).zfill(5), 24, "")
     mprint("]", 50, " ")
     mprint(str(old), 40, "")
     mprint(" -> ", 49, "")
