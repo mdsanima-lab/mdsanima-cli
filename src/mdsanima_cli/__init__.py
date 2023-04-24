@@ -10,6 +10,7 @@ from .ascii import ascii_title
 from .parser import create_argument_parser
 
 from .cli_check import cli_check
+from .cli_number import cli_number
 from .cli_pixelart import cli_pixelart
 from .cli_uuid import cli_uuid
 
@@ -35,7 +36,7 @@ def main_cli():
         if args.command == "uuid":
             cli_uuid()
         if args.command == "number":
-            print("hello from number")
+            cli_number()
         if args.command == "logo":
             print("hello from logo")
     except AttributeError:
