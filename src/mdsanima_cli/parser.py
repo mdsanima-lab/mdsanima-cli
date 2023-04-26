@@ -35,6 +35,10 @@ LP_PROG = "logo"
 LP_DESC = "Append a logo to all images in the current directory."
 LP_HELP = "appending a logo to all images in the current directory"
 
+WP_PROG = "watermark"
+WP_DESC = "Append a watermark to all images in the current directory."
+WP_HELP = "appending a watermark to all images in the current directory"
+
 
 def create_argument_parser() -> None:
     """This function creates an argument parser for all available functions in
@@ -100,5 +104,14 @@ def create_argument_parser() -> None:
         epilog=AP_TOP_EPIL,
     )
     logo_parser.set_defaults(command=LP_PROG)
+
+    # Create subparser for watermark command.
+    watermark_parser = subparsers.add_parser(
+        WP_PROG,
+        description=WP_DESC,
+        help=WP_HELP,
+        epilog=AP_TOP_EPIL,
+    )
+    watermark_parser.set_defaults(command=WP_PROG)
 
     return parser

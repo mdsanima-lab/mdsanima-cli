@@ -37,6 +37,7 @@ Avaiable command for this package:
 - `mdsanima uuid` rename image file to uuid
 - `mdsanima number` rename image file to number
 - `mdsanima logo` append a logo
+- `mdsanima watermark` append a watermark
 
 The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
 art with creating the new file and appending the suffix `pixelart` to original file name.

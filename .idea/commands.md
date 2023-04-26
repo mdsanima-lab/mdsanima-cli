@@ -8,6 +8,7 @@ Here are some ideas for commands that we need to implement in this package.
 - [x] `mdsanima uuid` rename image file to uuid
 - [x] `mdsanima number` rename image file to number
 - [x] `mdsanima logo` append a logo
+- [x] `mdsanima watermark` append a watermark
 - [ ] `mdsanima thumb` generate thumbnail
 - [ ] `mdsanima grid` generate grid
 - [ ] `mdsanima gif` generate gif

@@ -14,6 +14,7 @@ from .cli_logo import cli_logo
 from .cli_number import cli_number
 from .cli_pixelart import cli_pixelart
 from .cli_uuid import cli_uuid
+from .cli_watermark import cli_watermark
 
 
 def main_cli():
@@ -40,5 +41,7 @@ def main_cli():
             cli_number()
         if args.command == "logo":
             cli_logo()
+        if args.command == "watermark":
+            cli_watermark()
     except AttributeError:
         parser.print_help()
