@@ -115,5 +115,5 @@ def cli_watermark() -> None:
     try:
         compute_watermark()
     except FileNotFoundError:
-        warning = "Put your watermakr here '" + WATERMARK + "' to continue!"
+        warning = "Put your watermark here '" + WATERMARK + "' to continue!"
         print_cli_data("WARNING WATERMARK", warning, 197, 209, 38)
