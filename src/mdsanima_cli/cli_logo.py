@@ -19,7 +19,7 @@ from .mprints import print_cli_proc
 from .cli_check import print_directory_check
 
 
-LOGO = os.path.expanduser("~/.mdsanima-cli/config/logo.png")
+LOGO = os.path.expanduser("~/.mdsanima-cli/config/img/logo.png")
 
 
 def append_logo(image_path: str, logo_path: str, new_name: str) -> None:

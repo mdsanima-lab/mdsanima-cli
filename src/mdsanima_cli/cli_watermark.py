@@ -19,7 +19,7 @@ from .mprints import print_cli_proc
 from .cli_check import print_directory_check
 
 
-WATERMARK = os.path.expanduser("~/.mdsanima-cli/config/watermark.png")
+WATERMARK = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
 
 
 def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
