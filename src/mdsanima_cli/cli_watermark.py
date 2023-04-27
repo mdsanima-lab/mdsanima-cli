@@ -10,9 +10,11 @@ once.
 from __future__ import annotations
 
 import os
+
 from PIL import Image
 
 from .ascii import ascii_title
+from .exif import get_exif_bytes
 from .mprints import print_cli_data
 from .mprints import print_cli_proc
 
@@ -24,7 +26,8 @@ WATERMARK = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
 
 def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
     """Append a watermark to one image, and then save the result with a new
-    file name. The watermark is a rotated on 45 degrees and shifted.
+    file name. The watermark is a rotated on 45 degrees and shifted. Adding
+    exif data.
     """
 
     # Open image and watermark file.
@@ -69,8 +72,11 @@ def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
             height = int(-bg_half + bg_size * col)
             image.paste(watermark_bg, (width, height), watermark_bg)
 
+    # Add exif data.
+    exif_bytes = get_exif_bytes("with watermark")
+
     # Save the result.
-    image.save(new_name)
+    image.save(new_name, exif=exif_bytes)
 
 
 def compute_watermark() -> None:

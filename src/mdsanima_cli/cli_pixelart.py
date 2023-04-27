@@ -12,9 +12,11 @@ modified.
 from __future__ import annotations
 
 import os
+
 from PIL import Image
 
 from .ascii import ascii_title
+from .exif import get_exif_bytes
 from .mprints import print_cli_proc
 
 from .cli_check import print_directory_check
@@ -22,14 +24,21 @@ from .cli_check import print_directory_check
 
 def generate_pixelart(image_path: str, new_name: str, res: int) -> None:
     """Generate pixel art for one image, then save the result with a new
-    filename.
+    filename. Adding exif data.
     """
 
-    # Generate one pixel art.
+    # Open image file.
     image = Image.open(image_path)
+
+    # Generate one pixel art.
     image_small = image.resize((res, res), resample=Image.Resampling.BILINEAR)
     result = image_small.resize(image.size, Image.Resampling.NEAREST)
-    result.save(new_name)
+
+    # Add exif data.
+    exif_bytes = get_exif_bytes("with pixel art")
+
+    # Save the result.
+    result.save(new_name, exif=exif_bytes)
 
 
 def compute_pixelart() -> None:

@@ -76,8 +76,9 @@ classifiers = [
     'Typing :: Typed',
 ]
 dependencies = [
-    'Pillow==9.4.0',
     'mdsanima-dev==0.1.1',
+    'piexif==1.1.3',
+    'Pillow==9.4.0',
 ]
 dynamic = ['version']
 

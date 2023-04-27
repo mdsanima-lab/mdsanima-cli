@@ -10,9 +10,11 @@ once.
 from __future__ import annotations
 
 import os
+
 from PIL import Image
 
 from .ascii import ascii_title
+from .exif import get_exif_bytes
 from .mprints import print_cli_data
 from .mprints import print_cli_proc
 
@@ -24,7 +26,7 @@ LOGO = os.path.expanduser("~/.mdsanima-cli/config/img/logo.png")
 
 def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
     """Append a logo to one image in the bottom right position, and then save
-    the result with a new file name.
+    the result with a new file name. Adding exif data.
     """
 
     # Open image and logo file.
@@ -45,9 +47,12 @@ def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
     position_x = image_width - new_logo_width
     position_y = image_height - new_logo_height
 
+    # Add exif data.
+    exif_bytes = get_exif_bytes("with logo")
+
     # Append logo to image and save.
     image.paste(logo, (position_x, position_y), logo)
-    image.save(new_name)
+    image.save(new_name, exif=exif_bytes)
 
 
 def compute_logo() -> None:
