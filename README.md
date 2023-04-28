@@ -29,6 +29,8 @@ The response is printing help how to use this command-line tools.
 
 ### CLI
 
+You can use the `mdsanima` command or the `mds` alias, which have the same functionality.
+
 Avaiable command for this package:
 
 - `mdsanima` main command showing help

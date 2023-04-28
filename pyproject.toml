@@ -90,6 +90,7 @@ changelog = 'https://github.com/mdsanima-lab/mdsanima-cli/blob/main/CHANGELOG.md
 
 [project.scripts]
 mdsanima = 'mdsanima_cli:main_cli'
+mds = 'mdsanima_cli:main_cli'
 
 [tool.black]
 line-length = 79
