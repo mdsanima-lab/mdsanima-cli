@@ -10,7 +10,7 @@ import piexif
 import piexif.helper
 
 
-from ._version import version
+from ._version import version  # pylint: disable=E0401
 
 
 def get_exif_bytes(comment: str) -> None:
