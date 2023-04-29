@@ -60,9 +60,9 @@ def print_cli_data(
 def print_cli_proc(process: str, count: int, old: str, new: str) -> None:
     """Helper for printing multiple colors processing info in one line. The
     colors have already been selected, you can configure only the text without
-    changing the colors.
+    changing the colors. The colors are shades of green and blue.
 
-    Example look: `[COMPUTING 00001] image.png -> image_pixelart.png`
+    Example look: `[PROCESSING 00001] image.png -> image_pixelart.png`
     """
 
     # Print multiple colors in one line.
@@ -73,3 +73,21 @@ def print_cli_proc(process: str, count: int, old: str, new: str) -> None:
     mprint(str(old), 40, "")
     mprint(" -> ", 49, "")
     mprint(str(new), 34)
+
+
+def print_cli_comp(process: str, count: int, old: str, new: str) -> None:
+    """Helper for printing multiple colors computing info in one line. The
+    colors have already been selected, you can configure only the text without
+    changing the colors. The colors are shades of red and green.
+
+    Example look: `[COMPUTING 00001] image.png -> image_pixelart.png`
+    """
+
+    # Print multiple colors in one line.
+    mprint("[", 203, "")
+    mprint(str(process), 197, " ")
+    mprint(str(count).zfill(5), 209, "")
+    mprint("]", 203, " ")
+    mprint(str(old), 3, "")
+    mprint(" -> ", 203, "")
+    mprint(str(new), 113)
