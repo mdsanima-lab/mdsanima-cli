@@ -1,0 +1,37 @@
+# Copyright © 2023 Marcin Różewski MDSANIMA
+
+
+[MASTER]
+
+# Add files or directories to the blacklist. They should be base names, not paths.
+ignore=CVS,.git,flake8.egg-info
+
+# Use multiple processes to speed up Pylint.
+jobs=4
+
+
+[FORMAT]
+
+# Maximum number of characters on a single line.
+max-line-length=100
+
+# Maximum number of lines in a module.
+max-module-lines=1000
+
+
+[DESIGN]
+
+# Maximum number of arguments for function / method.
+max-args=20
+
+# Maximum number of locals for function / method body.
+max-locals=30
+
+# Maximum number of return / yield for function / method body.
+max-returns=6
+
+# Maximum number of branch for function / method body.
+max-branches=12
+
+# Maximum number of statements in function / method body.
+max-statements=50

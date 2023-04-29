@@ -12,15 +12,19 @@ readme = 'README.md'
 license = {file = 'LICENSE'}
 requires-python = '>=3.10'
 keywords = [
+    'bash',
     'cli',
     'command-line',
     'console-app',
     'console-application',
     'exif metadata',
+    'exif',
     'image-processing',
     'images',
+    'logo',
     'mdsanima command line',
     'mdsanima command-line',
+    'mdsanima-cli',
     'mdsanima-dev',
     'mdsanima',
     'meta information',
@@ -30,6 +34,9 @@ keywords = [
     'python',
     'python3',
     'shell-script',
+    'shell',
+    'watermark',
+    'zsh',
 ]
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
@@ -93,7 +100,7 @@ mdsanima = 'mdsanima_cli:main_cli'
 mds = 'mdsanima_cli:main_cli'
 
 [tool.black]
-line-length = 79
+line-length = 100
 target-version = ['py310']
 include = '\.pyi?$'
 

@@ -1,3 +1,5 @@
+# Copyright © 2023 Marcin Różewski MDSANIMA
+
 # https://editorconfig.org
 
 root = true
@@ -53,7 +55,7 @@ indent_style = space
 profile = black
 indent_size = 4
 indent_style = space
-max_line_length = 79
+max_line_length = 100
 
 [*.sh]
 indent_size = 2
