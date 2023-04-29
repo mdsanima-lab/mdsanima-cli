@@ -21,6 +21,9 @@ from .mprints import print_cli_proc
 from .cli_check import print_directory_check
 
 
+COMMAND = "watermark"
+INFO = "appending a watermark"
+
 WATERMARK = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
 
 
@@ -73,7 +76,7 @@ def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
             image.paste(watermark_bg, (width, height), watermark_bg)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes("with watermark")
+    exif_bytes = get_exif_bytes(INFO)
 
     # Save the result.
     image.save(new_name, exif=exif_bytes)
@@ -99,27 +102,27 @@ def compute_watermark() -> None:
         if file.endswith(png) and not file.endswith(suffix + png):
             new_name = file[:-4] + suffix + png
             append_watermark(file, WATERMARK, new_name)
-            print_cli_proc("COMPUTE", count, file, new_name)
+            print_cli_proc("computing", count, file, new_name)
             count += 1
         if file.endswith(jpg) and not file.endswith(suffix + jpg):
             new_name = file[:-4] + suffix + jpg
             append_watermark(file, WATERMARK, new_name)
-            print_cli_proc("COMPUTE", count, file, new_name)
+            print_cli_proc("computing", count, file, new_name)
             count += 1
         if file.endswith(webp) and not file.endswith(suffix + webp):
             new_name = file[:-5] + suffix + webp
             append_watermark(file, WATERMARK, new_name)
-            print_cli_proc("COMPUTE", count, file, new_name)
+            print_cli_proc("computing", count, file, new_name)
             count += 1
 
 
 def cli_watermark() -> None:
     """Main function for `watermark` command."""
-    print_directory_check("WATERMARK", "APPENDING A WATERMARK")
+    print_directory_check(COMMAND, INFO)
     ascii_title("processing")
 
     try:
         compute_watermark()
     except FileNotFoundError:
         warning = "Put your watermark here '" + WATERMARK + "' to continue!"
-        print_cli_data("WARNING WATERMARK", warning, 197, 209, 38)
+        print_cli_data("warning watermark", warning, 197, 209, 38)

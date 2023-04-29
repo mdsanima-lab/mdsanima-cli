@@ -21,6 +21,10 @@ from .mprints import print_cli_proc
 from .cli_check import print_directory_check
 
 
+COMMAND = "grid"
+INFO = "generating grid 2x2"
+
+
 def generate_grid(
     image1_path: str,
     image2_path: str,
@@ -49,7 +53,7 @@ def generate_grid(
     grid_image.paste(image4, (image1.size[0], image1.size[1]))
 
     # Add exif data.
-    exif_bytes = get_exif_bytes("with grid 2x2")
+    exif_bytes = get_exif_bytes(INFO)
 
     # Save the result.
     grid_image.save(grid_name, exif=exif_bytes)
@@ -77,10 +81,10 @@ def compute_grid() -> None:
         if file.endswith(png):
             grid_name = prefix + str(grid).zfill(5) + png
             img.append(file)
-            print_cli_proc("APPENDING", count, file, grid_name)
+            print_cli_proc("appending", count, file, grid_name)
             if len(img) == 4:
                 images_clean = str(img).replace(",", "").replace("'", "")[1:-1]
-                print_cli_comp("COMPUTING", grid, images_clean, grid_name)
+                print_cli_comp("computing", grid, images_clean, grid_name)
                 generate_grid(img[0], img[1], img[2], img[3], grid_name)
                 grid += 1
                 img = []
@@ -88,10 +92,10 @@ def compute_grid() -> None:
         if file.endswith(jpg):
             grid_name = prefix + str(grid).zfill(5) + jpg
             img.append(file)
-            print_cli_proc("APPENDING", count, file, grid_name)
+            print_cli_proc("appending", count, file, grid_name)
             if len(img) == 4:
                 images_clean = str(img).replace(",", "").replace("'", "")[1:-1]
-                print_cli_comp("COMPUTING", grid, images_clean, grid_name)
+                print_cli_comp("computing", grid, images_clean, grid_name)
                 generate_grid(img[0], img[1], img[2], img[3], grid_name)
                 grid += 1
                 img = []
@@ -99,10 +103,10 @@ def compute_grid() -> None:
         if file.endswith(webp):
             grid_name = prefix + str(grid).zfill(5) + webp
             img.append(file)
-            print_cli_proc("APPENDING", count, file, grid_name)
+            print_cli_proc("appending", count, file, grid_name)
             if len(img) == 4:
                 images_clean = str(img).replace(",", "").replace("'", "")[1:-1]
-                print_cli_comp("COMPUTING", grid, images_clean, grid_name)
+                print_cli_comp("computing", grid, images_clean, grid_name)
                 generate_grid(img[0], img[1], img[2], img[3], grid_name)
                 grid += 1
                 img = []
@@ -111,6 +115,6 @@ def compute_grid() -> None:
 
 def cli_grid() -> None:
     """Main function for `grid` command."""
-    print_directory_check("GRID", "COMPUTE GRID 2x2")
+    print_directory_check(COMMAND, INFO)
     ascii_title("processing")
     compute_grid()

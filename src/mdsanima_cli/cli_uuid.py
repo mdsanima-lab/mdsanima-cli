@@ -18,6 +18,10 @@ from .mprints import print_cli_proc
 from .cli_check import print_directory_check
 
 
+COMMAND = "uuid"
+INFO = "renaming image files to uuid"
+
+
 def rename_uuid() -> None:
     """Renaming all images file to UUID in the current directory.
 
@@ -39,20 +43,20 @@ def rename_uuid() -> None:
         if file.endswith(png):
             new_name = uuidv4 + png
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", count, file, new_name)
+            print_cli_proc("renaming", count, file, new_name)
         if file.endswith(jpg):
             new_name = uuidv4 + jpg
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", count, file, new_name)
+            print_cli_proc("renaming", count, file, new_name)
         if file.endswith(webp):
             new_name = uuidv4 + webp
             shutil.move(file, new_name)
-            print_cli_proc("RENAME", count, file, new_name)
+            print_cli_proc("renaming", count, file, new_name)
         count += 1
 
 
 def cli_uuid() -> None:
     """Main function for `uuid` command."""
-    print_directory_check("UUID", "RENAME IMAGE FILES TO UUID")
+    print_directory_check(COMMAND, INFO)
     ascii_title("processing")
     rename_uuid()

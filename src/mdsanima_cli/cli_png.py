@@ -20,6 +20,10 @@ from .mprints import print_cli_proc
 from .cli_check import print_directory_check
 
 
+COMMAND = "png"
+INFO = "converting to png format"
+
+
 def convert_png(image_path: str, new_name: str) -> None:
     """Converting a image to PNG format, and then save the result with a new
     file name. Adding exif data.
@@ -29,7 +33,7 @@ def convert_png(image_path: str, new_name: str) -> None:
     image = Image.open(image_path)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes("with png")
+    exif_bytes = get_exif_bytes(INFO)
 
     # Save the result.
     image.save(new_name, "PNG", exif=exif_bytes)
@@ -55,22 +59,22 @@ def compute_png() -> None:
         if file.endswith(png) and not file.endswith(suffix + png):
             new_name = file[:-4] + suffix + png
             convert_png(file, new_name)
-            print_cli_proc("CONVERTING", count, file, new_name)
+            print_cli_proc("converting", count, file, new_name)
             count += 1
         if file.endswith(jpg) and not file.endswith(suffix + png):
             new_name = file[:-4] + suffix + png
             convert_png(file, new_name)
-            print_cli_proc("CONVERTING", count, file, new_name)
+            print_cli_proc("converting", count, file, new_name)
             count += 1
         if file.endswith(webp) and not file.endswith(suffix + png):
             new_name = file[:-5] + suffix + png
             convert_png(file, new_name)
-            print_cli_proc("CONVERTING", count, file, new_name)
+            print_cli_proc("converting", count, file, new_name)
             count += 1
 
 
 def cli_png() -> None:
     """Main function for `png` command."""
-    print_directory_check("PNG", "CONVERTING TO PNG")
+    print_directory_check(COMMAND, INFO)
     ascii_title("processing")
     compute_png()
