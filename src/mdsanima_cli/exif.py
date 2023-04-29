@@ -18,7 +18,7 @@ def get_exif_bytes(comment: str) -> None:
 
     # Add new exif data.
     software = f"MDSANIMA-CLI {version}"
-    user_comment = piexif.helper.UserComment.dump(comment)
+    user_comment = piexif.helper.UserComment.dump(f"{comment} by mdsanima-cli")
 
     # Dump exif bytes software and user comment.
     exif_bytes = piexif.dump(
