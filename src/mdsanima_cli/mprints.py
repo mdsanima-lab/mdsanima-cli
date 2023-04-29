@@ -31,9 +31,9 @@ def print_cli_info(
 
     # Print multiple colors in one line.
     mprint("[".rjust(14 - align), bracket_color, "")
-    mprint(str(key), key_color, "")
+    mprint(str(key).upper(), key_color, "")
     mprint("]", bracket_color, " -> ")
-    mprint(str(info), info_color)
+    mprint(str(info).upper(), info_color)
 
 
 def print_cli_data(
@@ -52,7 +52,7 @@ def print_cli_data(
 
     # Print multiple colors in one line.
     mprint("[".rjust(14 - align), bracket_color, "")
-    mprint(str(key), key_color, "")
+    mprint(str(key).upper(), key_color, "")
     mprint("]", bracket_color, " ")
     mprint(str(data), data_color)
 
@@ -67,7 +67,7 @@ def print_cli_proc(process: str, count: int, old: str, new: str) -> None:
 
     # Print multiple colors in one line.
     mprint("[", 50, "")
-    mprint(str(process), 37, " ")
+    mprint(str(process).upper(), 37, " ")
     mprint(str(count).zfill(5), 24, "")
     mprint("]", 50, " ")
     mprint(str(old), 40, "")
@@ -85,7 +85,7 @@ def print_cli_comp(process: str, count: int, old: str, new: str) -> None:
 
     # Print multiple colors in one line.
     mprint("[", 203, "")
-    mprint(str(process), 197, " ")
+    mprint(str(process).upper(), 197, " ")
     mprint(str(count).zfill(5), 209, "")
     mprint("]", 203, " ")
     mprint(str(old), 3, "")

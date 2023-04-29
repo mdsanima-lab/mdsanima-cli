@@ -20,8 +20,8 @@ def print_directory_check(cli_command: str, cli_info: str) -> None:
     info = get_directory_info()
 
     # Print color info stats.
-    print_cli_info("MDSANIMA CLI", cli_command, 40, 34, 12)
-    print_cli_info("INFO CLI", cli_info, 40, 34, 5)
+    print_cli_info("MDSANIMA CLI", cli_command.upper(), 40, 34, 12)
+    print_cli_info("INFO CLI", cli_info.upper(), 40, 34, 5)
     print_cli_data("PATH", info["path"], 34, 26, 38)
     print_cli_data("TOTAL", info["total"], 34, 24, 52)
     print_cli_data("FOLDERS", info["folders"], 34, 24, 52)
@@ -36,4 +36,4 @@ def print_directory_check(cli_command: str, cli_info: str) -> None:
 
 def cli_check() -> None:
     """Main function for `check` command."""
-    print_directory_check("CHECK", "DIRECTORY STATISTIC")
+    print_directory_check("check", "directory statistic")
