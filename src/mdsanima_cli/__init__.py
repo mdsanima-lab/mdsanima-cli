@@ -18,6 +18,7 @@ from .cli_pixelart import cli_pixelart
 from .cli_png import cli_png
 from .cli_uuid import cli_uuid
 from .cli_watermark import cli_watermark
+from .cli_webp import cli_webp
 
 
 def main_cli():
@@ -52,5 +53,7 @@ def main_cli():
             cli_jpg()
         if args.command == "png":
             cli_png()
+        if args.command == "webp":
+            cli_webp()
     except AttributeError:
         parser.print_help()

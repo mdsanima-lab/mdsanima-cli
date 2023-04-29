@@ -51,6 +51,10 @@ PNG_AP_PROG = "png"
 PNG_AP_DESC = "Convert image files to PNG format in the current directory."
 PNG_AP_HELP = "converting image files to PNG format in the current dir"
 
+WEB_AP_PROG = "webp"
+WEB_AP_DESC = "Convert image files to WEBP format in the current directory."
+WEB_AP_HELP = "converting image files to WEBP format in the current dir"
+
 
 def create_argument_parser() -> None:
     """This function creates an argument parser for all available functions in
@@ -152,5 +156,14 @@ def create_argument_parser() -> None:
         epilog=AP_TOP_EPIL,
     )
     png_parser.set_defaults(command=PNG_AP_PROG)
+
+    # Create subparser for webp command.
+    webp_parser = subparsers.add_parser(
+        WEB_AP_PROG,
+        description=WEB_AP_DESC,
+        help=WEB_AP_HELP,
+        epilog=AP_TOP_EPIL,
+    )
+    webp_parser.set_defaults(command=WEB_AP_PROG)
 
     return parser
