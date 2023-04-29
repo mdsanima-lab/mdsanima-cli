@@ -42,6 +42,7 @@ Avaiable command for this package:
 - `mdsanima watermark` append a watermark
 - `mdsanima grid` generate grid 2x2
 - `mdsanima jpg` convert to jpg
+- `mdsanima png` convert to png
 
 The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
 art with creating the new file and appending the suffix `pixelart` to original file name.

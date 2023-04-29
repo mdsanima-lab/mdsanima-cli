@@ -15,37 +15,41 @@ AP_TOP_PROG = "mdsanima"
 AP_TOP_DESC = "MDSANIMA CLI is a command-line interface for image processing."
 AP_TOP_EPIL = "Copyright \U000000A9 2023 Marcin Różewski MDSANIMA"
 
-CP_PROG = "check"
-CP_DESC = "Displaying info about all images in the current directory."
-CP_HELP = "printing info about all images inside the current directory"
+CHE_AP_PROG = "check"
+CHE_AP_DESC = "Displaying info about all images in the current directory."
+CHE_AP_HELP = "printing info about all images inside the current dir"
 
-PP_PROG = "pixelart"
-PP_DESC = "Generate pixel art from all images in the current directory."
-PP_HELP = "generating pixel art from all images in the current directory"
+PIX_AP_PROG = "pixelart"
+PIX_AP_DESC = "Generate pixel art from all images in the current directory."
+PIX_AP_HELP = "generating pixel art from all images in the current dir"
 
-UP_PROG = "uuid"
-UP_DESC = "Rename image files to UUID in the current directory."
-UP_HELP = "renaming all images file to UUID in the current directory"
+UUI_AP_PROG = "uuid"
+UUI_AP_DESC = "Rename image files to UUID in the current directory."
+UUI_AP_HELP = "renaming all images file to UUID in the current dir"
 
-NP_PROG = "number"
-NP_DESC = "Rename image files to sequential numbers in current directory."
-NP_HELP = "renaming all images file to seq numbers in the current directory"
+NUM_AP_PROG = "number"
+NUM_AP_DESC = "Rename image files to sequential numbers in current directory."
+NUM_AP_HELP = "renaming all images file to seq numbers in the current dir"
 
-LP_PROG = "logo"
-LP_DESC = "Append a logo to all images in the current directory."
-LP_HELP = "appending a logo to all images in the current directory"
+LOG_AP_PROG = "logo"
+LOG_AP_DESC = "Append a logo to all images in the current directory."
+LOG_AP_HELP = "appending a logo to all images in the current dir"
 
-WP_PROG = "watermark"
-WP_DESC = "Append a watermark to all images in the current directory."
-WP_HELP = "appending a watermark to all images in the current directory"
+WAT_AP_PROG = "watermark"
+WAT_AP_DESC = "Append a watermark to all images in the current directory."
+WAT_AP_HELP = "appending a watermark to all images in the current dir"
 
-GP_PROG = "grid"
-GP_DESC = "Generate a grid 2x2 from all images in the current directory."
-GP_HELP = "generating a grid 2x2 from all images in the current directory"
+GRI_AP_PROG = "grid"
+GRI_AP_DESC = "Generate a grid 2x2 from all images in the current directory."
+GRI_AP_HELP = "generating a grid 2x2 from all images in the current dir"
 
-JP_PROG = "jpg"
-JP_DESC = "Convert image files to JPG format in the current directory."
-JP_HELP = "converting image files to JPG format in the current directory"
+JPG_AP_PROG = "jpg"
+JPG_AP_DESC = "Convert image files to JPG format in the current directory."
+JPG_AP_HELP = "converting image files to JPG format in the current dir"
+
+PNG_AP_PROG = "png"
+PNG_AP_DESC = "Convert image files to PNG format in the current directory."
+PNG_AP_HELP = "converting image files to PNG format in the current dir"
 
 
 def create_argument_parser() -> None:
@@ -70,74 +74,83 @@ def create_argument_parser() -> None:
 
     # Create subparser for check command.
     check_parser = subparsers.add_parser(
-        CP_PROG,
-        description=CP_DESC,
-        help=CP_HELP,
+        CHE_AP_PROG,
+        description=CHE_AP_DESC,
+        help=CHE_AP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    check_parser.set_defaults(command=CP_PROG)
+    check_parser.set_defaults(command=CHE_AP_PROG)
 
     # Create subparser for pixelart command.
     pixelart_parser = subparsers.add_parser(
-        PP_PROG,
-        description=PP_DESC,
-        help=PP_HELP,
+        PIX_AP_PROG,
+        description=PIX_AP_DESC,
+        help=PIX_AP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    pixelart_parser.set_defaults(command=PP_PROG)
+    pixelart_parser.set_defaults(command=PIX_AP_PROG)
 
     # Create subparser for uuid command.
     uuid_parser = subparsers.add_parser(
-        UP_PROG,
-        description=UP_DESC,
-        help=UP_HELP,
+        UUI_AP_PROG,
+        description=UUI_AP_DESC,
+        help=UUI_AP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    uuid_parser.set_defaults(command=UP_PROG)
+    uuid_parser.set_defaults(command=UUI_AP_PROG)
 
     # Create subparser for number command.
     number_parser = subparsers.add_parser(
-        NP_PROG,
-        description=NP_DESC,
-        help=NP_HELP,
+        NUM_AP_PROG,
+        description=NUM_AP_DESC,
+        help=NUM_AP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    number_parser.set_defaults(command=NP_PROG)
+    number_parser.set_defaults(command=NUM_AP_PROG)
 
     # Create subparser for logo command.
     logo_parser = subparsers.add_parser(
-        LP_PROG,
-        description=LP_DESC,
-        help=LP_HELP,
+        LOG_AP_PROG,
+        description=LOG_AP_DESC,
+        help=LOG_AP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    logo_parser.set_defaults(command=LP_PROG)
+    logo_parser.set_defaults(command=LOG_AP_PROG)
 
     # Create subparser for watermark command.
     watermark_parser = subparsers.add_parser(
-        WP_PROG,
-        description=WP_DESC,
-        help=WP_HELP,
+        WAT_AP_PROG,
+        description=WAT_AP_DESC,
+        help=WAT_AP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    watermark_parser.set_defaults(command=WP_PROG)
+    watermark_parser.set_defaults(command=WAT_AP_PROG)
 
     # Create subparser for grid command.
     grid_parser = subparsers.add_parser(
-        GP_PROG,
-        description=GP_DESC,
-        help=GP_HELP,
+        GRI_AP_PROG,
+        description=GRI_AP_DESC,
+        help=GRI_AP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    grid_parser.set_defaults(command=GP_PROG)
+    grid_parser.set_defaults(command=GRI_AP_PROG)
 
     # Create subparser for jpg command.
     jpg_parser = subparsers.add_parser(
-        JP_PROG,
-        description=JP_DESC,
-        help=JP_HELP,
+        JPG_AP_PROG,
+        description=JPG_AP_DESC,
+        help=JPG_AP_HELP,
         epilog=AP_TOP_EPIL,
     )
-    jpg_parser.set_defaults(command=JP_PROG)
+    jpg_parser.set_defaults(command=JPG_AP_PROG)
+
+    # Create subparser for png command.
+    png_parser = subparsers.add_parser(
+        PNG_AP_PROG,
+        description=PNG_AP_DESC,
+        help=PNG_AP_HELP,
+        epilog=AP_TOP_EPIL,
+    )
+    png_parser.set_defaults(command=PNG_AP_PROG)
 
     return parser

@@ -15,6 +15,7 @@ from .cli_jpg import cli_jpg
 from .cli_logo import cli_logo
 from .cli_number import cli_number
 from .cli_pixelart import cli_pixelart
+from .cli_png import cli_png
 from .cli_uuid import cli_uuid
 from .cli_watermark import cli_watermark
 
@@ -49,5 +50,7 @@ def main_cli():
             cli_grid()
         if args.command == "jpg":
             cli_jpg()
+        if args.command == "png":
+            cli_png()
     except AttributeError:
         parser.print_help()

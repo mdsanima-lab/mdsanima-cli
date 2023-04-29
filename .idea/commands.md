@@ -13,7 +13,7 @@ You can use the `mdsanima` command or the `mds` alias, which have the same funct
 - [x] `mdsanima watermark` append a watermark
 - [x] `mdsanima grid` generate grid 2x2
 - [x] `mdsanima jpg` convert to jpg
-- [ ] `mdsanima png` convert to png
+- [x] `mdsanima png` convert to png
 - [ ] `mdsanima webp` convert to webp
 - [ ] `mdsanima thumb` generate thumbnail
 - [ ] `mdsanima gif` generate gif
