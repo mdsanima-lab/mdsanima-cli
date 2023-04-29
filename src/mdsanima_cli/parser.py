@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import argparse
 
-from ._version import __version__
+from ._version import __version__  # pylint: disable=E0401
 
 
 AP_TOP_PROG = "mdsanima"
@@ -38,6 +38,10 @@ LP_HELP = "appending a logo to all images in the current directory"
 WP_PROG = "watermark"
 WP_DESC = "Append a watermark to all images in the current directory."
 WP_HELP = "appending a watermark to all images in the current directory"
+
+GP_PROG = "grid"
+GP_DESC = "Generate a grid 2x2 from all images in the current directory."
+GP_HELP = "generating a grid 2x2 from all images in the current directory"
 
 
 def create_argument_parser() -> None:
@@ -113,5 +117,14 @@ def create_argument_parser() -> None:
         epilog=AP_TOP_EPIL,
     )
     watermark_parser.set_defaults(command=WP_PROG)
+
+    # Create subparser for grid command.
+    grid_parser = subparsers.add_parser(
+        GP_PROG,
+        description=GP_DESC,
+        help=GP_HELP,
+        epilog=AP_TOP_EPIL,
+    )
+    grid_parser.set_defaults(command=GP_PROG)
 
     return parser

@@ -11,8 +11,8 @@ You can use the `mdsanima` command or the `mds` alias, which have the same funct
 - [x] `mdsanima number` rename image file to number
 - [x] `mdsanima logo` append a logo
 - [x] `mdsanima watermark` append a watermark
+- [x] `mdsanima grid` generate grid 2x2
 - [ ] `mdsanima thumb` generate thumbnail
-- [ ] `mdsanima grid` generate grid
 - [ ] `mdsanima gif` generate gif
 - [ ] `mdsanima multi` generate multi resolution
 - [ ] `mdsanima webp` convert to webp

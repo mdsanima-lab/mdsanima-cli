@@ -10,6 +10,7 @@ from .ascii import ascii_title
 from .parser import create_argument_parser
 
 from .cli_check import cli_check
+from .cli_grid import cli_grid
 from .cli_logo import cli_logo
 from .cli_number import cli_number
 from .cli_pixelart import cli_pixelart
@@ -43,5 +44,7 @@ def main_cli():
             cli_logo()
         if args.command == "watermark":
             cli_watermark()
+        if args.command == "grid":
+            cli_grid()
     except AttributeError:
         parser.print_help()

@@ -40,6 +40,7 @@ Avaiable command for this package:
 - `mdsanima number` rename image file to number
 - `mdsanima logo` append a logo
 - `mdsanima watermark` append a watermark
+- `mdsanima grid` generate grid 2x2
 
 The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
 art with creating the new file and appending the suffix `pixelart` to original file name.
