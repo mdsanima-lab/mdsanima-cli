@@ -21,7 +21,7 @@ def print_cli_info(
     """Helper for printing multiple colors info in one line. Aligning the last
     bracket to the right within a maximum width of 14 characters. You can
     choose individual colors for the bracket, text inside the bracket, and the
-    last text.
+    last text. The string `key` and `info` are always printed in upper case.
 
     Example look: `[MDSANIMA CLI] -> CHECK`
     """
@@ -42,7 +42,7 @@ def print_cli_data(
     """Helper for printing multiple colors data in one line. Aligning the last
     bracket to the right within a maximum width of 14 characters. You can
     choose individual colors for the bracket, text inside the bracket, and the
-    last text.
+    last text. The string `key` are always printed in upper case.
 
     Example look: `[REAL PATH] /home/mdsanima/dev/mdsanima-cli`
     """
@@ -60,7 +60,8 @@ def print_cli_data(
 def print_cli_proc(process: str, count: int, old: str, new: str) -> None:
     """Helper for printing multiple colors processing info in one line. The
     colors have already been selected, you can configure only the text without
-    changing the colors. The colors are shades of green and blue.
+    changing the colors. The string `process` are always printed in upper case.
+    The colors are shades of green and blue.
 
     Example look: `[PROCESSING 00001] image.png -> image_pixelart.png`
     """
@@ -78,7 +79,8 @@ def print_cli_proc(process: str, count: int, old: str, new: str) -> None:
 def print_cli_comp(process: str, count: int, old: str, new: str) -> None:
     """Helper for printing multiple colors computing info in one line. The
     colors have already been selected, you can configure only the text without
-    changing the colors. The colors are shades of red and green.
+    changing the colors. The string `process` are always printed in upper case.
+    The colors are shades of red and green.
 
     Example look: `[COMPUTING 00001] image.png -> image_pixelart.png`
     """
