@@ -11,6 +11,7 @@ from .parser import create_argument_parser
 
 from .cli_check import cli_check
 from .cli_grid import cli_grid
+from .cli_jpg import cli_jpg
 from .cli_logo import cli_logo
 from .cli_number import cli_number
 from .cli_pixelart import cli_pixelart
@@ -46,5 +47,7 @@ def main_cli():
             cli_watermark()
         if args.command == "grid":
             cli_grid()
+        if args.command == "jpg":
+            cli_jpg()
     except AttributeError:
         parser.print_help()

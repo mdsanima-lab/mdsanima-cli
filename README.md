@@ -27,9 +27,9 @@ mdsanima
 
 The response is printing help how to use this command-line tools.
 
-### CLI
-
 You can use the `mdsanima` command or the `mds` alias, which have the same functionality.
+
+### CLI
 
 Avaiable command for this package:
 
@@ -41,6 +41,7 @@ Avaiable command for this package:
 - `mdsanima logo` append a logo
 - `mdsanima watermark` append a watermark
 - `mdsanima grid` generate grid 2x2
+- `mdsanima jpg` convert to jpg
 
 The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
 art with creating the new file and appending the suffix `pixelart` to original file name.

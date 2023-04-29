@@ -43,6 +43,10 @@ GP_PROG = "grid"
 GP_DESC = "Generate a grid 2x2 from all images in the current directory."
 GP_HELP = "generating a grid 2x2 from all images in the current directory"
 
+JP_PROG = "jpg"
+JP_DESC = "Convert image files to JPG format in the current directory."
+JP_HELP = "converting image files to JPG format in the current directory"
+
 
 def create_argument_parser() -> None:
     """This function creates an argument parser for all available functions in
@@ -126,5 +130,14 @@ def create_argument_parser() -> None:
         epilog=AP_TOP_EPIL,
     )
     grid_parser.set_defaults(command=GP_PROG)
+
+    # Create subparser for jpg command.
+    jpg_parser = subparsers.add_parser(
+        JP_PROG,
+        description=JP_DESC,
+        help=JP_HELP,
+        epilog=AP_TOP_EPIL,
+    )
+    jpg_parser.set_defaults(command=JP_PROG)
 
     return parser
