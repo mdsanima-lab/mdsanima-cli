@@ -15,7 +15,7 @@ COMMAND = "check"
 INFO = "directory statistic"
 
 
-def print_directory_check(cli_command: str, cli_info: str) -> None:
+def print_directory_statistic(cli_command: str, cli_info: str) -> None:
     """Printing info about all images inside the current directory."""
 
     # Get directory stats info and color print.
@@ -38,4 +38,4 @@ def print_directory_check(cli_command: str, cli_info: str) -> None:
 
 def cli_check() -> None:
     """Main function for `check` command."""
-    print_directory_check(COMMAND, INFO)
+    print_directory_statistic(COMMAND, INFO)

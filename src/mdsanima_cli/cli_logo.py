@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from .ascii import ascii_title
-from .cli_check import print_directory_check
+from .cli_check import print_directory_statistic
 from .exif import get_exif_bytes
 from .mprints import print_cli_data
 from .mprints import print_cli_proc
@@ -90,7 +90,7 @@ def compute_logo() -> None:
 
 def cli_logo() -> None:
     """Main function for `logo` command."""
-    print_directory_check(COMMAND, INFO)
+    print_directory_statistic(COMMAND, INFO)
     ascii_title("processing")
 
     try:

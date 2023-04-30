@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from .ascii import ascii_title
-from .cli_check import print_directory_check
+from .cli_check import print_directory_statistic
 from .exif import get_exif_bytes
 from .mprints import print_cli_proc
 
@@ -69,6 +69,6 @@ def compute_png() -> None:
 
 def cli_png() -> None:
     """Main function for `png` command."""
-    print_directory_check(COMMAND, INFO)
+    print_directory_statistic(COMMAND, INFO)
     ascii_title("processing")
     compute_png()

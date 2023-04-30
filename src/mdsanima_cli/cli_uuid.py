@@ -11,7 +11,7 @@ import shutil
 import uuid
 
 from .ascii import ascii_title
-from .cli_check import print_directory_check
+from .cli_check import print_directory_statistic
 from .mprints import print_cli_proc
 
 
@@ -54,6 +54,6 @@ def rename_to_uuid() -> None:
 
 def cli_uuid() -> None:
     """Main function for `uuid` command."""
-    print_directory_check(COMMAND, INFO)
+    print_directory_statistic(COMMAND, INFO)
     ascii_title("processing")
     rename_to_uuid()

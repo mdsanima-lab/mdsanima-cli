@@ -14,11 +14,10 @@ import os
 from PIL import Image
 
 from .ascii import ascii_title
+from .cli_check import print_directory_statistic
 from .exif import get_exif_bytes
 from .mprints import print_cli_data
 from .mprints import print_cli_proc
-
-from .cli_check import print_directory_check
 
 
 COMMAND = "watermark"
@@ -114,7 +113,7 @@ def compute_watermark() -> None:
 
 def cli_watermark() -> None:
     """Main function for `watermark` command."""
-    print_directory_check(COMMAND, INFO)
+    print_directory_statistic(COMMAND, INFO)
     ascii_title("processing")
 
     try:
