@@ -9,14 +9,13 @@ from __future__ import annotations
 from mdsanima_dev.colors import get_complex_color
 
 
-def get_ascii() -> None:
-    """This function returns a single ASCII character that includes the entire
-    alphabet, numbers, and some special characters includes spaces. Each
-    character is displayed on 3 lines, and the width is 3 normal-length spaces.
+def get_ascii_character() -> None:
+    """This function returns a single ASCII character that includes the entire alphabet, numbers,
+    and some special characters includes spaces. Each character is displayed on 3 lines, and the
+    width is 3 normal-length spaces.
 
-    Usage: `ascii["a"][0]` returns the first line of the character `a` in ASCII
-    format. To obtain the entire character, you need to retrieve lines
-    `ascii["a"][1]` and `ascii["a"][2]` as well.
+    Usage: `ascii["a"][0]` returns the first line of the character `a` in ASCII format. To obtain
+    the entire character, you need to retrieve lines `ascii["a"][1]` and `ascii["a"][2]` as well.
 
     Return: `dict[str, list[str]]`
 
@@ -312,16 +311,11 @@ def get_ascii() -> None:
     return ascii_characters
 
 
-def generate_ascii(
-    ascii_line_a: str,
-    ascii_line_b: str,
-    ascii_line_c: str,
-    border_color: int,
-    ascii_color: int,
-    width: int = 50,
+def generate_ascii_with_border(
+    line_1: str, line_2: str, line_3: str, border_color: int, ascii_color: int, width: int = 50
 ) -> None:
-    """Generate ASCII art text in color and with a border. Printing ASCI art
-    in 5 lines. You can adjust a width and color.
+    """Generate ASCII art text in color and with a border. Printing ASCI art in 5 lines. You can
+    adjust a width and color.
     """
 
     # Color print variable.
@@ -338,17 +332,17 @@ def generate_ascii(
 
     # Line 2.
     mprint(border_vertical, border_color, "")
-    mprint(ascii_line_a.center(width), ascii_color, "")
+    mprint(line_1.center(width), ascii_color, "")
     mprint(border_vertical, border_color)
 
     # Line 3.
     mprint(border_vertical, border_color, "")
-    mprint(ascii_line_b.center(width), ascii_color, "")
+    mprint(line_2.center(width), ascii_color, "")
     mprint(border_vertical, border_color)
 
     # Line 4.
     mprint(border_vertical, border_color, "")
-    mprint(ascii_line_c.center(width), ascii_color, "")
+    mprint(line_3.center(width), ascii_color, "")
     mprint(border_vertical, border_color)
 
     # Line 5.
@@ -356,25 +350,24 @@ def generate_ascii(
 
 
 def ascii_title(option: str) -> None:
-    """Print ASCII title art text in color and with a border. For now is two
-    options you can use.
+    """Print ASCII title art text in color and with a border. For now is two options you can use.
 
     Title option 1: `mdsanima cli`
     Title option 2: `processing`
     """
 
     # Ascii tile option 1.
-    ascii_cli_a = "┏┳┓╺┳┓┏━┓┏━┓┏┓╻╻┏┳┓┏━┓   ┏━╸╻  ╻"
-    ascii_cli_b = "┃┃┃ ┃┃┗━┓┣━┫┃┗┫┃┃┃┃┣━┫   ┃  ┃  ┃"
-    ascii_cli_c = "╹ ╹╺┻┛┗━┛╹ ╹╹ ╹╹╹ ╹╹ ╹   ┗━╸┗━╸╹"
+    ascii_cli_line_1 = "┏┳┓╺┳┓┏━┓┏━┓┏┓╻╻┏┳┓┏━┓   ┏━╸╻  ╻"
+    ascii_cli_line_2 = "┃┃┃ ┃┃┗━┓┣━┫┃┗┫┃┃┃┃┣━┫   ┃  ┃  ┃"
+    ascii_cli_line_3 = "╹ ╹╺┻┛┗━┛╹ ╹╹ ╹╹╹ ╹╹ ╹   ┗━╸┗━╸╹"
 
     # Ascii title option 2.
-    ascii_proc_a = "┏━┓┏━┓┏━┓┏━╸┏━╸┏━┓┏━┓╻┏┓╻┏━╸"
-    ascii_proc_b = "┣━┛┣┳┛┃ ┃┃  ┣╸ ┗━┓┗━┓┃┃┗┫┃╺┓"
-    ascii_proc_c = "╹  ╹┗╸┗━┛┗━╸┗━╸┗━┛┗━┛╹╹ ╹┗━┛"
+    ascii_proc_line_1 = "┏━┓┏━┓┏━┓┏━╸┏━╸┏━┓┏━┓╻┏┓╻┏━╸"
+    ascii_proc_line_2 = "┣━┛┣┳┛┃ ┃┃  ┣╸ ┗━┓┗━┓┃┃┗┫┃╺┓"
+    ascii_proc_line_3 = "╹  ╹┗╸┗━┛┗━╸┗━╸┗━┛┗━┛╹╹ ╹┗━┛"
 
     # Check which option to print.
     if option == "mdsanima cli":
-        generate_ascii(ascii_cli_a, ascii_cli_b, ascii_cli_c, 40, 50)
+        generate_ascii_with_border(ascii_cli_line_1, ascii_cli_line_2, ascii_cli_line_3, 40, 50)
     if option == "processing":
-        generate_ascii(ascii_proc_a, ascii_proc_b, ascii_proc_c, 50, 197)
+        generate_ascii_with_border(ascii_proc_line_1, ascii_proc_line_2, ascii_proc_line_3, 50, 197)

@@ -44,14 +44,10 @@ def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
     # Calculating size for watermark.
     resize_ratio = 0.25
     new_watermark_width = int(image_width * resize_ratio)
-    new_watermark_height = int(
-        watermark_height * new_watermark_width / watermark_width
-    )
+    new_watermark_height = int(watermark_height * new_watermark_width / watermark_width)
 
     # Resizing and rotating watermark.
-    watermark = watermark.resize(
-        (new_watermark_width, new_watermark_height)
-    ).rotate(45, expand=1)
+    watermark = watermark.resize((new_watermark_width, new_watermark_height)).rotate(45, expand=1)
 
     # Rotate watermark size.
     rotate_watermark_width, rotate_watermark_height = watermark.size

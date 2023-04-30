@@ -1,8 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module provides various utilities that can be used for command-line
-tools. The module is intended for use in development.
+"""This module provides various utilities that can be used for command-line tools.
+The module is intended for use in development.
 """
 
 
@@ -29,7 +29,7 @@ def get_directory_info() -> dict:
     gif = 0
     other = 0
 
-    # Loop for checking each files in direcotry..
+    # Loop for checking each files in direcotry.
     for filename in directory:
         if os.path.isdir(os.path.join(path, filename)):
             folders += 1
@@ -70,9 +70,8 @@ def get_directory_info() -> dict:
 
 
 def get_images_count() -> dict:
-    """This function is intended for counting only the images in the current
-    directory. Instead of using a loop, we will use a Linux command for this
-    and pipe it to another command.
+    """This function is intended for counting only the images in the current directory. Instead of
+    using a loop, we will use a Linux command for this and pipe it to another command.
     """
 
     # Linux terminal commands variable for counting.

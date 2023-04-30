@@ -1,9 +1,7 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed to renaming all images file in current directory to
-sequential number name.
-"""
+"""Renaming all images file in current directory to sequential number name."""
 
 
 from __future__ import annotations
@@ -12,18 +10,16 @@ import os
 import shutil
 
 from .ascii import ascii_title
-from .mprints import print_cli_proc
-
 from .cli_check import print_directory_check
+from .mprints import print_cli_proc
 
 
 COMMAND = "number"
 INFO = "renaming image files to sequential number"
 
 
-def rename_number() -> None:
-    """Renaming all images file to sequential number in the current directory.
-    Starting from 1.
+def rename_to_seq_number() -> None:
+    """Renaming all images file to sequential number in the current directory. Starting from 1.
 
     Example file name: `00001.jpg`
     """
@@ -58,4 +54,4 @@ def cli_number() -> None:
     """Main function for `number` command."""
     print_directory_check(COMMAND, INFO)
     ascii_title("processing")
-    rename_number()
+    rename_to_seq_number()

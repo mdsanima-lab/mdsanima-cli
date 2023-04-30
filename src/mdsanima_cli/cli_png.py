@@ -1,9 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed to converting images to PNG format from all images
-in the curreny directory. It operates within a specified folder and can process
-all images at once.
+"""Converting images to PNG format from all images in the curreny directory. It operates within
+a specified folder and can process all images at once.
 """
 
 
@@ -14,20 +13,17 @@ import os
 from PIL import Image
 
 from .ascii import ascii_title
+from .cli_check import print_directory_check
 from .exif import get_exif_bytes
 from .mprints import print_cli_proc
-
-from .cli_check import print_directory_check
 
 
 COMMAND = "png"
 INFO = "converting to png format"
 
 
-def convert_png(image_path: str, new_name: str) -> None:
-    """Converting a image to PNG format, and then save the result with a new
-    file name. Adding exif data.
-    """
+def convert_to_png(image_path: str, new_name: str) -> None:
+    """Convert a image to PNG format, and then save the result with a new name and exif data."""
 
     # Open image file.
     image = Image.open(image_path)
@@ -40,9 +36,7 @@ def convert_png(image_path: str, new_name: str) -> None:
 
 
 def compute_png() -> None:
-    """Computing all images in the current directory to PNG format and save
-    them with a new file name.
-    """
+    """Computing all images in the current directory to PNG format."""
 
     # Get directory stats info.
     directory = os.listdir()
@@ -58,17 +52,17 @@ def compute_png() -> None:
     for file in directory:
         if file.endswith(png) and not file.endswith(suffix + png):
             new_name = file[:-4] + suffix + png
-            convert_png(file, new_name)
+            convert_to_png(file, new_name)
             print_cli_proc("converting", count, file, new_name)
             count += 1
         if file.endswith(jpg) and not file.endswith(suffix + png):
             new_name = file[:-4] + suffix + png
-            convert_png(file, new_name)
+            convert_to_png(file, new_name)
             print_cli_proc("converting", count, file, new_name)
             count += 1
         if file.endswith(webp) and not file.endswith(suffix + png):
             new_name = file[:-5] + suffix + png
-            convert_png(file, new_name)
+            convert_to_png(file, new_name)
             print_cli_proc("converting", count, file, new_name)
             count += 1
 

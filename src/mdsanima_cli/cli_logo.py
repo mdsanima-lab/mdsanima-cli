@@ -1,9 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed to adding a logo to all images in the current
-directory. It operates within a specified folder and can process all images at
-once.
+"""Appendign a logo to all images in the current directory. It operates within a specified folder
+and can process all images at once.
 """
 
 
@@ -14,11 +13,10 @@ import os
 from PIL import Image
 
 from .ascii import ascii_title
+from .cli_check import print_directory_check
 from .exif import get_exif_bytes
 from .mprints import print_cli_data
 from .mprints import print_cli_proc
-
-from .cli_check import print_directory_check
 
 
 COMMAND = "logo"
@@ -28,8 +26,8 @@ LOGO = os.path.expanduser("~/.mdsanima-cli/config/img/logo.png")
 
 
 def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
-    """Append a logo to one image in the bottom right position, and then save
-    the result with a new file name. Adding exif data.
+    """Append a logo to one image in the bottom right position, and then save the result with a new
+    name and exif data.
     """
 
     # Open image and logo file.
@@ -59,9 +57,7 @@ def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
 
 
 def compute_logo() -> None:
-    """Add a logo to all images in the current directory and save them with a
-    new file name that includes the logo.
-    """
+    """Computing all images in the current directory with appending a logo."""
 
     # Get directory stats info.
     directory = os.listdir()

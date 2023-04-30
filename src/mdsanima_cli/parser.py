@@ -57,8 +57,8 @@ WEB_AP_HELP = "converting image files to WEBP format in the current dir"
 
 
 def create_argument_parser() -> None:
-    """This function creates an argument parser for all available functions in
-    this package, which can be used in command-line tools.
+    """This function creates an argument parser for all available functions in this package, which
+    can be used in command-line tools.
     """
 
     # Create top level parser for mdsanima command.

@@ -7,8 +7,6 @@
 from __future__ import annotations
 
 from .ascii import ascii_title
-from .parser import create_argument_parser
-
 from .cli_check import cli_check
 from .cli_grid import cli_grid
 from .cli_jpg import cli_jpg
@@ -19,12 +17,11 @@ from .cli_png import cli_png
 from .cli_uuid import cli_uuid
 from .cli_watermark import cli_watermark
 from .cli_webp import cli_webp
+from .parser import create_argument_parser
 
 
 def main_cli():
-    """The main command-line function responsible for sub-functions and
-    allocation separation.
-    """
+    """The main command-line function responsible for sub-functions and allocation separation."""
 
     # Argument parser and color print.
     parser = create_argument_parser()
@@ -34,7 +31,6 @@ def main_cli():
     ascii_title("mdsanima cli")
 
     try:
-        # Check argument parser and execute function for it.
         if args.command == "check":
             cli_check()
         if args.command == "pixelart":

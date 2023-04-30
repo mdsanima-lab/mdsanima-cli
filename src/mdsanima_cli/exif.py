@@ -1,14 +1,13 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed to adding a exif meta data to images."""
+"""Aadding a exif meta data to images."""
 
 
 from __future__ import annotations
 
 import piexif
 import piexif.helper
-
 
 from ._version import version  # pylint: disable=E0401
 

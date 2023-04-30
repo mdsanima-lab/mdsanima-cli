@@ -1,15 +1,13 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed for checking and displaying info about all images in
-the current directory.
-"""
+"""Checking and displaying info about all images in current directory."""
 
 
 from __future__ import annotations
 
-from .mprints import print_cli_info
 from .mprints import print_cli_data
+from .mprints import print_cli_info
 from .utils import get_directory_info
 
 

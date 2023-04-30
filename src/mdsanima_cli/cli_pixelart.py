@@ -1,11 +1,9 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed to convert photos into pixel art. It operates within
-a specified folder and can process all images at once. The first step is to
-open the original photo, scale it to 32x32 pixels, scale it back to its
-original size, and then save it. The pixel size is a parameter that can be
-modified.
+"""Generating images into pixel art. It operates within a specified folder and can process all
+images at once. The first step is to open the original image, scale it to 32x32 pixels, scale it
+back to its original size, and then save it.
 """
 
 
@@ -16,10 +14,9 @@ import os
 from PIL import Image
 
 from .ascii import ascii_title
+from .cli_check import print_directory_check
 from .exif import get_exif_bytes
 from .mprints import print_cli_proc
-
-from .cli_check import print_directory_check
 
 
 COMMAND = "pixelart"
@@ -27,16 +24,14 @@ INFO = "generating pixel art 32px"
 
 
 def generate_pixelart(image_path: str, new_name: str, res: int) -> None:
-    """Generate pixel art for one image, then save the result with a new
-    filename. Adding exif data.
-    """
+    """Generate pixel art for one image, then save the result with a new name and exif data."""
 
     # Open image file.
     image = Image.open(image_path)
 
     # Generate one pixel art.
-    image_small = image.resize((res, res), resample=Image.Resampling.BILINEAR)
-    result = image_small.resize(image.size, Image.Resampling.NEAREST)
+    small_image = image.resize((res, res), resample=Image.Resampling.BILINEAR)
+    result = small_image.resize(image.size, Image.Resampling.NEAREST)
 
     # Add exif data.
     exif_bytes = get_exif_bytes(INFO)
@@ -46,9 +41,7 @@ def generate_pixelart(image_path: str, new_name: str, res: int) -> None:
 
 
 def compute_pixelart() -> None:
-    """Compute pixel art for all images in the directory and save them with
-    a new appended filename.
-    """
+    """Computing pixel art for all images in the directory."""
 
     # Get directory stats info.
     directory = os.listdir()

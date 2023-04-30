@@ -1,9 +1,7 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed to renaming all images file in current directory to
-UUID name.
-"""
+"""Renaming all images file in current directory to UUID v4 name."""
 
 
 from __future__ import annotations
@@ -13,16 +11,15 @@ import shutil
 import uuid
 
 from .ascii import ascii_title
-from .mprints import print_cli_proc
-
 from .cli_check import print_directory_check
+from .mprints import print_cli_proc
 
 
 COMMAND = "uuid"
 INFO = "renaming image files to uuid"
 
 
-def rename_uuid() -> None:
+def rename_to_uuid() -> None:
     """Renaming all images file to UUID in the current directory.
 
     Example file name: `9c569045-a69f-4a26-b0b5-c3b06dd9052c.jpg`
@@ -59,4 +56,4 @@ def cli_uuid() -> None:
     """Main function for `uuid` command."""
     print_directory_check(COMMAND, INFO)
     ascii_title("processing")
-    rename_uuid()
+    rename_to_uuid()
