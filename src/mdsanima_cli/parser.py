@@ -8,64 +8,67 @@ from __future__ import annotations
 
 import argparse
 
-from ._version import __version__  # pylint: disable=E0401
+from mdsanima_cli._version import __version__
 
 
-AP_TOP_PROG = "mdsanima"
-AP_TOP_DESC = "MDSANIMA CLI is a command-line interface for image processing."
-AP_TOP_EPIL = "Copyright \U000000A9 2023 Marcin Różewski MDSANIMA"
+PROG = "mdsanima"
+DESCRIPTION = "MDSANIMA CLI is a command-line interface for image processing."
+EPILOG = "Copyright \U000000A9 2023 Marcin Różewski MDSANIMA"
 
-CHE_AP_PROG = "check"
-CHE_AP_DESC = "Displaying info about all images in the current directory."
-CHE_AP_HELP = "printing info about all images inside the current dir"
+ALL_IMAGES = "all images file inside the current directory."
+SUBPERSER_DESCRIPTION = f"All commands execute on {ALL_IMAGES}"
 
-PIX_AP_PROG = "pixelart"
-PIX_AP_DESC = "Generate pixel art from all images in the current directory."
-PIX_AP_HELP = "generating pixel art from all images in the current dir"
+CHECK_NAME = "check"
+CHECK_DESCRIPTION = f"Print statistic info about {ALL_IMAGES}"
+CHECK_HELP = "print directory info"
 
-UUI_AP_PROG = "uuid"
-UUI_AP_DESC = "Rename image files to UUID in the current directory."
-UUI_AP_HELP = "renaming all images file to UUID in the current dir"
+UUID_NAME = "uuid"
+UUID_DESCRIPTION = f"Rename to UUID {ALL_IMAGES}"
+UUID_HELP = "rename to UUID"
 
-NUM_AP_PROG = "number"
-NUM_AP_DESC = "Rename image files to sequential numbers in current directory."
-NUM_AP_HELP = "renaming all images file to seq numbers in the current dir"
+NUMBER_NAME = "number"
+NUMBER_DESCRIPTION = f"Rename to sequential numbers {ALL_IMAGES}"
+NUMBER_HELP = "rename to seq numbers"
 
-LOG_AP_PROG = "logo"
-LOG_AP_DESC = "Append a logo to all images in the current directory."
-LOG_AP_HELP = "appending a logo to all images in the current dir"
+LOGO_NAME = "logo"
+LOGO_DESCRIPTION = f"Append a logo to {ALL_IMAGES}"
+LOGO_HELP = "append a logo"
 
-WAT_AP_PROG = "watermark"
-WAT_AP_DESC = "Append a watermark to all images in the current directory."
-WAT_AP_HELP = "appending a watermark to all images in the current dir"
+WATERMARK_NAME = "watermark"
+WATERMARK_DESCRIPTION = f"Append a watermark to {ALL_IMAGES}"
+WATERMARK_HELP = "append a watermark"
 
-GRI_AP_PROG = "grid"
-GRI_AP_DESC = "Generate a grid 2x2 from all images in the current directory."
-GRI_AP_HELP = "generating a grid 2x2 from all images in the current dir"
+JPG_NAME = "jpg"
+JPG_DESCRIPTION = f"Convert to JPG format {ALL_IMAGES}"
+JPG_HELP = "convert to JPG"
 
-JPG_AP_PROG = "jpg"
-JPG_AP_DESC = "Convert image files to JPG format in the current directory."
-JPG_AP_HELP = "converting image files to JPG format in the current dir"
+PNG_NAME = "png"
+PNG_DESCRIPTION = f"Convert to PNG format {ALL_IMAGES}"
+PNG_HELP = "convert to PNG"
 
-PNG_AP_PROG = "png"
-PNG_AP_DESC = "Convert image files to PNG format in the current directory."
-PNG_AP_HELP = "converting image files to PNG format in the current dir"
+WEBP_NAME = "webp"
+WEBP_DESCRIPTION = f"Convert to WebP format {ALL_IMAGES}"
+WEBP_HELP = "convert to WebP"
 
-WEB_AP_PROG = "webp"
-WEB_AP_DESC = "Convert image files to WEBP format in the current directory."
-WEB_AP_HELP = "converting image files to WEBP format in the current dir"
+PIXELART_NAME = "pixelart"
+PIXELART_DESCRIPTION = f"Generate pixel art from {ALL_IMAGES}"
+PIXELART_HELP = "generate pixel art"
+
+GRID_NAME = "grid"
+GRID_DESCRIPTION = f"Generate grid 2x2 from {ALL_IMAGES}"
+GRID_HELP = "generate grid 2x2"
 
 
-def create_argument_parser() -> None:
+def create_parser() -> None:
     """This function creates an argument parser for all available functions in this package, which
     can be used in command-line tools.
     """
 
     # Create top level parser for mdsanima command.
     parser = argparse.ArgumentParser(
-        prog=AP_TOP_PROG,
-        description=AP_TOP_DESC,
-        epilog=AP_TOP_EPIL,
+        prog=PROG,
+        description=DESCRIPTION,
+        epilog=EPILOG,
         formatter_class=argparse.RawTextHelpFormatter,
     )
     parser.add_argument(
@@ -74,96 +77,96 @@ def create_argument_parser() -> None:
         action="version",
         version="%(prog)s-cli " + __version__,
     )
-    subparsers = parser.add_subparsers()
+    subparser = parser.add_subparsers(title="commands", description=SUBPERSER_DESCRIPTION)
 
     # Create subparser for check command.
-    check_parser = subparsers.add_parser(
-        CHE_AP_PROG,
-        description=CHE_AP_DESC,
-        help=CHE_AP_HELP,
-        epilog=AP_TOP_EPIL,
+    check_parser = subparser.add_parser(
+        name=CHECK_NAME,
+        description=CHECK_DESCRIPTION,
+        help=CHECK_HELP,
+        epilog=EPILOG,
     )
-    check_parser.set_defaults(command=CHE_AP_PROG)
-
-    # Create subparser for pixelart command.
-    pixelart_parser = subparsers.add_parser(
-        PIX_AP_PROG,
-        description=PIX_AP_DESC,
-        help=PIX_AP_HELP,
-        epilog=AP_TOP_EPIL,
-    )
-    pixelart_parser.set_defaults(command=PIX_AP_PROG)
+    check_parser.set_defaults(command=CHECK_NAME)
 
     # Create subparser for uuid command.
-    uuid_parser = subparsers.add_parser(
-        UUI_AP_PROG,
-        description=UUI_AP_DESC,
-        help=UUI_AP_HELP,
-        epilog=AP_TOP_EPIL,
+    uuid_parser = subparser.add_parser(
+        name=UUID_NAME,
+        description=UUID_DESCRIPTION,
+        help=UUID_HELP,
+        epilog=EPILOG,
     )
-    uuid_parser.set_defaults(command=UUI_AP_PROG)
+    uuid_parser.set_defaults(command=UUID_NAME)
 
     # Create subparser for number command.
-    number_parser = subparsers.add_parser(
-        NUM_AP_PROG,
-        description=NUM_AP_DESC,
-        help=NUM_AP_HELP,
-        epilog=AP_TOP_EPIL,
+    number_parser = subparser.add_parser(
+        name=NUMBER_NAME,
+        description=NUMBER_DESCRIPTION,
+        help=NUMBER_HELP,
+        epilog=EPILOG,
     )
-    number_parser.set_defaults(command=NUM_AP_PROG)
+    number_parser.set_defaults(command=NUMBER_NAME)
 
     # Create subparser for logo command.
-    logo_parser = subparsers.add_parser(
-        LOG_AP_PROG,
-        description=LOG_AP_DESC,
-        help=LOG_AP_HELP,
-        epilog=AP_TOP_EPIL,
+    logo_parser = subparser.add_parser(
+        name=LOGO_NAME,
+        description=LOGO_DESCRIPTION,
+        help=LOGO_HELP,
+        epilog=EPILOG,
     )
-    logo_parser.set_defaults(command=LOG_AP_PROG)
+    logo_parser.set_defaults(command=LOGO_NAME)
 
     # Create subparser for watermark command.
-    watermark_parser = subparsers.add_parser(
-        WAT_AP_PROG,
-        description=WAT_AP_DESC,
-        help=WAT_AP_HELP,
-        epilog=AP_TOP_EPIL,
+    watermark_parser = subparser.add_parser(
+        name=WATERMARK_NAME,
+        description=WATERMARK_DESCRIPTION,
+        help=WATERMARK_HELP,
+        epilog=EPILOG,
     )
-    watermark_parser.set_defaults(command=WAT_AP_PROG)
-
-    # Create subparser for grid command.
-    grid_parser = subparsers.add_parser(
-        GRI_AP_PROG,
-        description=GRI_AP_DESC,
-        help=GRI_AP_HELP,
-        epilog=AP_TOP_EPIL,
-    )
-    grid_parser.set_defaults(command=GRI_AP_PROG)
+    watermark_parser.set_defaults(command=WATERMARK_NAME)
 
     # Create subparser for jpg command.
-    jpg_parser = subparsers.add_parser(
-        JPG_AP_PROG,
-        description=JPG_AP_DESC,
-        help=JPG_AP_HELP,
-        epilog=AP_TOP_EPIL,
+    jpg_parser = subparser.add_parser(
+        name=JPG_NAME,
+        description=JPG_DESCRIPTION,
+        help=JPG_HELP,
+        epilog=EPILOG,
     )
-    jpg_parser.set_defaults(command=JPG_AP_PROG)
+    jpg_parser.set_defaults(command=JPG_NAME)
 
     # Create subparser for png command.
-    png_parser = subparsers.add_parser(
-        PNG_AP_PROG,
-        description=PNG_AP_DESC,
-        help=PNG_AP_HELP,
-        epilog=AP_TOP_EPIL,
+    png_parser = subparser.add_parser(
+        name=PNG_NAME,
+        description=PNG_DESCRIPTION,
+        help=PNG_HELP,
+        epilog=EPILOG,
     )
-    png_parser.set_defaults(command=PNG_AP_PROG)
+    png_parser.set_defaults(command=PNG_NAME)
 
     # Create subparser for webp command.
-    webp_parser = subparsers.add_parser(
-        WEB_AP_PROG,
-        description=WEB_AP_DESC,
-        help=WEB_AP_HELP,
-        epilog=AP_TOP_EPIL,
+    webp_parser = subparser.add_parser(
+        name=WEBP_NAME,
+        description=WEBP_DESCRIPTION,
+        help=WEBP_HELP,
+        epilog=EPILOG,
     )
-    webp_parser.set_defaults(command=WEB_AP_PROG)
+    webp_parser.set_defaults(command=WEBP_NAME)
+
+    # Create subparser for pixelart command.
+    pixelart_parser = subparser.add_parser(
+        name=PIXELART_NAME,
+        description=PIXELART_DESCRIPTION,
+        help=PIXELART_HELP,
+        epilog=EPILOG,
+    )
+    pixelart_parser.set_defaults(command=PIXELART_NAME)
+
+    # Create subparser for grid command.
+    grid_parser = subparser.add_parser(
+        name=GRID_NAME,
+        description=GRID_DESCRIPTION,
+        help=GRID_HELP,
+        epilog=EPILOG,
+    )
+    grid_parser.set_defaults(command=GRID_NAME)
 
     return parser
