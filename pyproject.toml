@@ -1,7 +1,7 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 [build-system]
-requires = ['setuptools>=67.7.2', 'wheel>=0.40.0', 'pip>=23.1.1', 'setuptools_scm[toml]>=7.1.0']
+requires = ['setuptools>=67.7.2', 'wheel>=0.40.0', 'pip>=23.1.2', 'setuptools_scm[toml]>=7.1.0']
 build-backend = 'setuptools.build_meta'
 
 [project]
