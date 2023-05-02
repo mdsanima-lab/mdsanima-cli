@@ -56,12 +56,12 @@ def print_cli_data(
     mprint(str(data), data_color)
 
 
-def print_cli_proc(process: str, count: int, old: str, new: str) -> None:
+def print_cli_proc(process: str, count: int, old: str, new: str, time_taken: float) -> None:
     """Helper for printing multiple colors processing info in one line. The colors have already been
     selected, you can configure only the text without changing the colors. The string `process` are
     always printed in upper case. The colors are shades of green and blue.
 
-    Example look: `[PROCESSING 00001] image.png -> image_pixelart.png`
+    Example look: `[PROCESSING 00001] image.png -> image_pixelart.png -> ran in 1.337 sec`
     """
 
     # Print multiple colors in one line.
@@ -71,15 +71,19 @@ def print_cli_proc(process: str, count: int, old: str, new: str) -> None:
     mprint("]", 50, " ")
     mprint(str(old), 40, "")
     mprint(" -> ", 49, "")
-    mprint(str(new), 34)
+    mprint(str(new), 34, "")
+    mprint(" -> ", 197, "")
+    mprint("ran in", 25, " ")
+    mprint(str(time_taken), 26, " ")
+    mprint("sec", 25)
 
 
-def print_cli_comp(process: str, count: int, old: str, new: str) -> None:
+def print_cli_comp(process: str, count: int, old: str, new: str, time_taken: float) -> None:
     """Helper for printing multiple colors computing info in one line. The colors have already been
     selected, you can configure only the text without changing the colors. The string `process` are
     always printed in upper case. The colors are shades of red and green.
 
-    Example look: `[COMPUTING 00001] image.png -> image_pixelart.png`
+    Example look: `[COMPUTING 00001] image.png -> image_pixelart.png -> ran in 1.337 sec`
     """
 
     # Print multiple colors in one line.
@@ -89,4 +93,27 @@ def print_cli_comp(process: str, count: int, old: str, new: str) -> None:
     mprint("]", 203, " ")
     mprint(str(old), 3, "")
     mprint(" -> ", 203, "")
-    mprint(str(new), 113)
+    mprint(str(new), 113, "")
+    mprint(" -> ", 197, "")
+    mprint("ran in", 25, " ")
+    mprint(str(time_taken), 26, " ")
+    mprint("sec", 25)
+
+
+def print_cli_done(time_taken: float) -> None:
+    """Helper for printing multiple colors done info in one line. The colors and text have already
+    been selected, you can onfigure only the time taken without changing the colors. The colors are
+    shades of blue and red.
+
+    Configured look: `[DONE] Processing is finished -> ran in 1.337 sec`
+    """
+
+    # Print multiple colors in one line.
+    mprint("[", 28, "")
+    mprint("done".upper(), 40, "")
+    mprint("]", 28, " ")
+    mprint("Processing is finished", 197, "")
+    mprint(" -> ", 155, "")
+    mprint("ran in", 25, " ")
+    mprint(str(time_taken), 26, " ")
+    mprint("sec", 25)
