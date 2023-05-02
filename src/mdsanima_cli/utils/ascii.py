@@ -350,24 +350,32 @@ def ascii_border(
 
 
 def ascii_title(option: str) -> None:
-    """Printing ASCII title art text in color and with a border. For now is two options you can use.
+    """Print ASCII title art text in color and with a border. There are three options you can use.
 
     Title option 1: `mdsanima cli`
     Title option 2: `processing`
+    Title option 3: `completed`
     """
 
     # Ascii tile option 1.
-    ascii_cli_line_1 = "┏┳┓╺┳┓┏━┓┏━┓┏┓╻╻┏┳┓┏━┓   ┏━╸╻  ╻"
-    ascii_cli_line_2 = "┃┃┃ ┃┃┗━┓┣━┫┃┗┫┃┃┃┃┣━┫   ┃  ┃  ┃"
-    ascii_cli_line_3 = "╹ ╹╺┻┛┗━┛╹ ╹╹ ╹╹╹ ╹╹ ╹   ┗━╸┗━╸╹"
+    ascii_mdsa_line_1 = "┏┳┓╺┳┓┏━┓┏━┓┏┓╻╻┏┳┓┏━┓   ┏━╸╻  ╻"
+    ascii_mdsa_line_2 = "┃┃┃ ┃┃┗━┓┣━┫┃┗┫┃┃┃┃┣━┫   ┃  ┃  ┃"
+    ascii_mdsa_line_3 = "╹ ╹╺┻┛┗━┛╹ ╹╹ ╹╹╹ ╹╹ ╹   ┗━╸┗━╸╹"
 
     # Ascii title option 2.
     ascii_proc_line_1 = "┏━┓┏━┓┏━┓┏━╸┏━╸┏━┓┏━┓╻┏┓╻┏━╸"
     ascii_proc_line_2 = "┣━┛┣┳┛┃ ┃┃  ┣╸ ┗━┓┗━┓┃┃┗┫┃╺┓"
     ascii_proc_line_3 = "╹  ╹┗╸┗━┛┗━╸┗━╸┗━┛┗━┛╹╹ ╹┗━┛"
 
+    # Ascii title option 3.
+    ascii_comp_line_1 = "┏━╸┏━┓┏┳┓┏━┓╻  ┏━╸╺┳╸┏━╸╺┳┓"
+    ascii_comp_line_2 = "┃  ┃ ┃┃┃┃┣━┛┃  ┣╸  ┃ ┣╸  ┃┃"
+    ascii_comp_line_3 = "┗━╸┗━┛╹ ╹╹  ┗━╸┗━╸ ╹ ┗━╸╺┻┛"
+
     # Check which option to print.
     if option == "mdsanima cli":
-        ascii_border(ascii_cli_line_1, ascii_cli_line_2, ascii_cli_line_3, 40, 50)
+        ascii_border(ascii_mdsa_line_1, ascii_mdsa_line_2, ascii_mdsa_line_3, 28, 40)
     if option == "processing":
-        ascii_border(ascii_proc_line_1, ascii_proc_line_2, ascii_proc_line_3, 50, 197)
+        ascii_border(ascii_proc_line_1, ascii_proc_line_2, ascii_proc_line_3, 209, 197)
+    if option == "completed":
+        ascii_border(ascii_comp_line_1, ascii_comp_line_2, ascii_comp_line_3, 50, 155)
