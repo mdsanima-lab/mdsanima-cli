@@ -8,6 +8,8 @@ printing. The module is intended for use in development.
 
 from __future__ import annotations
 
+from typing import Literal
+
 from mdsanima_dev.colors import get_complex_color
 
 
@@ -56,12 +58,18 @@ def print_cli_data(
     mprint(str(data), data_color)
 
 
-def print_cli_proc(process: str, count: int, old: str, new: str, time_taken: float) -> None:
+def print_cli_proc(
+    process: Literal["appending", "computing", "converting", "renaming"],
+    count: int,
+    old: str,
+    new: str,
+    time_taken: float,
+) -> None:
     """Helper for printing multiple colors processing info in one line. The colors have already been
     selected, you can configure only the text without changing the colors. The string `process` are
     always printed in upper case. The colors are shades of green and blue.
 
-    Example look: `[PROCESSING 00001] image.png -> image_pixelart.png -> ran in 1.337 sec`
+    Example look: `[APPENDING 00001] image.png -> image_pixelart.png -> ran in 1.337 sec`
     """
 
     # Print multiple colors in one line.
@@ -78,7 +86,13 @@ def print_cli_proc(process: str, count: int, old: str, new: str, time_taken: flo
     mprint("sec", 25)
 
 
-def print_cli_comp(process: str, count: int, old: str, new: str, time_taken: float) -> None:
+def print_cli_comp(
+    process: Literal["appending", "computing", "converting", "renaming"],
+    count: int,
+    old: str,
+    new: str,
+    time_taken: float,
+) -> None:
     """Helper for printing multiple colors computing info in one line. The colors have already been
     selected, you can configure only the text without changing the colors. The string `process` are
     always printed in upper case. The colors are shades of red and green.
