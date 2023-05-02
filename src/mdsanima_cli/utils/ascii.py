@@ -6,6 +6,8 @@
 
 from __future__ import annotations
 
+from typing import Literal
+
 from mdsanima_dev.colors import get_complex_color
 
 
@@ -349,14 +351,8 @@ def ascii_border(
     mprint(border_bot, border_color)
 
 
-def ascii_title(option: str) -> None:
-    """Print ASCII title art text in color and with a border. There are four options you can use.
-
-    Title option 1: `mdsanima cli`
-    Title option 2: `processing`
-    Title option 3: `completed`
-    Title option 4: `config error`
-    """
+def ascii_title(option: Literal["mdsanima cli", "processing", "completed", "config error"]) -> None:
+    """Print ASCII title art text in color and with a border. There are four options you can use."""
 
     # Ascii tile option 1.
     ascii_mdsa_line_1 = "┏┳┓╺┳┓┏━┓┏━┓┏┓╻╻┏┳┓┏━┓   ┏━╸╻  ╻"
