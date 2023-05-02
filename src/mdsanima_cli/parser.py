@@ -18,43 +18,43 @@ EPILOG = "Copyright \U000000A9 2023 Marcin Różewski MDSANIMA"
 ALL_IMAGES = "all images file inside the current directory."
 SUBPERSER_DESCRIPTION = f"All commands execute on {ALL_IMAGES}"
 
-CHECK_NAME = "check"
+CHECK_COMMAND = "check"
 CHECK_DESCRIPTION = f"Print statistic info about {ALL_IMAGES}"
 CHECK_HELP = "print directory info"
 
-UUID_NAME = "uuid"
+UUID_COMMAND = "uuid"
 UUID_DESCRIPTION = f"Rename to UUID {ALL_IMAGES}"
 UUID_HELP = "rename to UUID"
 
-NUMBER_NAME = "number"
+NUMBER_COMMAND = "number"
 NUMBER_DESCRIPTION = f"Rename to sequential numbers {ALL_IMAGES}"
 NUMBER_HELP = "rename to seq numbers"
 
-LOGO_NAME = "logo"
+LOGO_COMMAND = "logo"
 LOGO_DESCRIPTION = f"Append a logo to {ALL_IMAGES}"
 LOGO_HELP = "append a logo"
 
-WATERMARK_NAME = "watermark"
+WATERMARK_COMMAND = "watermark"
 WATERMARK_DESCRIPTION = f"Append a watermark to {ALL_IMAGES}"
 WATERMARK_HELP = "append a watermark"
 
-JPG_NAME = "jpg"
+JPG_COMMAND = "jpg"
 JPG_DESCRIPTION = f"Convert to JPG format {ALL_IMAGES}"
 JPG_HELP = "convert to JPG"
 
-PNG_NAME = "png"
+PNG_COMMAND = "png"
 PNG_DESCRIPTION = f"Convert to PNG format {ALL_IMAGES}"
 PNG_HELP = "convert to PNG"
 
-WEBP_NAME = "webp"
+WEBP_COMMAND = "webp"
 WEBP_DESCRIPTION = f"Convert to WebP format {ALL_IMAGES}"
 WEBP_HELP = "convert to WebP"
 
-PIXELART_NAME = "pixelart"
+PIXELART_COMMAND = "pixelart"
 PIXELART_DESCRIPTION = f"Generate pixel art from {ALL_IMAGES}"
 PIXELART_HELP = "generate pixel art"
 
-GRID_NAME = "grid"
+GRID_COMMAND = "grid"
 GRID_DESCRIPTION = f"Generate grid 2x2 from {ALL_IMAGES}"
 GRID_HELP = "generate grid 2x2"
 
@@ -81,92 +81,92 @@ def create_parser() -> None:
 
     # Create subparser for check command.
     check_parser = subparser.add_parser(
-        name=CHECK_NAME,
+        name=CHECK_COMMAND,
         description=CHECK_DESCRIPTION,
         help=CHECK_HELP,
         epilog=EPILOG,
     )
-    check_parser.set_defaults(command=CHECK_NAME)
+    check_parser.set_defaults(command=CHECK_COMMAND)
 
     # Create subparser for uuid command.
     uuid_parser = subparser.add_parser(
-        name=UUID_NAME,
+        name=UUID_COMMAND,
         description=UUID_DESCRIPTION,
         help=UUID_HELP,
         epilog=EPILOG,
     )
-    uuid_parser.set_defaults(command=UUID_NAME)
+    uuid_parser.set_defaults(command=UUID_COMMAND)
 
     # Create subparser for number command.
     number_parser = subparser.add_parser(
-        name=NUMBER_NAME,
+        name=NUMBER_COMMAND,
         description=NUMBER_DESCRIPTION,
         help=NUMBER_HELP,
         epilog=EPILOG,
     )
-    number_parser.set_defaults(command=NUMBER_NAME)
+    number_parser.set_defaults(command=NUMBER_COMMAND)
 
     # Create subparser for logo command.
     logo_parser = subparser.add_parser(
-        name=LOGO_NAME,
+        name=LOGO_COMMAND,
         description=LOGO_DESCRIPTION,
         help=LOGO_HELP,
         epilog=EPILOG,
     )
-    logo_parser.set_defaults(command=LOGO_NAME)
+    logo_parser.set_defaults(command=LOGO_COMMAND)
 
     # Create subparser for watermark command.
     watermark_parser = subparser.add_parser(
-        name=WATERMARK_NAME,
+        name=WATERMARK_COMMAND,
         description=WATERMARK_DESCRIPTION,
         help=WATERMARK_HELP,
         epilog=EPILOG,
     )
-    watermark_parser.set_defaults(command=WATERMARK_NAME)
+    watermark_parser.set_defaults(command=WATERMARK_COMMAND)
 
     # Create subparser for jpg command.
     jpg_parser = subparser.add_parser(
-        name=JPG_NAME,
+        name=JPG_COMMAND,
         description=JPG_DESCRIPTION,
         help=JPG_HELP,
         epilog=EPILOG,
     )
-    jpg_parser.set_defaults(command=JPG_NAME)
+    jpg_parser.set_defaults(command=JPG_COMMAND)
 
     # Create subparser for png command.
     png_parser = subparser.add_parser(
-        name=PNG_NAME,
+        name=PNG_COMMAND,
         description=PNG_DESCRIPTION,
         help=PNG_HELP,
         epilog=EPILOG,
     )
-    png_parser.set_defaults(command=PNG_NAME)
+    png_parser.set_defaults(command=PNG_COMMAND)
 
     # Create subparser for webp command.
     webp_parser = subparser.add_parser(
-        name=WEBP_NAME,
+        name=WEBP_COMMAND,
         description=WEBP_DESCRIPTION,
         help=WEBP_HELP,
         epilog=EPILOG,
     )
-    webp_parser.set_defaults(command=WEBP_NAME)
+    webp_parser.set_defaults(command=WEBP_COMMAND)
 
     # Create subparser for pixelart command.
     pixelart_parser = subparser.add_parser(
-        name=PIXELART_NAME,
+        name=PIXELART_COMMAND,
         description=PIXELART_DESCRIPTION,
         help=PIXELART_HELP,
         epilog=EPILOG,
     )
-    pixelart_parser.set_defaults(command=PIXELART_NAME)
+    pixelart_parser.set_defaults(command=PIXELART_COMMAND)
 
     # Create subparser for grid command.
     grid_parser = subparser.add_parser(
-        name=GRID_NAME,
+        name=GRID_COMMAND,
         description=GRID_DESCRIPTION,
         help=GRID_HELP,
         epilog=EPILOG,
     )
-    grid_parser.set_defaults(command=GRID_NAME)
+    grid_parser.set_defaults(command=GRID_COMMAND)
 
     return parser
