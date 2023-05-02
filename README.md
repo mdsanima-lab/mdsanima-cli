@@ -87,7 +87,7 @@ python -m build
 Now you can run:
 
 ```shell
-pip install --force-reinstall dist/mdsanima_cli-0.1.0-py3-none-any.whl
+pip install --force-reinstall dist/mdsanima_cli-0.2.0-py3-none-any.whl
 ```
 
 ### Testing Package
