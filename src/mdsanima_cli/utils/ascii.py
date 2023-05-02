@@ -350,11 +350,12 @@ def ascii_border(
 
 
 def ascii_title(option: str) -> None:
-    """Print ASCII title art text in color and with a border. There are three options you can use.
+    """Print ASCII title art text in color and with a border. There are four options you can use.
 
     Title option 1: `mdsanima cli`
     Title option 2: `processing`
     Title option 3: `completed`
+    Title option 4: `config error`
     """
 
     # Ascii tile option 1.
@@ -372,6 +373,11 @@ def ascii_title(option: str) -> None:
     ascii_comp_line_2 = "┃  ┃ ┃┃┃┃┣━┛┃  ┣╸  ┃ ┣╸  ┃┃"
     ascii_comp_line_3 = "┗━╸┗━┛╹ ╹╹  ┗━╸┗━╸ ╹ ┗━╸╺┻┛"
 
+    # Ascii title option 4.
+    ascii_erro_line_1 = "┏━╸┏━┓┏┓╻┏━╸╻┏━╸   ┏━╸┏━┓┏━┓┏━┓┏━┓"
+    ascii_erro_line_2 = "┃  ┃ ┃┃┗┫┣╸ ┃┃╺┓   ┣╸ ┣┳┛┣┳┛┃ ┃┣┳┛"
+    ascii_erro_line_3 = "┗━╸┗━┛╹ ╹╹  ╹┗━┛   ┗━╸╹┗╸╹┗╸┗━┛╹┗╸"
+
     # Check which option to print.
     if option == "mdsanima cli":
         ascii_border(ascii_mdsa_line_1, ascii_mdsa_line_2, ascii_mdsa_line_3, 28, 40)
@@ -379,3 +385,5 @@ def ascii_title(option: str) -> None:
         ascii_border(ascii_proc_line_1, ascii_proc_line_2, ascii_proc_line_3, 209, 197)
     if option == "completed":
         ascii_border(ascii_comp_line_1, ascii_comp_line_2, ascii_comp_line_3, 50, 155)
+    if option == "config error":
+        ascii_border(ascii_erro_line_1, ascii_erro_line_2, ascii_erro_line_3, 197, 209)
