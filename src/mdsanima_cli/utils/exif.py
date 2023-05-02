@@ -9,21 +9,21 @@ from __future__ import annotations
 import piexif
 import piexif.helper
 
-from ._version import version  # pylint: disable=E0401
+from mdsanima_cli._version import __version__
 
 
-def get_exif_bytes(comment: str) -> None:
+def get_exif_bytes(user_comment: str) -> bytes:
     """Adding a `Software` and `UserComment` exif tags. Returning bytes."""
 
     # Add new exif data.
-    software = f"MDSANIMA-CLI {version}"
-    user_comment = piexif.helper.UserComment.dump(f"{comment} by mdsanima-cli")
+    software = f"MDSANIMA-CLI {__version__}"
+    comment = piexif.helper.UserComment.dump(f"{user_comment} by mdsanima-cli")
 
     # Dump exif bytes software and user comment.
     exif_bytes = piexif.dump(
         {
             "0th": {piexif.ImageIFD.Software: software},
-            "Exif": {piexif.ExifIFD.UserComment: user_comment},
+            "Exif": {piexif.ExifIFD.UserComment: comment},
         },
     )
 

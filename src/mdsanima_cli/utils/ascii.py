@@ -9,7 +9,7 @@ from __future__ import annotations
 from mdsanima_dev.colors import get_complex_color
 
 
-def get_ascii_character() -> None:
+def get_ascii_character() -> dict:
     """This function returns a single ASCII character that includes the entire alphabet, numbers,
     and some special characters includes spaces. Each character is displayed on 3 lines, and the
     width is 3 normal-length spaces.
@@ -25,7 +25,7 @@ def get_ascii_character() -> None:
     """
 
     # Entire alphabet, numbers and some special characters.
-    ascii_characters = {
+    ascii_character = {
         "a": [
             "┏━┓",
             "┣━┫",
@@ -308,10 +308,10 @@ def get_ascii_character() -> None:
         ],
     }
 
-    return ascii_characters
+    return ascii_character
 
 
-def generate_ascii_with_border(
+def ascii_border(
     line_1: str, line_2: str, line_3: str, border_color: int, ascii_color: int, width: int = 50
 ) -> None:
     """Generate ASCII art text in color and with a border. Printing ASCI art in 5 lines. You can
@@ -350,7 +350,7 @@ def generate_ascii_with_border(
 
 
 def ascii_title(option: str) -> None:
-    """Print ASCII title art text in color and with a border. For now is two options you can use.
+    """Printing ASCII title art text in color and with a border. For now is two options you can use.
 
     Title option 1: `mdsanima cli`
     Title option 2: `processing`
@@ -368,6 +368,6 @@ def ascii_title(option: str) -> None:
 
     # Check which option to print.
     if option == "mdsanima cli":
-        generate_ascii_with_border(ascii_cli_line_1, ascii_cli_line_2, ascii_cli_line_3, 40, 50)
+        ascii_border(ascii_cli_line_1, ascii_cli_line_2, ascii_cli_line_3, 40, 50)
     if option == "processing":
-        generate_ascii_with_border(ascii_proc_line_1, ascii_proc_line_2, ascii_proc_line_3, 50, 197)
+        ascii_border(ascii_proc_line_1, ascii_proc_line_2, ascii_proc_line_3, 50, 197)

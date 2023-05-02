@@ -34,16 +34,16 @@ You can use the `mdsanima` command or the `mds` alias, which have the same funct
 Avaiable command for this package:
 
 - `mdsanima` main command showing help
-- `mdsanima check` directory info
-- `mdsanima pixelart` generate pixel art
-- `mdsanima uuid` rename image file to uuid
-- `mdsanima number` rename image file to number
+- `mdsanima check` print directory info
+- `mdsanima uuid` rename to uuid
+- `mdsanima number` rename to seq numbers
 - `mdsanima logo` append a logo
 - `mdsanima watermark` append a watermark
-- `mdsanima grid` generate grid 2x2
 - `mdsanima jpg` convert to jpg
 - `mdsanima png` convert to png
 - `mdsanima webp` convert to webp
+- `mdsanima pixelart` generate pixel art 32px
+- `mdsanima grid` generate grid 2x2
 
 The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
 art with creating the new file and appending the suffix `pixelart` to original file name.
@@ -61,7 +61,7 @@ Creating isolated environment with specific pip version then activate and instal
 in terminal:
 
 ```shell
-virtualenv --setuptools 67.7.2 --wheel 0.40.0 --pip 23.1.1 .venv
+virtualenv --setuptools 67.7.2 --wheel 0.40.0 --pip 23.1.2 .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 pip install -r requirements-dev.txt

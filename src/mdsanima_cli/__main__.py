@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from . import main_cli  # pylint: disable=E0401
+from mdsanima_cli import main_cli
 
 
 if __name__ == "__main__":

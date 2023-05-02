@@ -24,7 +24,7 @@ CHECK_HELP = "print directory info"
 
 UUID_COMMAND = "uuid"
 UUID_DESCRIPTION = f"Rename to UUID {ALL_IMAGES}"
-UUID_HELP = "rename to UUID"
+UUID_HELP = "rename to uuid"
 
 NUMBER_COMMAND = "number"
 NUMBER_DESCRIPTION = f"Rename to sequential numbers {ALL_IMAGES}"
@@ -40,19 +40,19 @@ WATERMARK_HELP = "append a watermark"
 
 JPG_COMMAND = "jpg"
 JPG_DESCRIPTION = f"Convert to JPG format {ALL_IMAGES}"
-JPG_HELP = "convert to JPG"
+JPG_HELP = "convert to jpg"
 
 PNG_COMMAND = "png"
 PNG_DESCRIPTION = f"Convert to PNG format {ALL_IMAGES}"
-PNG_HELP = "convert to PNG"
+PNG_HELP = "convert to png"
 
 WEBP_COMMAND = "webp"
 WEBP_DESCRIPTION = f"Convert to WebP format {ALL_IMAGES}"
-WEBP_HELP = "convert to WebP"
+WEBP_HELP = "convert to webp"
 
 PIXELART_COMMAND = "pixelart"
-PIXELART_DESCRIPTION = f"Generate pixel art from {ALL_IMAGES}"
-PIXELART_HELP = "generate pixel art"
+PIXELART_DESCRIPTION = f"Generate pixel art 32px from {ALL_IMAGES}"
+PIXELART_HELP = "generate pixel art 32px"
 
 GRID_COMMAND = "grid"
 GRID_DESCRIPTION = f"Generate grid 2x2 from {ALL_IMAGES}"

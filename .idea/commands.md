@@ -5,16 +5,16 @@ Here are some ideas for commands that we need to implement in this package.
 You can use the `mdsanima` command or the `mds` alias, which have the same functionality.
 
 - [x] `mdsanima` main command showing help
-- [x] `mdsanima check` directory info
-- [x] `mdsanima pixelart` generate pixel art
-- [x] `mdsanima uuid` rename image file to uuid
-- [x] `mdsanima number` rename image file to number
+- [x] `mdsanima check` print directory info
+- [x] `mdsanima uuid` rename to uuid
+- [x] `mdsanima number` rename to seq numbers
 - [x] `mdsanima logo` append a logo
 - [x] `mdsanima watermark` append a watermark
-- [x] `mdsanima grid` generate grid 2x2
 - [x] `mdsanima jpg` convert to jpg
 - [x] `mdsanima png` convert to png
 - [x] `mdsanima webp` convert to webp
+- [x] `mdsanima pixelart` generate pixel art 32px
+- [x] `mdsanima grid` generate grid 2x2
 - [ ] `mdsanima thumb` generate thumbnail
 - [ ] `mdsanima gif` generate gif
 - [ ] `mdsanima multi` generate multi resolution

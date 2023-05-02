@@ -12,14 +12,12 @@ import os
 
 from PIL import Image
 
-from .ascii import ascii_title
-from .cli_check import print_directory_statistic
-from .exif import get_exif_bytes
-from .mprints import print_cli_proc
-
-
-COMMAND = "png"
-INFO = "converting to png format"
+from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.parser import PNG_COMMAND
+from mdsanima_cli.parser import PNG_HELP
+from mdsanima_cli.utils.ascii import ascii_title
+from mdsanima_cli.utils.exif import get_exif_bytes
+from mdsanima_cli.utils.print import print_cli_proc
 
 
 def convert_to_png(image_path: str, new_name: str) -> None:
@@ -29,7 +27,7 @@ def convert_to_png(image_path: str, new_name: str) -> None:
     image = Image.open(image_path)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(INFO)
+    exif_bytes = get_exif_bytes(PNG_HELP)
 
     # Save the result.
     image.save(new_name, "PNG", exif=exif_bytes)
@@ -69,6 +67,6 @@ def compute_png() -> None:
 
 def cli_png() -> None:
     """Main function for `png` command."""
-    print_directory_statistic(COMMAND, INFO)
+    directory_statistic(PNG_COMMAND, PNG_HELP)
     ascii_title("processing")
     compute_png()

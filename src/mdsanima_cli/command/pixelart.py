@@ -13,14 +13,12 @@ import os
 
 from PIL import Image
 
-from .ascii import ascii_title
-from .cli_check import print_directory_statistic
-from .exif import get_exif_bytes
-from .mprints import print_cli_proc
-
-
-COMMAND = "pixelart"
-INFO = "generating pixel art 32px"
+from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.parser import PIXELART_COMMAND
+from mdsanima_cli.parser import PIXELART_HELP
+from mdsanima_cli.utils.ascii import ascii_title
+from mdsanima_cli.utils.exif import get_exif_bytes
+from mdsanima_cli.utils.print import print_cli_proc
 
 
 def generate_pixelart(image_path: str, new_name: str, res: int) -> None:
@@ -34,7 +32,7 @@ def generate_pixelart(image_path: str, new_name: str, res: int) -> None:
     result = small_image.resize(image.size, Image.Resampling.NEAREST)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(INFO)
+    exif_bytes = get_exif_bytes(PIXELART_HELP)
 
     # Save the result.
     result.save(new_name, exif=exif_bytes)
@@ -74,6 +72,6 @@ def compute_pixelart() -> None:
 
 def cli_pixelart() -> None:
     """Main function for `pixelart` command."""
-    print_directory_statistic(COMMAND, INFO)
+    directory_statistic(PIXELART_COMMAND, PIXELART_HELP)
     ascii_title("processing")
     compute_pixelart()

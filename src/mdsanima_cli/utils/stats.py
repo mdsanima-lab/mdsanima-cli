@@ -11,8 +11,8 @@ from __future__ import annotations
 import os
 
 
-def get_directory_info() -> dict:
-    """Checking the current directory and returning details info about it."""
+def get_directory_statistic() -> dict:
+    """Checking the current directory and returning statistic details about it."""
 
     # Real path of directory.
     path = os.path.realpath(os.curdir)
@@ -52,8 +52,8 @@ def get_directory_info() -> dict:
             files += 1
             other += 1
 
-    # Dictionary for directory info.
-    directory_info = {
+    # Dictionary for directory stats.
+    directory_statistic = {
         "path": path,
         "total": total,
         "folders": folders,
@@ -66,7 +66,7 @@ def get_directory_info() -> dict:
         "other": other,
     }
 
-    return directory_info
+    return directory_statistic
 
 
 def get_images_count() -> dict:

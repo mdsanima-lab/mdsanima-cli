@@ -1,9 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed to adding a watermark to all images in the current
-directory. It operates within a specified folder and can process all images at
-once.
+"""This module is designed to adding a watermark to all images in the current directory. It operates
+within a specified folder and can process all images at once.
 """
 
 
@@ -13,23 +12,21 @@ import os
 
 from PIL import Image
 
-from .ascii import ascii_title
-from .cli_check import print_directory_statistic
-from .exif import get_exif_bytes
-from .mprints import print_cli_data
-from .mprints import print_cli_proc
+from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.parser import WATERMARK_COMMAND
+from mdsanima_cli.parser import WATERMARK_HELP
+from mdsanima_cli.utils.ascii import ascii_title
+from mdsanima_cli.utils.exif import get_exif_bytes
+from mdsanima_cli.utils.print import print_cli_data
+from mdsanima_cli.utils.print import print_cli_proc
 
 
-COMMAND = "watermark"
-INFO = "appending a watermark"
-
-WATERMARK = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
+WATERMARK_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
 
 
 def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
-    """Append a watermark to one image, and then save the result with a new
-    file name. The watermark is a rotated on 45 degrees and shifted. Adding
-    exif data.
+    """Append a watermark to one image, and then save the result with a new name and exif data.
+    The watermark is a rotated on 45 degrees and shifted.
     """
 
     # Open image and watermark file.
@@ -71,16 +68,14 @@ def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
             image.paste(watermark_bg, (width, height), watermark_bg)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(INFO)
+    exif_bytes = get_exif_bytes(WATERMARK_HELP)
 
     # Save the result.
     image.save(new_name, exif=exif_bytes)
 
 
 def compute_watermark() -> None:
-    """Add a watermark to all images in the current directory and save them
-    with a new file name that includes the watermark.
-    """
+    """Add a watermark to all images in the current directory that includes the watermark."""
 
     # Get directory stats info.
     directory = os.listdir()
@@ -96,28 +91,28 @@ def compute_watermark() -> None:
     for file in directory:
         if file.endswith(png) and not file.endswith(suffix + png):
             new_name = file[:-4] + suffix + png
-            append_watermark(file, WATERMARK, new_name)
+            append_watermark(file, WATERMARK_PATH, new_name)
             print_cli_proc("computing", count, file, new_name)
             count += 1
         if file.endswith(jpg) and not file.endswith(suffix + jpg):
             new_name = file[:-4] + suffix + jpg
-            append_watermark(file, WATERMARK, new_name)
+            append_watermark(file, WATERMARK_PATH, new_name)
             print_cli_proc("computing", count, file, new_name)
             count += 1
         if file.endswith(webp) and not file.endswith(suffix + webp):
             new_name = file[:-5] + suffix + webp
-            append_watermark(file, WATERMARK, new_name)
+            append_watermark(file, WATERMARK_PATH, new_name)
             print_cli_proc("computing", count, file, new_name)
             count += 1
 
 
 def cli_watermark() -> None:
     """Main function for `watermark` command."""
-    print_directory_statistic(COMMAND, INFO)
+    directory_statistic(WATERMARK_COMMAND, WATERMARK_HELP)
     ascii_title("processing")
 
     try:
         compute_watermark()
     except FileNotFoundError:
-        warning = "Put your watermark here '" + WATERMARK + "' to continue!"
+        warning = "Put your watermark here '" + WATERMARK_PATH + "' to continue!"
         print_cli_data("warning watermark", warning, 197, 209, 38)

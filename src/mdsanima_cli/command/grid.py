@@ -12,15 +12,13 @@ import os
 
 from PIL import Image
 
-from .ascii import ascii_title
-from .cli_check import print_directory_statistic
-from .exif import get_exif_bytes
-from .mprints import print_cli_comp
-from .mprints import print_cli_proc
-
-
-COMMAND = "grid"
-INFO = "generating grid 2x2"
+from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.parser import GRID_COMMAND
+from mdsanima_cli.parser import GRID_HELP
+from mdsanima_cli.utils.ascii import ascii_title
+from mdsanima_cli.utils.exif import get_exif_bytes
+from mdsanima_cli.utils.print import print_cli_comp
+from mdsanima_cli.utils.print import print_cli_proc
 
 
 def generate_grid(
@@ -47,7 +45,7 @@ def generate_grid(
     grid_image.paste(image_4, (image_1.size[0], image_1.size[1]))
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(INFO)
+    exif_bytes = get_exif_bytes(GRID_HELP)
 
     # Save the result.
     grid_image.save(grid_name, exif=exif_bytes)
@@ -107,6 +105,6 @@ def compute_grid() -> None:
 
 def cli_grid() -> None:
     """Main function for `grid` command."""
-    print_directory_statistic(COMMAND, INFO)
+    directory_statistic(GRID_COMMAND, GRID_HELP)
     ascii_title("processing")
     compute_grid()
