@@ -15,7 +15,7 @@ You can use the `mdsanima` command or the `mds` alias, which have the same funct
 - [x] `mdsanima webp` convert to webp
 - [x] `mdsanima pixelart` generate pixel art 32px
 - [x] `mdsanima grid` generate grid 2x2
-- [ ] `mdsanima thumb` generate thumbnail
+- [x] `mdsanima thumbnail` generate jpeg thumbnail 128px
 - [ ] `mdsanima gif` generate gif
 - [ ] `mdsanima multi` generate multi resolution
 - [ ] `mdsanima caption` adding caption

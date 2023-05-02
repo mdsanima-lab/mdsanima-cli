@@ -58,6 +58,10 @@ GRID_COMMAND = "grid"
 GRID_DESCRIPTION = f"Generate grid 2x2 from {ALL_IMAGES}"
 GRID_HELP = "generate grid 2x2"
 
+THUMBNAIL_COMMAND = "thumbnail"
+THUMBNAIL_DESCRIPTION = f"Generate JPEG thumbnails 128px from {ALL_IMAGES}"
+THUMBNAIL_HELP = "generate jpeg thumbnail 128px"
+
 
 def create_parser() -> None:
     """This function creates an argument parser for all available functions in this package, which
@@ -168,5 +172,14 @@ def create_parser() -> None:
         epilog=EPILOG,
     )
     grid_parser.set_defaults(command=GRID_COMMAND)
+
+    # Create subparser for thumbnail command.
+    thumbnail_parser = subparser.add_parser(
+        name=THUMBNAIL_COMMAND,
+        description=THUMBNAIL_DESCRIPTION,
+        help=THUMBNAIL_HELP,
+        epilog=EPILOG,
+    )
+    thumbnail_parser.set_defaults(command=THUMBNAIL_COMMAND)
 
     return parser

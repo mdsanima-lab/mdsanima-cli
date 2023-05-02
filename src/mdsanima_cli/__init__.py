@@ -13,6 +13,7 @@ from mdsanima_cli.command.logo import cli_logo
 from mdsanima_cli.command.number import cli_number
 from mdsanima_cli.command.pixelart import cli_pixelart
 from mdsanima_cli.command.png import cli_png
+from mdsanima_cli.command.thumbnail import cli_thumbnail
 from mdsanima_cli.command.uuids import cli_uuid
 from mdsanima_cli.command.watermark import cli_watermark
 from mdsanima_cli.command.webp import cli_webp
@@ -51,5 +52,7 @@ def main_cli():
             cli_pixelart()
         if args.command == "grid":
             cli_grid()
+        if args.command == "thumbnail":
+            cli_thumbnail()
     except AttributeError:
         parser.print_help()
