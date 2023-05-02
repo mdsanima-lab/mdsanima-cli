@@ -95,13 +95,13 @@ pip install --force-reinstall dist/mdsanima_cli-0.1.0-py3-none-any.whl
 Finally you can run this command:
 
 ```shell
-python -m mdsanima_cli.pixelart
+python -m mdsanima_cli.command.pixelart
 ```
 
 Also you can run this command before you build and install:
 
 ```shell
-python3 src/mdsanima_cli/pixelart.py
+python3 src/mdsanima_cli/command/pixelart.py
 ```
 
 ### Extracts Version Package
