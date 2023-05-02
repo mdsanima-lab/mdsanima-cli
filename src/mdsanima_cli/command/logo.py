@@ -18,12 +18,15 @@ from mdsanima_cli.parser import LOGO_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
 from mdsanima_cli.utils.print import print_cli_data
+from mdsanima_cli.utils.print import print_cli_done
 from mdsanima_cli.utils.print import print_cli_proc
+from mdsanima_cli.utils.timer import timer
 
 
 LOGO_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/logo.png")
 
 
+@timer
 def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
     """Append a logo to one image in the bottom right position, and then save the result with a new
     name and exif data.
@@ -55,6 +58,7 @@ def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
     image.save(new_name, exif=exif_bytes)
 
 
+@timer
 def compute_logo() -> None:
     """Computing all images in the current directory with appending a logo."""
 
@@ -72,28 +76,31 @@ def compute_logo() -> None:
     for file in directory:
         if file.endswith(png) and not file.endswith(suffix + png):
             new_name = file[:-4] + suffix + png
-            append_logo(file, LOGO_PATH, new_name)
-            print_cli_proc("computing", count, file, new_name)
+            time_taken = append_logo(file, LOGO_PATH, new_name)
+            print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
         if file.endswith(jpg) and not file.endswith(suffix + jpg):
             new_name = file[:-4] + suffix + jpg
-            append_logo(file, LOGO_PATH, new_name)
-            print_cli_proc("computing", count, file, new_name)
+            time_taken = append_logo(file, LOGO_PATH, new_name)
+            print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
         if file.endswith(webp) and not file.endswith(suffix + webp):
             new_name = file[:-5] + suffix + webp
-            append_logo(file, LOGO_PATH, new_name)
-            print_cli_proc("computing", count, file, new_name)
+            time_taken = append_logo(file, LOGO_PATH, new_name)
+            print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
 
 
 def cli_logo() -> None:
     """Main function for `logo` command."""
     directory_statistic(LOGO_COMMAND, LOGO_HELP)
-    ascii_title("processing")
 
     try:
-        compute_logo()
+        ascii_title("processing")
+        time_taken = compute_logo()
+        ascii_title("completed")
+        print_cli_done(time_taken)
     except FileNotFoundError:
+        ascii_title("config error")
         warning = "Put your logo here '" + LOGO_PATH + "' to continue!"
         print_cli_data("warning logo", warning, 197, 209, 38)

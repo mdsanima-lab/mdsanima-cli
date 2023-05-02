@@ -18,12 +18,15 @@ from mdsanima_cli.parser import WATERMARK_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
 from mdsanima_cli.utils.print import print_cli_data
+from mdsanima_cli.utils.print import print_cli_done
 from mdsanima_cli.utils.print import print_cli_proc
+from mdsanima_cli.utils.timer import timer
 
 
 WATERMARK_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
 
 
+@timer
 def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
     """Append a watermark to one image, and then save the result with a new name and exif data.
     The watermark is a rotated on 45 degrees and shifted.
@@ -74,6 +77,7 @@ def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
     image.save(new_name, exif=exif_bytes)
 
 
+@timer
 def compute_watermark() -> None:
     """Add a watermark to all images in the current directory that includes the watermark."""
 
@@ -91,28 +95,31 @@ def compute_watermark() -> None:
     for file in directory:
         if file.endswith(png) and not file.endswith(suffix + png):
             new_name = file[:-4] + suffix + png
-            append_watermark(file, WATERMARK_PATH, new_name)
-            print_cli_proc("computing", count, file, new_name)
+            time_taken = append_watermark(file, WATERMARK_PATH, new_name)
+            print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
         if file.endswith(jpg) and not file.endswith(suffix + jpg):
             new_name = file[:-4] + suffix + jpg
-            append_watermark(file, WATERMARK_PATH, new_name)
-            print_cli_proc("computing", count, file, new_name)
+            time_taken = append_watermark(file, WATERMARK_PATH, new_name)
+            print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
         if file.endswith(webp) and not file.endswith(suffix + webp):
             new_name = file[:-5] + suffix + webp
-            append_watermark(file, WATERMARK_PATH, new_name)
-            print_cli_proc("computing", count, file, new_name)
+            time_taken = append_watermark(file, WATERMARK_PATH, new_name)
+            print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
 
 
 def cli_watermark() -> None:
     """Main function for `watermark` command."""
     directory_statistic(WATERMARK_COMMAND, WATERMARK_HELP)
-    ascii_title("processing")
 
     try:
-        compute_watermark()
+        ascii_title("processing")
+        time_taken = compute_watermark()
+        ascii_title("completed")
+        print_cli_done(time_taken)
     except FileNotFoundError:
+        ascii_title("config error")
         warning = "Put your watermark here '" + WATERMARK_PATH + "' to continue!"
         print_cli_data("warning watermark", warning, 197, 209, 38)
