@@ -23,8 +23,8 @@ from mdsanima_cli.utils.timer import timer
 
 
 @timer
-def generate_jpeg_thumbnail(image_path: str, new_name: str) -> None:
-    """Generate JPEG thumbnail 128, and then save the result with a new name and exif data."""
+def generate_jpeg_thumbnail(image_path: str, new_name: str, resolution: int) -> None:
+    """Generate JPEG thumbnail, and then save the result with a new name and exif data."""
 
     # Open image file.
     image = Image.open(image_path)
@@ -33,8 +33,7 @@ def generate_jpeg_thumbnail(image_path: str, new_name: str) -> None:
     image_width, image_height = image.size
 
     # Calculating size for thumbnail.
-    size = 128
-    resize_ratio = int(image_width / size)
+    resize_ratio = int(image_width / resolution)
     thumbnail_width = int(image_width / resize_ratio)
     thumbnail_height = int(image_height / resize_ratio)
     thumbnail_size = (thumbnail_width, thumbnail_height)
@@ -65,17 +64,17 @@ def compute_thumbnail() -> None:
     for file in directory:
         if file.endswith(png) and not file.endswith(suffix + jpg):
             new_name = file[:-4] + suffix + jpg
-            time_teken = generate_jpeg_thumbnail(file, new_name)
+            time_teken = generate_jpeg_thumbnail(file, new_name, 128)
             print_cli_proc("computing", count, file, new_name, time_teken)
             count += 1
         if file.endswith(jpg) and not file.endswith(suffix + jpg):
             new_name = file[:-4] + suffix + jpg
-            time_teken = generate_jpeg_thumbnail(file, new_name)
+            time_teken = generate_jpeg_thumbnail(file, new_name, 128)
             print_cli_proc("computing", count, file, new_name, time_teken)
             count += 1
         if file.endswith(webp) and not file.endswith(suffix + jpg):
             new_name = file[:-5] + suffix + jpg
-            time_teken = generate_jpeg_thumbnail(file, new_name)
+            time_teken = generate_jpeg_thumbnail(file, new_name, 128)
             print_cli_proc("computing", count, file, new_name, time_teken)
             count += 1
 
