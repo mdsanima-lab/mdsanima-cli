@@ -2,7 +2,7 @@
 
 
 """Generating images into pixel art. It operates within a specified folder and can process all
-images at once. The first step is to open the original image, scale it to 32x32 pixels, scale it
+images at once. The first step is to open the original image, scale it to 32 pixels, scale it
 back to its original size, and then save it.
 """
 
@@ -24,14 +24,23 @@ from mdsanima_cli.utils.timer import timer
 
 
 @timer
-def generate_pixelart(image_path: str, new_name: str, res: int) -> None:
+def generate_pixelart(image_path: str, new_name: str, resolution: int) -> None:
     """Generate pixel art for one image, then save the result with a new name and exif data."""
 
     # Open image file.
     image = Image.open(image_path)
 
+    # Image size.
+    image_width, image_height = image.size
+
+    # Calculating resolution for pixelart.
+    resize_ratio = int(image_width / resolution)
+    pixelart_width = int(image_width / resize_ratio)
+    pixelart_height = int(image_height / resize_ratio)
+    pixelart_size = (pixelart_width, pixelart_height)
+
     # Generate one pixel art.
-    small_image = image.resize((res, res), resample=Image.Resampling.BILINEAR)
+    small_image = image.resize(pixelart_size, resample=Image.Resampling.BILINEAR)
     result = small_image.resize(image.size, Image.Resampling.NEAREST)
 
     # Add exif data.
