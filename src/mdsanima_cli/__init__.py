@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 from mdsanima_cli.command.check import cli_check
+from mdsanima_cli.command.gifmaker import cli_gifmaker
 from mdsanima_cli.command.grid import cli_grid
 from mdsanima_cli.command.jpg import cli_jpg
 from mdsanima_cli.command.logo import cli_logo
@@ -54,5 +55,7 @@ def main_cli():
             cli_grid()
         if args.command == "thumbnail":
             cli_thumbnail()
+        if args.command == "gifmaker":
+            cli_gifmaker()
     except AttributeError:
         parser.print_help()

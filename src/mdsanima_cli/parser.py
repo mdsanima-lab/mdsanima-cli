@@ -62,6 +62,10 @@ THUMBNAIL_COMMAND = "thumbnail"
 THUMBNAIL_DESCRIPTION = f"Generate JPEG thumbnails 128px from {ALL_IMAGES}"
 THUMBNAIL_HELP = "generate jpeg thumbnail 128px"
 
+GIFMAKER_COMMAND = "gifmaker"
+GIFMAKER_DESCRIPTION = f"Generate GIF animation pixel art from {ALL_IMAGES}"
+GIFMAKER_HELP = "generate gif animation pixel art"
+
 
 def create_parser() -> None:
     """This function creates an argument parser for all available functions in this package, which
@@ -181,5 +185,14 @@ def create_parser() -> None:
         epilog=EPILOG,
     )
     thumbnail_parser.set_defaults(command=THUMBNAIL_COMMAND)
+
+    # Create subparser for gifmaker command.
+    gifmaker_parser = subparser.add_parser(
+        name=GIFMAKER_COMMAND,
+        description=GIFMAKER_DESCRIPTION,
+        help=GIFMAKER_HELP,
+        epilog=EPILOG,
+    )
+    gifmaker_parser.set_defaults(command=GIFMAKER_COMMAND)
 
     return parser

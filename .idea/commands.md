@@ -16,7 +16,7 @@ You can use the `mdsanima` command or the `mds` alias, which have the same funct
 - [x] `mdsanima pixelart` generate pixel art 32px
 - [x] `mdsanima grid` generate grid 2x2
 - [x] `mdsanima thumbnail` generate jpeg thumbnail 128px
-- [ ] `mdsanima gif` generate gif
+- [x] `mdsanima gifmaker` generate gif animation pixel art
 - [ ] `mdsanima multi` generate multi resolution
 - [ ] `mdsanima caption` adding caption
 - [ ] `mdsanima bg` adding background
