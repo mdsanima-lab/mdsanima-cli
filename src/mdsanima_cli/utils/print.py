@@ -59,7 +59,7 @@ def print_cli_data(
 
 
 def print_cli_proc(
-    process: Literal["appending", "computing", "converting", "renaming"],
+    process: Literal["appending", "computing", "converting", "renaming", "resizing"],
     count: int,
     old: str,
     new: str,
@@ -87,7 +87,7 @@ def print_cli_proc(
 
 
 def print_cli_comp(
-    process: Literal["appending", "computing", "converting", "renaming"],
+    process: Literal["appending", "computing", "converting", "renaming", "resizing"],
     count: int,
     old: str,
     new: str,
