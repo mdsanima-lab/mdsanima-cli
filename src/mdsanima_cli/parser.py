@@ -67,6 +67,11 @@ GIFMAKER_DESCRIPTION = f"Generate GIF animation pixel art from {ALL_IMAGES}"
 GIFMAKER_HELP = "generate gif animation pixel art"
 
 
+RESIZE_COMMAND = "resize"
+RESIZE_DESCRIPTION = f"Resizing to 512px width from {ALL_IMAGES}"
+RESIZE_HELP = "resizing to 512px width"
+
+
 def create_parser() -> None:
     """This function creates an argument parser for all available functions in this package, which
     can be used in command-line tools.
@@ -194,5 +199,14 @@ def create_parser() -> None:
         epilog=EPILOG,
     )
     gifmaker_parser.set_defaults(command=GIFMAKER_COMMAND)
+
+    # Create subparser for resize command.
+    resize_parser = subparser.add_parser(
+        name=RESIZE_COMMAND,
+        description=RESIZE_DESCRIPTION,
+        help=RESIZE_HELP,
+        epilog=EPILOG,
+    )
+    resize_parser.set_defaults(command=RESIZE_COMMAND)
 
     return parser

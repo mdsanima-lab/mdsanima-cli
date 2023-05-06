@@ -1,4 +1,4 @@
-# Command Ideas
+# Commands Idea
 
 Here are some ideas for commands that we need to implement in this package.
 
@@ -17,9 +17,9 @@ You can use the `mdsanima` command or the `mds` alias, which have the same funct
 - [x] `mdsanima grid` generate grid 2x2
 - [x] `mdsanima thumbnail` generate jpeg thumbnail 128px
 - [x] `mdsanima gifmaker` generate gif animation pixel art
+- [x] `mdsanima resize` resizing to 512px width
 - [ ] `mdsanima multi` generate multi resolution
 - [ ] `mdsanima caption` adding caption
 - [ ] `mdsanima bg` adding background
 - [ ] `mdsanima filter` adding filter
-- [ ] `mdsanima resize` resizing image
 - [ ] `mdsanima crop` cropping image

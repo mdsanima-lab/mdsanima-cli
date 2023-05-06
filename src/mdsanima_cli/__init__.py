@@ -14,6 +14,7 @@ from mdsanima_cli.command.logo import cli_logo
 from mdsanima_cli.command.number import cli_number
 from mdsanima_cli.command.pixelart import cli_pixelart
 from mdsanima_cli.command.png import cli_png
+from mdsanima_cli.command.resize import cli_resize
 from mdsanima_cli.command.thumbnail import cli_thumbnail
 from mdsanima_cli.command.uuids import cli_uuid
 from mdsanima_cli.command.watermark import cli_watermark
@@ -57,5 +58,7 @@ def main_cli():
             cli_thumbnail()
         if args.command == "gifmaker":
             cli_gifmaker()
+        if args.command == "resize":
+            cli_resize()
     except AttributeError:
         parser.print_help()

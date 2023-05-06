@@ -46,6 +46,7 @@ Avaiable command for this package:
 - `mdsanima grid` generate grid 2x2
 - `mdsanima thumbnail` generate jpeg thumbnail 128px
 - `mdsanima gifmaker` generate gif animation pixel art
+- `mdsanima resize` resizing to 512px width
 
 The `pixelart` command works in folder that have only `.png` images and convert this images to pixel
 art with creating the new file and appending the suffix `pixelart` to original file name.
