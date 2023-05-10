@@ -45,7 +45,7 @@ end_of_line = lf
 [*.md]
 indent_size = 2
 indent_style = space
-max_line_length = 100
+max_line_length = 120
 
 [*.ps1]
 indent_size = 2
@@ -55,7 +55,7 @@ indent_style = space
 profile = black
 indent_size = 4
 indent_style = space
-max_line_length = 100
+max_line_length = 120
 
 [*.sh]
 indent_size = 2
