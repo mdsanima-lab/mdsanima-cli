@@ -9,6 +9,17 @@ and documentation for commit guidelines. Also you should check
 Docomentation for _MDSANIMA-CLI_ is available at this repository on [README.md](README.md)
 file be sure to check it.
 
+### 0.2.1 (2023-05-10)
+
+### FEATURES
+
+- generate gif animation pixel art closes [#18](https://github.com/mdsanima-lab/mdsanima-cli/issues/18) ([a502a2e](https://github.com/mdsanima-lab/mdsanima-cli/commit/a502a2e6162b032513398473aad299e5d564b566))
+- resizing to 512px width closes [#14](https://github.com/mdsanima-lab/mdsanima-cli/issues/14) ([c016b43](https://github.com/mdsanima-lab/mdsanima-cli/commit/c016b43e239a5226a04f4fe377176719fea3385f))
+
+### BUG FIXES
+
+- **gifmaker:** generate 512px gif closes [#42](https://github.com/mdsanima-lab/mdsanima-cli/issues/42) ([dddca30](https://github.com/mdsanima-lab/mdsanima-cli/commit/dddca3008d8f43df1339a3d6f604d4730825e559))
+
 ## 0.2.0 (2023-05-02)
 
 ### ⚠ BREAKING CHANGES
