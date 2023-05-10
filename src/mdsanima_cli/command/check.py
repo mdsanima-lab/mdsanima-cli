@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from mdsanima_cli.parser import CHECK_COMMAND
+from mdsanima_cli.parser import CHECK_COMD
 from mdsanima_cli.parser import CHECK_HELP
 from mdsanima_cli.utils.print import print_cli_data
 from mdsanima_cli.utils.print import print_cli_info
@@ -36,4 +36,4 @@ def directory_statistic(cli_command: str, cli_help: str) -> str:
 
 def cli_check() -> None:
     """Main function for `check` command."""
-    directory_statistic(CHECK_COMMAND, CHECK_HELP)
+    directory_statistic(CHECK_COMD, CHECK_HELP)

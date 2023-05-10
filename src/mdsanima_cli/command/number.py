@@ -10,7 +10,7 @@ import os
 import shutil
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import NUMBER_COMMAND
+from mdsanima_cli.parser import NUMBER_COMD
 from mdsanima_cli.parser import NUMBER_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.print import print_cli_done
@@ -61,7 +61,7 @@ def compute_seq_number() -> None:
 
 def cli_number() -> None:
     """Main function for `number` command."""
-    directory_statistic(NUMBER_COMMAND, NUMBER_HELP)
+    directory_statistic(NUMBER_COMD, NUMBER_HELP)
     ascii_title("processing")
     time_taken = compute_seq_number()
     ascii_title("completed")

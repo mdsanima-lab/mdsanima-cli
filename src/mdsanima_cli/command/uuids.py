@@ -11,7 +11,7 @@ import shutil
 import uuid
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import UUID_COMMAND
+from mdsanima_cli.parser import UUID_COMD
 from mdsanima_cli.parser import UUID_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.print import print_cli_done
@@ -63,7 +63,7 @@ def compute_uuid() -> None:
 
 def cli_uuid() -> None:
     """Main function for `uuid` command."""
-    directory_statistic(UUID_COMMAND, UUID_HELP)
+    directory_statistic(UUID_COMD, UUID_HELP)
     ascii_title("processing")
     time_taken = compute_uuid()
     ascii_title("completed")

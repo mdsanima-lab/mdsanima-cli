@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import WEBP_COMMAND
+from mdsanima_cli.parser import WEBP_COMD
 from mdsanima_cli.parser import WEBP_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
@@ -71,7 +71,7 @@ def compute_webp() -> None:
 
 def cli_webp() -> None:
     """Main function for `webp` command."""
-    directory_statistic(WEBP_COMMAND, WEBP_HELP)
+    directory_statistic(WEBP_COMD, WEBP_HELP)
     ascii_title("processing")
     time_taken = compute_webp()
     ascii_title("completed")

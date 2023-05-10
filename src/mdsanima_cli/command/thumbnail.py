@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import THUMBNAIL_COMMAND
+from mdsanima_cli.parser import THUMBNAIL_COMD
 from mdsanima_cli.parser import THUMBNAIL_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
@@ -81,7 +81,7 @@ def compute_thumbnail() -> None:
 
 def cli_thumbnail() -> None:
     """Main function for `thumbnail` command."""
-    directory_statistic(THUMBNAIL_COMMAND, THUMBNAIL_HELP)
+    directory_statistic(THUMBNAIL_COMD, THUMBNAIL_HELP)
     ascii_title("processing")
     time_taken = compute_thumbnail()
     ascii_title("completed")

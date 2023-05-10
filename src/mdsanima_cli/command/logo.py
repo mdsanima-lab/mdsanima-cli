@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import LOGO_COMMAND
+from mdsanima_cli.parser import LOGO_COMD
 from mdsanima_cli.parser import LOGO_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
@@ -91,7 +91,7 @@ def compute_logo() -> None:
 
 def cli_logo() -> None:
     """Main function for `logo` command."""
-    directory_statistic(LOGO_COMMAND, LOGO_HELP)
+    directory_statistic(LOGO_COMD, LOGO_HELP)
 
     try:
         ascii_title("processing")

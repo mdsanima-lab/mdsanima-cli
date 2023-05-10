@@ -14,7 +14,7 @@ from PIL import Image
 from mdsanima_cli.command.check import directory_statistic
 from mdsanima_cli.command.pixelart import generate_pixelart
 from mdsanima_cli.command.resize import generate_resize
-from mdsanima_cli.parser import GIFMAKER_COMMAND
+from mdsanima_cli.parser import GIFMAKER_COMD
 from mdsanima_cli.parser import GIFMAKER_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
@@ -143,7 +143,7 @@ def compute_gifmaker() -> None:
 
 def cli_gifmaker() -> None:
     """Main function for `gifmaker` command."""
-    directory_statistic(GIFMAKER_COMMAND, GIFMAKER_HELP)
+    directory_statistic(GIFMAKER_COMD, GIFMAKER_HELP)
     ascii_title("processing")
     time_taken = compute_gifmaker()
     ascii_title("completed")

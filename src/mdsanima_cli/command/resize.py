@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import RESIZE_COMMAND
+from mdsanima_cli.parser import RESIZE_COMD
 from mdsanima_cli.parser import RESIZE_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
@@ -83,7 +83,7 @@ def compute_resize() -> None:
 
 def cli_resize() -> None:
     """Main function for `resize` command."""
-    directory_statistic(RESIZE_COMMAND, RESIZE_HELP)
+    directory_statistic(RESIZE_COMD, RESIZE_HELP)
     ascii_title("processing")
     time_taken = compute_resize()
     ascii_title("completed")

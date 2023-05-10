@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import JPG_COMMAND
+from mdsanima_cli.parser import JPG_COMD
 from mdsanima_cli.parser import JPG_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
@@ -71,7 +71,7 @@ def compute_jpg() -> None:
 
 def cli_jpg() -> None:
     """Main function for `jpg` command."""
-    directory_statistic(JPG_COMMAND, JPG_HELP)
+    directory_statistic(JPG_COMD, JPG_HELP)
     ascii_title("processing")
     time_taken = compute_jpg()
     ascii_title("completed")

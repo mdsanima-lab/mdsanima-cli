@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import PIXELART_COMMAND
+from mdsanima_cli.parser import PIXELART_COMD
 from mdsanima_cli.parser import PIXELART_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
@@ -84,7 +84,7 @@ def compute_pixelart() -> None:
 
 def cli_pixelart() -> None:
     """Main function for `pixelart` command."""
-    directory_statistic(PIXELART_COMMAND, PIXELART_HELP)
+    directory_statistic(PIXELART_COMD, PIXELART_HELP)
     ascii_title("processing")
     time_taken = compute_pixelart()
     ascii_title("completed")

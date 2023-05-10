@@ -13,7 +13,7 @@ import os
 from PIL import Image
 
 from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.parser import WATERMARK_COMMAND
+from mdsanima_cli.parser import WATERMARK_COMD
 from mdsanima_cli.parser import WATERMARK_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
@@ -112,7 +112,7 @@ def compute_watermark() -> None:
 
 def cli_watermark() -> None:
     """Main function for `watermark` command."""
-    directory_statistic(WATERMARK_COMMAND, WATERMARK_HELP)
+    directory_statistic(WATERMARK_COMD, WATERMARK_HELP)
 
     try:
         ascii_title("processing")
