@@ -1,8 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module provides various utilities helpers that can be used for one line multiple colors
-printing. The module is intended for use in development.
+"""This module provides various utilities helpers that can be used for one line multiple colors printing. The module is
+intended for use in development.
 """
 
 
@@ -16,13 +16,10 @@ from mdsanima_dev.colors import get_complex_color
 mprint = get_complex_color
 
 
-def print_cli_info(
-    key: str, info: str, bracket_color: int, key_color: int, info_color: int
-) -> None:
-    """Helper for printing multiple colors info in one line. Aligning the last bracket to the right
-    within a maximum width of 14 characters. You can choose individual colors for the bracket, text
-    inside the bracket, and the last text. The string `key` and `info` are always printed in upper
-    case.
+def print_cli_info(key: str, info: str, bracket_color: int, key_color: int, info_color: int) -> None:
+    """Helper for printing multiple colors info in one line. Aligning the last bracket to the right within a maximum
+    width of 14 characters. You can choose individual colors for the bracket, text inside the bracket, and the last
+    text. The string `key` and `info` are always printed in upper case.
 
     Example look: `[MDSANIMA CLI] -> CHECK`
     """
@@ -38,12 +35,10 @@ def print_cli_info(
     mprint(str(info).upper(), info_color)
 
 
-def print_cli_data(
-    key: str, data: str, bracket_color: int, key_color: int, data_color: int
-) -> None:
-    """Helper for printing multiple colors data in one line. Aligning the last bracket to the right
-    within a maximum width of 14 characters. You can choose individual colors for the bracket, text
-    inside the bracket, and the last text. The string `key` are always printed in upper case.
+def print_cli_data(key: str, data: str, bracket_color: int, key_color: int, data_color: int) -> None:
+    """Helper for printing multiple colors data in one line. Aligning the last bracket to the right within a maximum
+    width of 14 characters. You can choose individual colors for the bracket, text inside the bracket, and the last
+    text. The string `key` are always printed in upper case.
 
     Example look: `[REAL PATH] /home/mdsanima/dev/mdsanima-cli`
     """
@@ -65,9 +60,9 @@ def print_cli_proc(
     new: str,
     time_taken: float,
 ) -> None:
-    """Helper for printing multiple colors processing info in one line. The colors have already been
-    selected, you can configure only the text without changing the colors. The string `process` are
-    always printed in upper case. The colors are shades of green and blue.
+    """Helper for printing multiple colors processing info in one line. The colors have already been selected, you can
+    configure only the text without changing the colors. The string `process` are always printed in upper case.
+    The colors are shades of green and blue.
 
     Example look: `[APPENDING 00001] image.png -> image_pixelart.png -> ran in 1.337 sec`
     """
@@ -93,9 +88,9 @@ def print_cli_comp(
     new: str,
     time_taken: float,
 ) -> None:
-    """Helper for printing multiple colors computing info in one line. The colors have already been
-    selected, you can configure only the text without changing the colors. The string `process` are
-    always printed in upper case. The colors are shades of red and green.
+    """Helper for printing multiple colors computing info in one line. The colors have already been selected, you can
+    configure only the text without changing the colors. The string `process` are always printed in upper case.
+    The colors are shades of red and green.
 
     Example look: `[COMPUTING 00001] image.png -> image_pixelart.png -> ran in 1.337 sec`
     """
@@ -115,9 +110,8 @@ def print_cli_comp(
 
 
 def print_cli_done(time_taken: float) -> None:
-    """Helper for printing multiple colors done info in one line. The colors and text have already
-    been selected, you can onfigure only the time taken without changing the colors. The colors are
-    shades of blue and red.
+    """Helper for printing multiple colors done info in one line. The colors and text have already been selected, you
+    can onfigure only the time taken without changing the colors. The colors are shades of blue and red.
 
     Configured look: `[DONE] Processing is finished -> ran in 1.337 sec`
     """

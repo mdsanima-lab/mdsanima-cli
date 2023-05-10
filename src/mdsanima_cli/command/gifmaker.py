@@ -1,9 +1,7 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""Generating pixel art animation GIF. It operates within a specified folder and can process all
-images at once.
-"""
+"""Generating pixel art animation GIF. It operates within a specified folder and can process all images at once."""
 
 
 from __future__ import annotations
@@ -31,8 +29,8 @@ TMP_PATH = os.path.expanduser("~/.mdsanima-cli/tmp/gifmaker")
 
 @timer
 def generate_tmp_images(image_path: str) -> None:
-    """Generate temporary images in tmp cli path. Resizing image to 512px width and generate pixel
-    art resolutions. This images is for generating GIF animation. Printing color info.
+    """Generate temporary images in tmp cli path. Resizing image to 512px width and generate pixel art resolutions.
+    This images is for generating GIF animation. Printing color info.
     """
 
     # Create tmp folder for images.
@@ -58,8 +56,8 @@ def generate_tmp_images(image_path: str) -> None:
 
 @timer
 def generate_gifmaker(image_path: str, gif_name: str, gif_duration: int, count: int) -> None:
-    """Generate one pixel art animation GIF from temporary images, then save the result with a new
-    name and exif data. Original image is resized to 512px width. Printing color info.
+    """Generate one pixel art animation GIF from temporary images, then save the result with a new name and exif data.
+    Original image is resized to 512px width. Printing color info.
     """
 
     # Generate temporary images.
@@ -108,7 +106,7 @@ def generate_gifmaker(image_path: str, gif_name: str, gif_duration: int, count: 
 
 @timer
 def compute_gifmaker() -> None:
-    """Computing pixel art animation GIF for all images in the directory. GIF durations is 100ms."""
+    """Computing pixel art animation GIF for all images in the directory. GIF durations is 100 ms."""
 
     # Get directory stats info.
     directory = os.listdir()

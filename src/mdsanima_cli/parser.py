@@ -73,8 +73,8 @@ RESIZE_HELP = "resizing to 512px width"
 
 
 def create_parser() -> None:
-    """This function creates an argument parser for all available functions in this package, which
-    can be used in command-line tools.
+    """This function creates an argument parser for all available functions in this package, which can be used in
+    command-line tools.
     """
 
     # Create top level parser for mdsanima command.
@@ -84,12 +84,7 @@ def create_parser() -> None:
         epilog=EPILOG,
         formatter_class=argparse.RawTextHelpFormatter,
     )
-    parser.add_argument(
-        "-v",
-        "--version",
-        action="version",
-        version="%(prog)s-cli " + __version__,
-    )
+    parser.add_argument("-v", "--version", action="version", version="%(prog)s-cli " + __version__)
     subparser = parser.add_subparsers(title="commands", description=SUBPERSER_DESCRIPTION)
 
     # Create subparser for check command.

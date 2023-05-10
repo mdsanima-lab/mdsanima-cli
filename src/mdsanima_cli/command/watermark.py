@@ -1,8 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""This module is designed to adding a watermark to all images in the current directory. It operates
-within a specified folder and can process all images at once.
+"""This module is designed to adding a watermark to all images in the current directory. It operates within a specified
+folder and can process all images at once.
 """
 
 
@@ -28,8 +28,8 @@ WATERMARK_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
 
 @timer
 def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
-    """Append a watermark to one image, and then save the result with a new name and exif data.
-    The watermark is a rotated on 45 degrees and shifted.
+    """Append a watermark to one image, and then save the result with a new name and exif data. The watermark is
+    a rotated on 45 degrees and shifted.
     """
 
     # Open image and watermark file.

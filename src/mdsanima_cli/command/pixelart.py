@@ -1,9 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""Generating images into pixel art. It operates within a specified folder and can process all
-images at once. The first step is to open the original image, scale it to 32 pixels, scale it
-back to its original size, and then save it.
+"""Generating images into pixel art. It operates within a specified folder and can process all images at once. The first
+step is to open the original image, scale it to 32 pixels, scale it back to its original size, and then save it.
 """
 
 

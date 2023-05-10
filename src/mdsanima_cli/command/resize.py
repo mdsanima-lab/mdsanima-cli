@@ -1,8 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""Resizing all images in the curreny directory. It operates within a specified folder and can
-process all images at once.
+"""Resizing all images in the curreny directory. It operates within a specified folder and can process all images at
+once.
 """
 
 

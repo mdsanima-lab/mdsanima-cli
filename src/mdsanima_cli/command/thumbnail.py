@@ -1,8 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""Generating JPEG thumbnails from all images in the curreny directory. It operates within
-a specified folder and can process all images at once.
+"""Generating JPEG thumbnails from all images in the curreny directory. It operates within a specified folder and can
+process all images at once.
 """
 
 

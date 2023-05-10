@@ -1,8 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""Appendign a logo to all images in the current directory. It operates within a specified folder
-and can process all images at once.
+"""Appendign a logo to all images in the current directory. It operates within a specified folder and can process all
+images at once.
 """
 
 
@@ -28,9 +28,7 @@ LOGO_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/logo.png")
 
 @timer
 def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
-    """Append a logo to one image in the bottom right position, and then save the result with a new
-    name and exif data.
-    """
+    """Append a logo to one image in the bottom right position, then save the result with a new name and exif data."""
 
     # Open image and logo file.
     image = Image.open(image_path)

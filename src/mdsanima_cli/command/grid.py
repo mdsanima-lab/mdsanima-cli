@@ -1,8 +1,8 @@
 # Copyright © 2023 Marcin Różewski MDSANIMA
 
 
-"""Generating a grid from all images in the current directory. It operates within a specified folder
-and can process all images at once.
+"""Generating a grid from all images in the current directory. It operates within a specified folder and can process all
+images at once.
 """
 
 
@@ -24,11 +24,9 @@ from mdsanima_cli.utils.timer import timer
 
 
 @timer
-def generate_grid(
-    image_1_path: str, image_2_path: str, image_3_path: str, image_4_path: str, grid_name: str
-) -> None:
-    """Generating a grid 2x2 from four images, and then save the result with a new file name.
-    Images must be the same size. Adding exif data.
+def generate_grid(image_1_path: str, image_2_path: str, image_3_path: str, image_4_path: str, grid_name: str) -> None:
+    """Generating a grid 2x2 from four images, and then save the result with a new file name. Images must be the same
+    size. Adding exif data.
     """
 
     # Open four images file.

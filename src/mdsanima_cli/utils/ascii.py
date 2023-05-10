@@ -12,12 +12,11 @@ from mdsanima_dev.colors import get_complex_color
 
 
 def get_ascii_character() -> dict:
-    """This function returns a single ASCII character that includes the entire alphabet, numbers,
-    and some special characters includes spaces. Each character is displayed on 3 lines, and the
-    width is 3 normal-length spaces.
+    """This function returns a single ASCII character that includes the entire alphabet, numbers, and some special
+    characters includes spaces. Each character is displayed on 3 lines, and the width is 3 normal-length spaces.
 
-    Usage: `ascii["a"][0]` returns the first line of the character `a` in ASCII format. To obtain
-    the entire character, you need to retrieve lines `ascii["a"][1]` and `ascii["a"][2]` as well.
+    Usage: `ascii["a"][0]` returns the first line of the character `a` in ASCII format. To obtain the entire character,
+    you need to retrieve lines `ascii["a"][1]` and `ascii["a"][2]` as well.
 
     Return: `dict[str, list[str]]`
 
@@ -313,12 +312,8 @@ def get_ascii_character() -> dict:
     return ascii_character
 
 
-def ascii_border(
-    line_1: str, line_2: str, line_3: str, border_color: int, ascii_color: int, width: int = 50
-) -> None:
-    """Generate ASCII art text in color and with a border. Printing ASCI art in 5 lines. You can
-    adjust a width and color.
-    """
+def ascii_border(line_1: str, line_2: str, line_3: str, border_color: int, ascii_color: int, width: int = 50) -> None:
+    """Generate ASCII text in color and with a border. Print ASCI art in 5 lines. You can adjust a width and color."""
 
     # Color print variable.
     mprint = get_complex_color
