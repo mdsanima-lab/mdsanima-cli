@@ -1,0 +1,22 @@
+# Copyright (c) 2023 MDSANIMA
+
+# Documentation: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates
+# Configuration: https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+# Basic set up for pip Python package ecosystem with one app.
+
+
+version: 2
+updates:
+
+  # Maintain dependencies for pip Python packages.
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: daily
+    ignore:
+      - dependency-name: mdsanima-dev
+    labels:
+      - dependencies
+      - python
+      - pip
