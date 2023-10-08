@@ -1,10 +1,13 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
-
+# Copyright (c) 2023 MDSANIMA
 
 [MASTER]
 
 # Add files or directories to the blacklist. They should be base names, not paths.
-ignore=CVS,.git,flake8.egg-info
+ignore=.git,flake8.egg-info,conf.py
+
+# Add files or directories matching the regex patterns to the blacklist.
+# The regex matches against base names, not paths.
+ignore-patterns=.*_test.py,.*_tmp.py
 
 # Use multiple processes to speed up Pylint.
 jobs=4
@@ -14,6 +17,9 @@ jobs=4
 
 # Maximum number of characters on a single line.
 max-line-length=120
+
+# Regexp for a line that is allowed to be longer than the limit.
+ignore-long-lines=^\s+:([A-Za-z]+( [A-Za-z]+)+)_[A-Za-z]+:.*$
 
 # Maximum number of lines in a module.
 max-module-lines=1000

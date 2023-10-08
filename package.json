@@ -60,7 +60,7 @@
         "hidden": true
       }
     ],
-    "header": "# CHANGELOG\n\nAll notable changes to this project will be documented in this file.\n\nPlease check [standard-version](https://github.com/conventional-changelog/standard-version)\nand documentation for commit guidelines. Also you should check\n[conventional-changelog](https://github.com/mdsanima/conventional-changelog) for more detail.\n\nDocomentation for _MDSANIMA-CLI_ is available at this repository on [README.md](README.md)\nfile be sure to check it.\n"
+    "header": "# CHANGELOG\n\nAll notable changes to this project will be documented in this file.\n\nPlease check [standard-version](https://github.com/conventional-changelog/standard-version) and documentation for commit guidelines. Also you should check [conventional-changelog](https://github.com/mdsanima/conventional-changelog) for more detail.\n\nDocomentation for _MDSANIMA-CLI_ is available at this repository on [README.md](README.md) file be sure to check it.\n"
   },
   "scripts": {
     "release": "standard-version --sign",

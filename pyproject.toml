@@ -1,120 +1,137 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
+
+# This is a configuration file for this Python package. Published on PyPI using Twine.
+
 
 [build-system]
-requires = ['setuptools>=67.7.2', 'wheel>=0.40.0', 'pip>=23.1.2', 'setuptools_scm[toml]>=7.1.0']
-build-backend = 'setuptools.build_meta'
+requires = ["setuptools>=68.2", "wheel>=0.41", "setuptools_scm[toml]>=8.0"]
+build-backend = "setuptools.build_meta"
+
 
 [project]
-name = 'mdsanima_cli'
-authors = [{name = 'Marcin Różewski', email = 'marcinrozewski@gmail.com'}]
-description = 'The package will provide command-line tools for image processing, generating pixel art, adding logos to images, and much more.'
-readme = 'README.md'
-license = {file = 'LICENSE'}
-requires-python = '>=3.10'
+name = "mdsanima_cli"
+dynamic = ["version"]
+description = "The package will provide command-line tools for images processing, generating pixel art, adding logo to images, and much more."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Marcin Różewski", email = "marcinrozewski@gmail.com" }]
 keywords = [
-    'bash',
-    'cli',
-    'command-line',
-    'console-app',
-    'console-application',
-    'exif metadata',
-    'exif',
-    'image-processing',
-    'images',
-    'logo',
-    'mdsanima command line',
-    'mdsanima command-line',
-    'mdsanima-cli',
-    'mdsanima-dev',
-    'mdsanima',
-    'meta information',
-    'pixel art',
-    'pixelart',
-    'python-library',
-    'python',
-    'python3',
-    'shell-script',
-    'shell',
-    'watermark',
-    'zsh',
+    "bash",
+    "cli",
+    "command-line",
+    "console-app",
+    "console-application",
+    "exif metadata",
+    "exif",
+    "image-processing",
+    "images",
+    "logo",
+    "mdsanima command line",
+    "mdsanima command-line",
+    "mdsanima-cli",
+    "mdsanima-dev",
+    "mdsanima",
+    "meta information",
+    "pixel art",
+    "pixelart",
+    "python-library",
+    "python",
+    "python3",
+    "shell-script",
+    "shell",
+    "watermark",
+    "zsh",
 ]
 classifiers = [
-    'Development Status :: 2 - Pre-Alpha',
-    'Environment :: Console',
-    'Environment :: Plugins',
-    'Intended Audience :: Developers',
-    'Intended Audience :: Education',
-    'Intended Audience :: End Users/Desktop',
-    'Intended Audience :: Information Technology',
-    'Intended Audience :: Legal Industry',
-    'Intended Audience :: Other Audience',
-    'Intended Audience :: System Administrators',
-    'License :: OSI Approved :: Apache Software License',
-    'Natural Language :: English',
-    'Natural Language :: Polish',
-    'Operating System :: MacOS',
-    'Operating System :: Microsoft :: Windows',
-    'Operating System :: POSIX :: BSD',
-    'Operating System :: POSIX :: Linux',
-    'Operating System :: Unix',
-    'Programming Language :: Python :: 3.10',
-    'Topic :: Desktop Environment',
-    'Topic :: Documentation :: Sphinx',
-    'Topic :: Education :: Testing',
-    'Topic :: Multimedia',
-    'Topic :: Multimedia :: Graphics',
-    'Topic :: Multimedia :: Graphics :: Editors',
-    'Topic :: Scientific/Engineering :: Image Processing',
-    'Topic :: Scientific/Engineering :: Information Analysis',
-    'Topic :: Software Development',
-    'Topic :: Software Development :: Libraries :: Python Modules',
-    'Topic :: System',
-    'Topic :: System :: Console Fonts',
-    'Topic :: System :: Filesystems',
-    'Topic :: System :: Logging',
-    'Topic :: System :: Operating System',
-    'Topic :: System :: Shells',
-    'Topic :: System :: System Shells',
-    'Topic :: System :: Systems Administration',
-    'Topic :: System :: Systems Administration :: Authentication/Directory',
-    'Topic :: Terminals',
-    'Topic :: Text Processing',
-    'Topic :: Utilities',
-    'Typing :: Typed',
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Environment :: Plugins",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Legal Industry",
+    "Intended Audience :: Other Audience",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Natural Language :: Polish",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: BSD",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Desktop Environment",
+    "Topic :: Documentation :: Sphinx",
+    "Topic :: Education :: Testing",
+    "Topic :: Multimedia",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Multimedia :: Graphics :: Editors",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System",
+    "Topic :: System :: Console Fonts",
+    "Topic :: System :: Filesystems",
+    "Topic :: System :: Logging",
+    "Topic :: System :: Operating System",
+    "Topic :: System :: Shells",
+    "Topic :: System :: System Shells",
+    "Topic :: System :: Systems Administration",
+    "Topic :: System :: Systems Administration :: Authentication/Directory",
+    "Topic :: Terminals",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+    "Typing :: Typed",
 ]
-dependencies = [
-    'mdsanima-dev==0.1.1',
-    'piexif==1.1.3',
-    'Pillow==10.0.1',
+dependencies = ["mdsanima-dev==0.1.1", "piexif==1.1.3", "pillow==10.0.1"]
+
+
+[project.optional-dependencies]
+dev = [
+    "black==23.3.0",
+    "build==0.10.0",
+    "flake8==6.0.0",
+    "isort==5.12.0",
+    "pylint==2.17.3",
+    "setuptools-scm==7.1.0",
+    "twine==4.0.2",
 ]
-dynamic = ['version']
+
 
 [project.urls]
-homepage = 'https://github.com/mdsanima-lab/mdsanima-cli'
-documentation = 'https://github.com/mdsanima-lab/mdsanima-cli#readme'
-repository = 'https://github.com/mdsanima-lab/mdsanima-cli.git'
-changelog = 'https://github.com/mdsanima-lab/mdsanima-cli/blob/main/CHANGELOG.md'
+homepage = "https://github.com/mdsanima-lab/mdsanima-cli"
+documentation = "https://github.com/mdsanima-lab/mdsanima-cli#readme"
+repository = "https://github.com/mdsanima-lab/mdsanima-cli.git"
+changelog = "https://github.com/mdsanima-lab/mdsanima-cli/blob/main/CHANGELOG.md"
+
 
 [project.scripts]
-mdsanima = 'mdsanima_cli:main_cli'
-mds = 'mdsanima_cli:main_cli'
+mdsanima = "mdsanima_cli:main_cli"
+mds = "mdsanima_cli:main_cli"
+
 
 [tool.black]
 line-length = 120
-target-version = ['py310']
-include = '\.pyi?$'
+
 
 [tool.isort]
-profile = 'black'
-src_paths = ['src', 'tests']
+profile = "black"
+src_paths = ["src", "tests"]
 force_single_line = true
 lines_before_imports = 2
 lines_after_imports = 2
 treat_all_comments_as_code = true
-extend_skip = ['.md', '.json']
+extend_skip = [".md", ".json"]
+
 
 [tool.setuptools.packages.find]
-where = ['src']
+where = ["src"]
+
 
 [tool.setuptools_scm]
-write_to = 'src/mdsanima_cli/_version.py'
+write_to = "src/mdsanima_cli/_version.py"
