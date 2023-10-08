@@ -2,6 +2,6 @@ black==23.3.0
 build==1.0.3
 flake8==6.1.0
 isort==5.12.0
-pylint==2.17.3
+pylint==3.0.1
 setuptools-scm==7.1.0
 twine==4.0.2
