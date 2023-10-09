@@ -150,7 +150,7 @@ Here are the steps to create a release version:
 5. Generate the CHANGELOG.md file
 6. Commit the release
 7. Add and push the new tag
-8. Update on PyPI
+8. Build and Update on PyPI
 
 This is done manually for now, but we plan to set up a _GitHub Action_ workflow for testing and automatic release version creation in the future.
 
@@ -170,9 +170,10 @@ Always use this format for committing to Git, as it enables generating a changel
 
 Check the [package.json](package.json) file in the **standard-version** section and in the types lists for the first string that you can use in the commit message or check the [examples](https://www.conventionalcommits.org/en/v1.0.0/#examples) from _Conventional Commits_ documentation.
 
-Bump the package version in the [package.json](package.json) file and generate the [CHANGELOG.md](CHANGELOG.md) file with new release information, type the `standard-version` command in the terminal, and then add these changes to Git, committing the release like this:
+Bump the package version in the [package.json](package.json) file and generate the [CHANGELOG.md](CHANGELOG.md) file with new release information, type the **standard-version** command to check first, type `npm run check-release` command in the terminal, and then add these changes to Git, committing the release like this:
 
 ```shell
+npm run release
 git commit -am "chore(release): v0.2.0"
 ```
 
@@ -181,7 +182,7 @@ The version above is the result of the `standard-version` command, and this is j
 The next step is to create a tag and push the changes to the remote repository with the tag. The command should look like this:
 
 ```shell
-git tag v0.1.2
+git tag v0.2.0
 git push origin --tag
 ```
 
