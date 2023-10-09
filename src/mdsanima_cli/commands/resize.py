@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """Resizing all images in the curreny directory. It operates within a specified folder and can process all images at
@@ -12,7 +12,7 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.commands.check import directory_statistic
 from mdsanima_cli.parser import RESIZE_COMD
 from mdsanima_cli.parser import RESIZE_HELP
 from mdsanima_cli.utils.ascii import ascii_title

@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """This module is designed to adding a watermark to all images in the current directory. It operates within a specified
@@ -12,7 +12,7 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.commands.check import directory_statistic
 from mdsanima_cli.parser import WATERMARK_COMD
 from mdsanima_cli.parser import WATERMARK_HELP
 from mdsanima_cli.utils.ascii import ascii_title

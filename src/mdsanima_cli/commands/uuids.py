@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """Renaming all images file in current directory to UUID v4 name."""
@@ -10,7 +10,7 @@ import os
 import shutil
 import uuid
 
-from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.commands.check import directory_statistic
 from mdsanima_cli.parser import UUID_COMD
 from mdsanima_cli.parser import UUID_HELP
 from mdsanima_cli.utils.ascii import ascii_title

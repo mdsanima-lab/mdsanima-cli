@@ -1,4 +1,4 @@
-# Copyritht © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """Tool timer measures the execution time for the decorated function we provide."""

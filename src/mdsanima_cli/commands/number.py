@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """Renaming all images file in current directory to sequential number name."""
@@ -9,7 +9,7 @@ from __future__ import annotations
 import os
 import shutil
 
-from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.commands.check import directory_statistic
 from mdsanima_cli.parser import NUMBER_COMD
 from mdsanima_cli.parser import NUMBER_HELP
 from mdsanima_cli.utils.ascii import ascii_title

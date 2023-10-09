@@ -67,6 +67,12 @@ This package is built using specific tools and will be published on PyPI using T
 
 #### Virtual Environment
 
+Make sure you have `virtualenv` installed on your system. If not, enter this command:
+
+```shell
+python3.11 -m pip install virtualenv
+```
+
 Creating and activating the development environment, and then installing the necessary packages, enter the following commands in the terminal:
 
 ```shell
