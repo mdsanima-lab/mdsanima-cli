@@ -1,6 +1,23 @@
 # mdsanima-cli
 
-The package will provide command-line tools for images processing, generating pixel art, adding logo to images, and much more.
+[![GitHub Repo License](https://img.shields.io/github/license/mdsanima-lab/mdsanima-cli?logo=apache)][link-github-repo-license]
+[![GitHub Repo Stars](https://img.shields.io/github/stars/mdsanima-lab/mdsanima-cli?logo=github)][link-github-repo-stars]
+[![PePy Total Downloads](https://img.shields.io/pepy/dt/mdsanima-cli?logo=python&logoColor=lightgray)][link-pepy-total-downloads]
+[![PyPi Latest Version](https://img.shields.io/pypi/v/mdsanima-cli?logo=python&logoColor=lightgray)][link-pypi-project]
+[![PyPi Python Version](https://img.shields.io/pypi/pyversions/mdsanima-cli?logo=python&logoColor=lightgray)][link-pypi-project]
+[![PyPi Format](https://img.shields.io/pypi/format/mdsanima-cli?logo=python&logoColor=lightgray)][link-pypi-project]
+[![Code Style Black](https://img.shields.io/badge/code_style-black-black?logo=python&logoColor=lightgray)][link-code-style-black]
+
+[![GitHub Followers MDSANIMA](https://img.shields.io/github/followers/mdsanima?style=social)][link-mdsanima-github-account]
+[![X Follow MDSANIMA](https://img.shields.io/twitter/follow/mdsanima?style=social)][link-mdsanima-x-account]
+[![Reddit Subreddit Subscribers MDSANIMA](https://img.shields.io/reddit/subreddit-subscribers/mdsanima?style=social)][link-mdsanima-reddit-account]
+[![YouTube Subscribers MDSANIMA](https://img.shields.io/youtube/channel/subscribers/UCB5na2BRwrnwx00LCspbG5Q?style=social)][link-mdsanima-youtube-account]
+[![Discord Channel Chat MDSANIMA](https://img.shields.io/discord/621477380359454742?style=social&logo=discord)][link-mdsanima-discord-account]
+[![Twitch Channel Status MDSANIMA](https://img.shields.io/twitch/status/mdsanima?style=social)][link-mdsanima-twitch-account]
+
+Command-line tools for image processing, generating pixel art, adding logos to images, and much more.
+
+These command-line tools are readily available for a multitude of image processing tasks, such as manipulating images, generating mesmerizing pixel art, seamlessly integrating logos into visuals, and accomplishing a diverse array of other creative endeavors. By harnessing the power of these tools, users can unlock endless possibilities for creating captivating artwork that can greatly enhance a wide range of projects.
 
 ## Package Installation
 
@@ -62,7 +79,7 @@ All dependencies for this project are specified in the `requirements.*` files an
 
 You can install these dependencies using the `pip install .` command, which will build our package and install the basic dependencies along with the new version of our package. To install dev dependencies, you can use the `pip install ".[dev]"` command instead of specifying a `-r` flag and file as mentioned earlier.
 
-After following the above instructions, we can start writing the program. You can also refer to the instructions regarding the configuration of the development environment, which are included in this [workflow](https://mdsanima-dev.github.io/mdsanima-dev/development/workflow/) guide.
+After following the above instructions, we can start writing the program. You can also refer to the instructions regarding the configuration of the development environment, which are included in this [workflow](https://docs.mdsanima.dev/development/workflow/) guide.
 
 #### Build Package
 
@@ -168,7 +185,7 @@ After completing the above steps, you can verify the package version by entering
 python -m setuptools_scm
 ```
 
-Finally, create the build and update this build on [test.pypi.org](https://test.pypi.org/project/mdsanima-cli/) and [pypi.org](https://pypi.org/project/mdsanima-cli/), but first, make sure to check everything, and then proceed with the update.
+Finally, create the build and update this build on [test.pypi.org][link-pypi-test-project] and [pypi.org][link-pypi-project], but first, make sure to check everything, and then proceed with the update.
 
 Enter the following commands in the terminal:
 
@@ -181,3 +198,20 @@ twine upload dist/*
 ```
 
 Remember, only the package owner can perform this operation and must have the secrets configured in the `.pypirc` file in the system.
+
+## License
+
+Package [mdsanima-cli][link-pypi-project] developed by [Marcin Różewski][link-mdsanima-github-account] is released under the terms of [Apache-2.0][link-github-repo-license] license.
+
+[link-github-repo-license]: https://github.com/mdsanima-lab/mdsanima-cli/blob/main/LICENSE
+[link-github-repo-stars]: https://github.com/mdsanima-lab/mdsanima-cli/stargazers
+[link-pepy-total-downloads]: https://www.pepy.tech/projects/mdsanima-cli
+[link-pypi-project]: https://pypi.org/project/mdsanima-cli
+[link-pypi-test-project]: https://test.pypi.org/project/mdsanima-cli
+[link-code-style-black]: https://github.com/psf/black
+[link-mdsanima-github-account]: https://github.com/mdsanima
+[link-mdsanima-x-account]: https://twitter.com/intent/follow?mdsanima&screen_name=mdsanima
+[link-mdsanima-reddit-account]: https://reddit.com/r/mdsanima
+[link-mdsanima-youtube-account]: https://youtube.com/mdsanima?sub_confirmation=1
+[link-mdsanima-discord-account]: https://discord.gg/c3m7pTF
+[link-mdsanima-twitch-account]: https://twitch.tv/mdsanima
