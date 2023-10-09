@@ -11,7 +11,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mdsanima_cli"
 dynamic = ["version"]
-description = "The package will provide command-line tools for images processing, generating pixel art, adding logo to images, and much more."
+description = "Command-line tools for image processing, generating pixel art, adding logos to images, and much more."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
