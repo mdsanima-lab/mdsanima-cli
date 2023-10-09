@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """Appendign a logo to all images in the current directory. It operates within a specified folder and can process all

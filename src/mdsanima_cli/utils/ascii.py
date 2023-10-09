@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """This module is for printing ASCII art text with colors."""

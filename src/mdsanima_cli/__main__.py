@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """Main entry point for command-line tools."""

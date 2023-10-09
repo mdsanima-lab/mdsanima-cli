@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """Generating pixel art animation GIF. It operates within a specified folder and can process all images at once."""

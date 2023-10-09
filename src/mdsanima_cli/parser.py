@@ -1,4 +1,4 @@
-# Copyright © 2023 Marcin Różewski MDSANIMA
+# Copyright (c) 2023 MDSANIMA
 
 
 """This is a functionality for parsing arguments in command-line tools."""
@@ -14,7 +14,7 @@ from mdsanima_cli._version import __version__
 
 PROG: Final[str] = "mdsanima"
 DESC: Final[str] = "MDSANIMA CLI is a command-line interface for image processing."
-EPIL: Final[str] = "Copyright \U000000A9 2023 Marcin Różewski MDSANIMA"
+EPIL: Final[str] = "Copyright \U000000A9 2023 MDSANIMA"
 
 ALL_IMAGES_DIR: Final[str] = "all images file inside the current directory."
 SUBPERSER_DESC: Final[str] = f"All commands execute on {ALL_IMAGES_DIR}"
