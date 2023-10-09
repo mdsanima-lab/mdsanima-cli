@@ -183,7 +183,7 @@ The next step is to create a tag and push the changes to the remote repository w
 
 ```shell
 git tag v0.2.0
-git push origin --tag
+git push && git push origin --tag
 ```
 
 After completing the above steps, you can verify the package version by entering this command in the terminal:
