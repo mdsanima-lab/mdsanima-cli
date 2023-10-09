@@ -12,7 +12,7 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.command.check import directory_statistic
+from mdsanima_cli.commands.check import directory_statistic
 from mdsanima_cli.parser import GRID_COMD
 from mdsanima_cli.parser import GRID_HELP
 from mdsanima_cli.utils.ascii import ascii_title

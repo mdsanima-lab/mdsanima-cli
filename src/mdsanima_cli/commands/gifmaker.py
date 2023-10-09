@@ -11,9 +11,9 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.command.check import directory_statistic
-from mdsanima_cli.command.pixelart import generate_pixelart
-from mdsanima_cli.command.resize import generate_resize
+from mdsanima_cli.commands.check import directory_statistic
+from mdsanima_cli.commands.pixelart import generate_pixelart
+from mdsanima_cli.commands.resize import generate_resize
 from mdsanima_cli.parser import GIFMAKER_COMD
 from mdsanima_cli.parser import GIFMAKER_HELP
 from mdsanima_cli.utils.ascii import ascii_title

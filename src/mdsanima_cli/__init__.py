@@ -6,19 +6,19 @@
 
 from __future__ import annotations
 
-from mdsanima_cli.command.check import cli_check
-from mdsanima_cli.command.gifmaker import cli_gifmaker
-from mdsanima_cli.command.grid import cli_grid
-from mdsanima_cli.command.jpg import cli_jpg
-from mdsanima_cli.command.logo import cli_logo
-from mdsanima_cli.command.number import cli_number
-from mdsanima_cli.command.pixelart import cli_pixelart
-from mdsanima_cli.command.png import cli_png
-from mdsanima_cli.command.resize import cli_resize
-from mdsanima_cli.command.thumbnail import cli_thumbnail
-from mdsanima_cli.command.uuids import cli_uuid
-from mdsanima_cli.command.watermark import cli_watermark
-from mdsanima_cli.command.webp import cli_webp
+from mdsanima_cli.commands.check import cli_check
+from mdsanima_cli.commands.gifmaker import cli_gifmaker
+from mdsanima_cli.commands.grid import cli_grid
+from mdsanima_cli.commands.jpg import cli_jpg
+from mdsanima_cli.commands.logo import cli_logo
+from mdsanima_cli.commands.number import cli_number
+from mdsanima_cli.commands.pixelart import cli_pixelart
+from mdsanima_cli.commands.png import cli_png
+from mdsanima_cli.commands.resize import cli_resize
+from mdsanima_cli.commands.thumbnail import cli_thumbnail
+from mdsanima_cli.commands.uuids import cli_uuid
+from mdsanima_cli.commands.watermark import cli_watermark
+from mdsanima_cli.commands.webp import cli_webp
 from mdsanima_cli.parser import create_parser
 from mdsanima_cli.utils.ascii import ascii_title
 
