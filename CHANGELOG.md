@@ -2,12 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
-Please check [standard-version](https://github.com/conventional-changelog/standard-version)
-and documentation for commit guidelines. Also you should check
-[conventional-changelog](https://github.com/mdsanima/conventional-changelog) for more detail.
+Please check [standard-version](https://github.com/conventional-changelog/standard-version) and documentation for commit guidelines. Also you should check [conventional-changelog](https://github.com/mdsanima/conventional-changelog) for more detail.
 
-Docomentation for _MDSANIMA-CLI_ is available at this repository on [README.md](README.md)
-file be sure to check it.
+Docomentation for _MDSANIMA-CLI_ is available at this repository on [README.md](README.md) file be sure to check it.
+
+## 0.3.0 (2023-10-09)
+
+### ⚠ BREAKING CHANGES
+
+- renamed module from `command` to `commands`
+
+### BUG FIXES
+
+- update the name ([461862f](https://github.com/mdsanima-lab/mdsanima-cli/commit/461862fef228f608952056f668bcfd16afded099))
+- renamed module from `command` to `commands` ([705cb5b](https://github.com/mdsanima-lab/mdsanima-cli/commit/705cb5b3a8c7ed809b7e45006751387b8670044a))
+
+### DOCUMENTATION
+
+- creating release info ([dd8fd09](https://github.com/mdsanima-lab/mdsanima-cli/commit/dd8fd09cd120f0cf28eddb4c9205c37e3ab75a7d))
 
 ### 0.2.1 (2023-05-10)
 
