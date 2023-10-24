@@ -1,0 +1,19 @@
+# Copyright (c) 2023 MDSANIMA
+
+# This file is for linting commit messages with commitlint GitHub action workflow.
+# Documentation: https://github.com/wagoid/commitlint-github-action#readme
+
+
+name: Lint Commit Messages
+on: [pull_request]
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: wagoid/commitlint-github-action@v5
+        with:
+          configFile: "./.commitlintrc"
