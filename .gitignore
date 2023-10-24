@@ -1,6 +1,8 @@
 # Copyright (c) 2023 MDSANIMA
 
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files
+# This is a configuration file for ignoring files on this repository.
+# Documentation: https://help.github.com/articles/ignoring-files/
+
 
 # Python Template
 # Byte-compiled / optimized / DLL files
