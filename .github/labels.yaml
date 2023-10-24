@@ -1,0 +1,55 @@
+# Copyright (c) 2023 MDSANIMA
+
+# This file is used to declaratively define the `mdsanima-cli` repository labels.
+# Documentation: https://github.com/Financial-Times/github-label-sync#label-config-file
+
+
+# Default labels
+- name: bug
+  color: B60205
+  description: Something isn't working
+- name: dependencies
+  color: 0366D6
+  description: Pull requests that update a dependency file
+- name: dev
+  color: 0E8A16
+  description: Tools for helping development
+- name: documentation
+  color: 0075CA
+  description: Improvements or additions to documentation
+- name: done
+  color: 1D76DB
+  description: I can say it's finished
+- name: duplicate
+  color: CFD3D7
+  description: This issue or pull request already exists
+- name: enhancement
+  color: A2EEEF
+  description: New feature or request
+- name: epic
+  color: FF7800
+  description: This is a cool idea
+- name: feature
+  color: 67AF00
+  description: New features ideas
+- name: help wanted
+  color: 008672
+  description: Extra attention is needed
+- name: invalid
+  color: E4E669
+  description: This doesn't seem right
+- name: pip
+  color: 2E79F8
+  description: Pull requests that update a dependency file
+- name: python
+  color: 006B75
+  description: Pull requests that update a dependency file
+- name: question
+  color: D876E3
+  description: Further information is requested
+- name: task
+  color: EEFF00
+  description: New task
+- name: wontfix
+  color: FBCA04
+  description: This will not be worked on
