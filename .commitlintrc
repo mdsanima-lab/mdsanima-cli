@@ -16,8 +16,8 @@ rules:
     - kebab-case
   subject-case:
     - 2
-    - always
-    - sentence-case
+    - never
+    - [upper-case, pascal-case, sentence-case, start-case]
   body-case:
     - 2
     - always
