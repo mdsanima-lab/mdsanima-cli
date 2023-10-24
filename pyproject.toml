@@ -100,7 +100,7 @@ dev = [
     "pylint==3.0.2",
     "setuptools-scm==8.0.4",
     "twine==4.0.2",
-    "virtualenv==20.24.5",
+    "virtualenv==20.24.6",
 ]
 
 
