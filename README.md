@@ -168,19 +168,31 @@ In this project, we use [Conventional Commits](https://www.conventionalcommits.o
 Therefore, a crucial step is to commit your code changes using this specification. A commit message should look like this:
 
 ```shell
-git commit -m "feat: generating pixel art command"
+git commit -m "feat: added generating pixel art command"
 ```
 
 Always use this format for committing to Git, as it enables generating a changelog from the commit message.
 
 #### Standard Version
 
-Check the [package.json](package.json) file in the **standard-version** section and in the types lists for the first string that you can use in the commit message or check the [examples](https://www.conventionalcommits.org/en/v1.0.0/#examples) from _Conventional Commits_ documentation.
+The [manifest.json](manifest.json) file is used to store the version number that generates the changelog. In the [.versionrc](.versionrc) file, there is a section that lists the types you can use in commit messages. You can also check the [examples](https://www.conventionalcommits.org/en/v1.0.0/#examples) in the _Conventional Commits_ documentation.
 
-Bump the package version in the [package.json](package.json) file and generate the [CHANGELOG.md](CHANGELOG.md) file with new release information, type the **standard-version** command to check first, type `npm run check-release` command in the terminal, and then add these changes to Git, committing the release like this:
+The process is straightforward. First, update the version number in the [manifest.json](manifest.json) file and generate the [CHANGELOG.md](CHANGELOG.md) file with new release information.
+
+Make sure that the `standard-version` package is installed on your system. If it's not, you need to install it globally on your system. You can do this by running the following command in your terminal:
 
 ```shell
-npm run release
+npm install -g standard-version
+```
+
+Once it's installed, you can use the `standard-version --dry-run` command to check the output. You can use the `--help` flag to see the help.
+
+The `standard-version` is configured to only bump versions and generate changelogs. In the [.versionrc](.versionrc) configuration file, you can set it up to also create commits and add Git tags with version numbers.
+
+Now, after you've confirmed that it's working correctly, you can execute the following commands:
+
+```shell
+standard-version
 git commit -am "chore(release): v0.3.0"
 ```
 
