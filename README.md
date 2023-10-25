@@ -1,6 +1,5 @@
 # mdsanima-cli
 
-[![GitHub Repo License](https://img.shields.io/github/license/mdsanima-lab/mdsanima-cli?logo=apache)][link-github-repo-license]
 [![GitHub Repo Stars](https://img.shields.io/github/stars/mdsanima-lab/mdsanima-cli?logo=github)][link-github-repo-stars]
 [![PePy Total Downloads](https://img.shields.io/pepy/dt/mdsanima-cli?logo=python&logoColor=lightgray)][link-pepy-total-downloads]
 [![PyPi Latest Version](https://img.shields.io/pypi/v/mdsanima-cli?logo=python&logoColor=lightgray)][link-pypi-project]
@@ -8,16 +7,7 @@
 [![PyPi Format](https://img.shields.io/pypi/format/mdsanima-cli?logo=python&logoColor=lightgray)][link-pypi-project]
 [![Code Style Black](https://img.shields.io/badge/code_style-black-black?logo=python&logoColor=lightgray)][link-code-style-black]
 
-[![GitHub Followers MDSANIMA](https://img.shields.io/github/followers/mdsanima?style=social)][link-mdsanima-github-account]
-[![X Follow MDSANIMA](https://img.shields.io/twitter/follow/mdsanima?style=social)][link-mdsanima-x-account]
-[![Reddit Subreddit Subscribers MDSANIMA](https://img.shields.io/reddit/subreddit-subscribers/mdsanima?style=social)][link-mdsanima-reddit-account]
-[![YouTube Subscribers MDSANIMA](https://img.shields.io/youtube/channel/subscribers/UCB5na2BRwrnwx00LCspbG5Q?style=social)][link-mdsanima-youtube-account]
-[![Discord Channel Chat MDSANIMA](https://img.shields.io/discord/621477380359454742?style=social&logo=discord)][link-mdsanima-discord-account]
-[![Twitch Channel Status MDSANIMA](https://img.shields.io/twitch/status/mdsanima?style=social)][link-mdsanima-twitch-account]
-
-Command-line tools for image processing, generating pixel art, adding logos to images, and much more.
-
-These command-line tools are readily available for a multitude of image processing tasks, such as manipulating images, generating mesmerizing pixel art, seamlessly integrating logos into visuals, and accomplishing a diverse array of other creative endeavors. By harnessing the power of these tools, users can unlock endless possibilities for creating captivating artwork that can greatly enhance a wide range of projects.
+A command-line tool for image processing, generating pixel art, adding logos to images, and much more. These command-line tool are readily available for a multitude of image processing tasks, such as manipulating images, generating mesmerizing pixel art, seamlessly integrating logos into visuals, and accomplishing a diverse array of other creative endeavors. By harnessing the power of these tools, users can unlock endless possibilities for creating captivating artwork that can greatly enhance a wide range of projects.
 
 ## Package Installation
 
@@ -41,6 +31,7 @@ Below are the available commands that have been marked as completed, along with 
 - [x] `mdsanima number` rename to seq numbers
 - [x] `mdsanima logo` append a logo
 - [x] `mdsanima watermark` append a watermark
+- [ ] `mdsanima ico` convert to ico
 - [x] `mdsanima jpg` convert to jpg
 - [x] `mdsanima png` convert to png
 - [x] `mdsanima webp` convert to webp
@@ -63,25 +54,26 @@ Here are some helpful instructions in the development process of this Python pac
 
 ### Python Setup
 
-This package is built using specific tools and will be published on PyPI using Twine. Instructions on how to activate the **virtual environment** for this project and how to configure and build the package. We will use specific package versions and **Python 3.11** for now.
+This package is built using specific tools and will be published on PyPI using Twine. Instructions on how to activate the **virtual environment** for this project and how to configure and build the package. We will use specific package versions and the latest **Python 3.12** environment.
 
 #### Virtual Environment
 
 Make sure you have `virtualenv` installed on your system. If not, enter this command:
 
 ```shell
-python3.11 -m pip install virtualenv
+sudo apt update && sudo apt install virtualenv
+python3 -m pip install --upgrade virtualenv
 ```
 
 Creating and activating the development environment, and then installing the necessary packages, enter the following commands in the terminal:
 
 ```shell
-virtualenv --setuptools=68.2.2 --wheel=0.41.2 --pip=23.2.1 --python=python3.11 .venv
+virtualenv --pip=23.3.1 --python=python3.12 .venv
 source .venv/bin/activate
 pip install -r requirements.txt -r requirements-dev.txt
 ```
 
-All dependencies for this project are specified in the `requirements.*` files and in the project's TOML configuration.
+All dependencies for this project are specified in the `requirements*` files and in the project's TOML configuration.
 
 You can install these dependencies using the `pip install .` command, which will build our package and install the basic dependencies along with the new version of our package. To install dev dependencies, you can use the `pip install ".[dev]"` command instead of specifying a `-r` flag and file as mentioned earlier.
 
@@ -104,7 +96,7 @@ After building, the package will be placed in a folder named `dist`, and the fil
 After building the package, you can install it by entering the following command in the terminal:
 
 ```shell
-pip install --force-reinstall dist/mdsanima_cli-0.2.0-py3-none-any.whl
+pip install --force-reinstall dist/mdsanima_cli-0.3.0-py3-none-any.whl
 ```
 
 The `--force-reinstall` flag is necessary when installing the package because if you have a previous version installed, the installation will fail. Please note that the above command may change depending on the version you are currently building.
@@ -125,6 +117,21 @@ python3 src/mdsanima_cli/commands/pixelart.py
 
 After running the above command, you will test only the selected module.
 
+#### Test with pytest
+
+Run pytest:
+
+```shell
+pytest tests
+```
+
+Run coverage:
+
+```shell
+coverage run --branch -m pytest tests
+coverage xml
+```
+
 #### Extracts Version
 
 The _setuptools-scm_ tool allows you to extract the **Python** package version from _git_ instead of declaring it as a version argument.
@@ -143,14 +150,14 @@ Below is the instruction on how to create a release version of our Python packag
 
 Here are the steps to create a release version:
 
-1. Add new code to the package
-2. Test new functionality
-3. Commit the changes
-4. Bump the package version
-5. Generate the CHANGELOG.md file
-6. Commit the release
-7. Add and push the new tag
-8. Build and Update on PyPI
+- Add new code to the package
+- Test new functionality
+- Commit the changes
+- Bump the package version
+- Generate the CHANGELOG.md file
+- Commit the release
+- Add and push the new tag
+- Build and Update on PyPI
 
 This is done manually for now, but we plan to set up a _GitHub Action_ workflow for testing and automatic release version creation in the future.
 
@@ -174,7 +181,7 @@ Bump the package version in the [package.json](package.json) file and generate t
 
 ```shell
 npm run release
-git commit -am "chore(release): v0.2.0"
+git commit -am "chore(release): v0.3.0"
 ```
 
 The version above is the result of the `standard-version` command, and this is just an example version. The version must always be changed when a new release is made.
@@ -182,7 +189,7 @@ The version above is the result of the `standard-version` command, and this is j
 The next step is to create a tag and push the changes to the remote repository with the tag. The command should look like this:
 
 ```shell
-git tag v0.2.0
+git tag v0.3.0
 git push && git push origin --tag
 ```
 
@@ -206,9 +213,56 @@ twine upload dist/*
 
 Remember, only the package owner can perform this operation and must have the secrets configured in the `.pypirc` file in the system.
 
+#### Commit Lint
+
+Here is the help regarding `commitlint`, a tool for checking if commits meet specific requirements.
+
+To perform a local check, you should install the required packages and then run `npx commitlint` in your terminal:
+
+```shell
+npm install --save-dev @commitlint/{cli,config-conventional}
+npx commitlint --from HEAD~1 --to HEAD --verbose --config .commitlintrc
+```
+
+This will validate the last commit and return an error if it's invalid or success if it's valid.
+
+Here is an example of possible values for the rules:
+
+- `lower-case` - **default**
+- `upper-case` - **UPPERCASE**
+- `camel-case` - **camelCase**
+- `kebab-case` - **kebab-case**
+- `pascal-case` - **PascalCase**
+- `sentence-case` - **Sentence case**
+- `snake-case` - **snake_case**
+- `start-case` - **Start Case**
+
+Check the [reference rules](https://commitlint.js.org/#/reference-rules) documentation for more info.
+
+#### Label Config
+
+In the `./.github/labels.yaml` file, you'll find the configuration for labels in this repository. If you want to change an old name, you need to use `aliases: [ ... ]` and provide a list of old names inside square brackets.
+
+To automatically synchronize the labels, you should add the `sync-labels.yaml` workflow to GitHub Actions. Take a look at the example of how they did it in [Sentry](https://github.com/getsentry/sentry/blob/master/.github/workflows/sync-labels.yml), but remember that you need to modify the code to fit this repository.
+
+Here is a command that you can execute in the terminal to manually synchronize. You will need a GitHub access token for this. You can use the `--dry-run` flag to test, and then run the command without this flag to synchronize the labels:
+
+```shell
+npm install -g github-label-sync
+github-label-sync --access-token xxxxxx --labels ./.github/labels.yaml --dry-run mdsanima-lab/mdsanima-cli
+```
+
+Here is the [documentation](https://github.com/Financial-Times/github-label-sync) if you want to check the details.
+
 ## License
 
 Package [mdsanima-cli][link-pypi-project] developed by [Marcin Różewski][link-mdsanima-github-account] is released under the terms of [Apache-2.0][link-github-repo-license] license.
+
+[![GitHub Followers MDSANIMA](https://img.shields.io/github/followers/mdsanima?style=social)][link-mdsanima-github-account]
+[![X Follow MDSANIMA](https://img.shields.io/twitter/follow/mdsanima?style=social)][link-mdsanima-x-account]
+[![Reddit Subreddit Subscribers MDSANIMA](https://img.shields.io/reddit/subreddit-subscribers/mdsanima?style=social)][link-mdsanima-reddit-account]
+[![YouTube Subscribers MDSANIMA](https://img.shields.io/youtube/channel/subscribers/UCB5na2BRwrnwx00LCspbG5Q?style=social)][link-mdsanima-youtube-account]
+[![Discord Channel Chat MDSANIMA](https://img.shields.io/discord/621477380359454742?style=social&logo=discord)][link-mdsanima-discord-account]
 
 [link-github-repo-license]: https://github.com/mdsanima-lab/mdsanima-cli/blob/main/LICENSE
 [link-github-repo-stars]: https://github.com/mdsanima-lab/mdsanima-cli/stargazers
@@ -221,4 +275,3 @@ Package [mdsanima-cli][link-pypi-project] developed by [Marcin Różewski][link-
 [link-mdsanima-reddit-account]: https://reddit.com/r/mdsanima
 [link-mdsanima-youtube-account]: https://youtube.com/mdsanima?sub_confirmation=1
 [link-mdsanima-discord-account]: https://discord.gg/c3m7pTF
-[link-mdsanima-twitch-account]: https://twitch.tv/mdsanima
