@@ -70,10 +70,10 @@ Creating and activating the development environment, and then installing the nec
 ```shell
 virtualenv --pip=23.3.1 --python=python3.12 .venv
 source .venv/bin/activate
-pip install -r requirements.txt -r requirements-dev.txt
+pip install ".[dev]"
 ```
 
-All dependencies for this project are specified in the `requirements*` files and in the project's TOML configuration.
+All dependencies for this project are specified in the project's TOML configuration.
 
 You can install these dependencies using the `pip install .` command, which will build our package and install the basic dependencies along with the new version of our package. To install dev dependencies, you can use the `pip install ".[dev]"` command instead of specifying a `-r` flag and file as mentioned earlier.
 
@@ -81,7 +81,7 @@ After following the above instructions, we can start writing the program. You ca
 
 #### Build Package
 
-Building our **Python** package is done using the `build` module, which was previously installed as a requirement in the `requirements-dev.txt` file when activating the development environment.
+Building our **Python** package is done using the `build` module, which was previously installed as a requirement when activating the development environment.
 
 To build the package, enter the following command in the terminal:
 

@@ -9,9 +9,9 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "mdsanima_cli"
+name = "mdsanima-cli"
 dynamic = ["version"]
-description = "Command-line tools for image processing, generating pixel art, adding logos to images, and much more."
+description = "A command-line tool for image processing, generating pixel art, adding logos to images, and much more."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -44,7 +44,7 @@ keywords = [
     "zsh",
 ]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
     "Environment :: Console",
     "Environment :: Plugins",
     "Intended Audience :: Developers",
@@ -64,6 +64,7 @@ classifiers = [
     "Operating System :: Unix",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Desktop Environment",
     "Topic :: Documentation :: Sphinx",
     "Topic :: Education :: Testing",
@@ -96,19 +97,25 @@ dev = [
     "black==23.10.1",
     "build==1.0.3",
     "flake8==6.1.0",
+    "ipython==8.16.1",
     "isort==5.12.0",
     "pylint==3.0.2",
+    "pytest-cov==4.1.0",
+    "pytest==7.4.2",
     "setuptools-scm==8.0.4",
+    "setuptools==68.2.2",
     "twine==4.0.2",
     "virtualenv==20.24.6",
+    "wheel==0.41.2",
 ]
 
 
 [project.urls]
-homepage = "https://github.com/mdsanima-lab/mdsanima-cli"
-documentation = "https://github.com/mdsanima-lab/mdsanima-cli#readme"
-repository = "https://github.com/mdsanima-lab/mdsanima-cli.git"
-changelog = "https://github.com/mdsanima-lab/mdsanima-cli/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/mdsanima-lab/mdsanima-cli"
+Documentation = "https://github.com/mdsanima-lab/mdsanima-cli#readme"
+Repository = "https://github.com/mdsanima-lab/mdsanima-cli.git"
+Changelog = "https://github.com/mdsanima-lab/mdsanima-cli/blob/main/CHANGELOG.md"
+Tracker = "https://github.com/mdsanima-lab/mdsanima-cli/issues"
 
 
 [project.scripts]
@@ -122,6 +129,7 @@ line-length = 120
 
 [tool.isort]
 profile = "black"
+# known_first_party = ["mdsanima_cli", "tests"]
 src_paths = ["src", "tests"]
 force_single_line = true
 lines_before_imports = 2
