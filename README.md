@@ -112,7 +112,7 @@ python -m mdsanima_cli.commands.pixelart
 You can also run and test before building and installing the package, type in the terminal:
 
 ```shell
-python3 src/mdsanima_cli/commands/pixelart.py
+python3 mdsanima_cli/commands/pixelart.py
 ```
 
 After running the above command, you will test only the selected module.
