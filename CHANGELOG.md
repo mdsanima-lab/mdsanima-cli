@@ -6,7 +6,7 @@ Documentation for the [mdsanima-cli](https://pypi.org/project/mdsanima-cli) pack
 
 <!-- markdownlint-disable -->
 
-## [v0.3.0](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.2.1...v0.3.0) _2023-10-09_
+## [v0.3.0](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.2.1...v0.3.0) (_2023-10-09_)
 
 ### 💥 BREAKING CHANGES
 
@@ -22,7 +22,7 @@ Documentation for the [mdsanima-cli](https://pypi.org/project/mdsanima-cli) pack
 - creating release info ([dd8fd09](https://github.com/mdsanima-lab/mdsanima-cli/commit/dd8fd09cd120f0cf28eddb4c9205c37e3ab75a7d))
 
 
-## [v0.2.1](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.2.0...v0.2.1) _2023-05-10_
+## [v0.2.1](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.2.0...v0.2.1) (_2023-05-10_)
 
 ### 🐱‍👤 Features
 
@@ -34,7 +34,7 @@ Documentation for the [mdsanima-cli](https://pypi.org/project/mdsanima-cli) pack
 - **gifmaker:** generate 512px gif closes [#42](https://github.com/mdsanima-lab/mdsanima-cli/issues/42) ([dddca30](https://github.com/mdsanima-lab/mdsanima-cli/commit/dddca3008d8f43df1339a3d6f604d4730825e559))
 
 
-## [v0.2.0](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.3...v0.2.0) _2023-05-02_
+## [v0.2.0](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.3...v0.2.0) (_2023-05-02_)
 
 ### 💥 BREAKING CHANGES
 
@@ -90,7 +90,7 @@ Documentation for the [mdsanima-cli](https://pypi.org/project/mdsanima-cli) pack
 - new commands ideas and fixing some documentation string ([8731ba6](https://github.com/mdsanima-lab/mdsanima-cli/commit/8731ba6a29bec11c0189a606a50fa3398fc7fef6))
 
 
-## [v0.1.3](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.2...v0.1.3) _2023-02-14_
+## [v0.1.3](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.2...v0.1.3) (_2023-02-14_)
 
 ### 🐱‍👤 Features
 
@@ -109,7 +109,7 @@ Documentation for the [mdsanima-cli](https://pypi.org/project/mdsanima-cli) pack
 - info for updating to latest version ([3188ed5](https://github.com/mdsanima-lab/mdsanima-cli/commit/3188ed599592af16143a31f4c0d3f7f51778b866))
 
 
-## [v0.1.2](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.1...v0.1.2) _2023-02-13_
+## [v0.1.2](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.1...v0.1.2) (_2023-02-13_)
 
 ### 🐱‍👤 Features
 
@@ -126,7 +126,7 @@ Documentation for the [mdsanima-cli](https://pypi.org/project/mdsanima-cli) pack
 - first cli command `mdsanima pixelart` documentation info ([09bfd68](https://github.com/mdsanima-lab/mdsanima-cli/commit/09bfd683e259cf7eaa3b97f5c93eb209bd23f46e))
 
 
-## [v0.1.1](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.0...v0.1.1) _2023-02-12_
+## [v0.1.1](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.0...v0.1.1) (_2023-02-12_)
 
 ### 🐱‍👤 Features
 
@@ -144,7 +144,7 @@ Documentation for the [mdsanima-cli](https://pypi.org/project/mdsanima-cli) pack
 - commands idea and info before build ([54273aa](https://github.com/mdsanima-lab/mdsanima-cli/commit/54273aac2f67dba808f76d1b3a283bb3dc05bb64))
 
 
-## [v0.1.0](https://github.com/mdsanima-lab/mdsanima-cli/releases/tag/v0.1.0) _2023-02-07_
+## [v0.1.0](https://github.com/mdsanima-lab/mdsanima-cli/releases/tag/v0.1.0) (_2023-02-07_)
 
 ### 🐱‍👤 Features
 
