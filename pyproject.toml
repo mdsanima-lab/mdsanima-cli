@@ -129,8 +129,7 @@ line-length = 120
 
 [tool.isort]
 profile = "black"
-# known_first_party = ["mdsanima_cli", "tests"]
-src_paths = ["src", "tests"]
+known_first_party = ["mdsanima_cli"]
 force_single_line = true
 lines_before_imports = 2
 lines_after_imports = 2
@@ -138,9 +137,9 @@ treat_all_comments_as_code = true
 extend_skip = [".md", ".json"]
 
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools.package-dir]
+mdsanima_cli = "mdsanima_cli"
 
 
 [tool.setuptools_scm]
-write_to = "src/mdsanima_cli/_version.py"
+write_to = "mdsanima_cli/_version.py"
