@@ -1,63 +1,48 @@
-# CHANGELOG
+# Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-Please check [standard-version](https://github.com/conventional-changelog/standard-version) and documentation for commit guidelines. Also you should check [conventional-changelog](https://github.com/mdsanima/conventional-changelog) for more detail.
+Documentation for the [mdsanima-cli](https://pypi.org/project/mdsanima-cli) package is available in this repository in the [README.md](README.md) file. Be sure to check it.
 
-Docomentation for _MDSANIMA-CLI_ is available at this repository on [README.md](README.md) file be sure to check it.
+<!-- markdownlint-disable -->
 
-## 0.3.0 (2023-10-09)
+## [v0.3.0](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.2.1...v0.3.0) _2023-10-09_
 
-### ⚠ BREAKING CHANGES
+### 💥 BREAKING CHANGES
 
 - renamed module from `command` to `commands`
 
-### BUG FIXES
+### 🐛 Bug Fixes
 
 - update the name ([461862f](https://github.com/mdsanima-lab/mdsanima-cli/commit/461862fef228f608952056f668bcfd16afded099))
 - renamed module from `command` to `commands` ([705cb5b](https://github.com/mdsanima-lab/mdsanima-cli/commit/705cb5b3a8c7ed809b7e45006751387b8670044a))
 
-### DOCUMENTATION
+### 📚 Documentation
 
 - creating release info ([dd8fd09](https://github.com/mdsanima-lab/mdsanima-cli/commit/dd8fd09cd120f0cf28eddb4c9205c37e3ab75a7d))
 
-### 0.2.1 (2023-05-10)
 
-### FEATURES
+## [v0.2.1](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.2.0...v0.2.1) _2023-05-10_
+
+### 🐱‍👤 Features
 
 - generate gif animation pixel art closes [#18](https://github.com/mdsanima-lab/mdsanima-cli/issues/18) ([a502a2e](https://github.com/mdsanima-lab/mdsanima-cli/commit/a502a2e6162b032513398473aad299e5d564b566))
 - resizing to 512px width closes [#14](https://github.com/mdsanima-lab/mdsanima-cli/issues/14) ([c016b43](https://github.com/mdsanima-lab/mdsanima-cli/commit/c016b43e239a5226a04f4fe377176719fea3385f))
 
-### BUG FIXES
+### 🐛 Bug Fixes
 
 - **gifmaker:** generate 512px gif closes [#42](https://github.com/mdsanima-lab/mdsanima-cli/issues/42) ([dddca30](https://github.com/mdsanima-lab/mdsanima-cli/commit/dddca3008d8f43df1339a3d6f604d4730825e559))
 
-## 0.2.0 (2023-05-02)
 
-### ⚠ BREAKING CHANGES
+## [v0.2.0](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.3...v0.2.0) _2023-05-02_
+
+### 💥 BREAKING CHANGES
 
 - **dev:** helper function for print done message in color
 - module prefix `cli` rename file
 - more stats info for `get_directory_info` function
 
-- module prefix `cli` rename file ([bd745a4](https://github.com/mdsanima-lab/mdsanima-cli/commit/bd745a444d2b481712840951c0ea93133e4555e8))
-
-### BUG FIXES
-
-- calculating align spaces for nice printing ([760a99d](https://github.com/mdsanima-lab/mdsanima-cli/commit/760a99dfa6344260afe71ca2c1d9c4bd66e6aac1))
-- generate pixel art only once closes [#23](https://github.com/mdsanima-lab/mdsanima-cli/issues/23) ([6ef48ec](https://github.com/mdsanima-lab/mdsanima-cli/commit/6ef48ec08424464c91252b4ae0c76d62ff40d7d1))
-
-### DOCUMENTATION
-
-- add documentation for `number` command ([a1f4415](https://github.com/mdsanima-lab/mdsanima-cli/commit/a1f4415e305d175fc3696c2834b6415210d605e9))
-- add documentation for `uuid` command ([81fbc91](https://github.com/mdsanima-lab/mdsanima-cli/commit/81fbc91dfac9c533b413829e6634981bde60a229))
-- adding command ideas and fixing some typos ([28f91ff](https://github.com/mdsanima-lab/mdsanima-cli/commit/28f91ffbcdc0c7c43f6582c7dee2c8674c10501e))
-- fixing typo ([a0416b3](https://github.com/mdsanima-lab/mdsanima-cli/commit/a0416b3a7893421e277c56d16d9e740aeca3cf01))
-- info about always printed in upper caase ([cd0a9e9](https://github.com/mdsanima-lab/mdsanima-cli/commit/cd0a9e9556906237f4c9b27726f2d46be4e2b3f4))
-- more command ideas ([fe56c2b](https://github.com/mdsanima-lab/mdsanima-cli/commit/fe56c2b52dd56939548ca11fca218903e2335545))
-- new commands ideas and fixing some documentation string ([8731ba6](https://github.com/mdsanima-lab/mdsanima-cli/commit/8731ba6a29bec11c0189a606a50fa3398fc7fef6))
-
-### FEATURES
+### 🐱‍👤 Features
 
 - add parser for check command ([b589d7a](https://github.com/mdsanima-lab/mdsanima-cli/commit/b589d7a8c55c85bd7f6299726ca87445139b7c80))
 - add watermark command closes [#37](https://github.com/mdsanima-lab/mdsanima-cli/issues/37) ([ef714a6](https://github.com/mdsanima-lab/mdsanima-cli/commit/ef714a61174b1d0a61d55387152d623af6d3bb75))
@@ -88,60 +73,85 @@ Docomentation for _MDSANIMA-CLI_ is available at this repository on [README.md](
 - rename all images to `uuid` in current directory closes [#11](https://github.com/mdsanima-lab/mdsanima-cli/issues/11) ([81be311](https://github.com/mdsanima-lab/mdsanima-cli/commit/81be31170e6b211bd88da287440ae2872a437b40))
 - rename file name to seq number closes [#36](https://github.com/mdsanima-lab/mdsanima-cli/issues/36) ([ab90088](https://github.com/mdsanima-lab/mdsanima-cli/commit/ab90088cc84b56bec932abd1923c57f00d81eef5))
 
-### 0.1.3 (2023-02-14)
+### 🐛 Bug Fixes
 
-### FEATURES
+- module prefix `cli` rename file ([bd745a4](https://github.com/mdsanima-lab/mdsanima-cli/commit/bd745a444d2b481712840951c0ea93133e4555e8))
+- calculating align spaces for nice printing ([760a99d](https://github.com/mdsanima-lab/mdsanima-cli/commit/760a99dfa6344260afe71ca2c1d9c4bd66e6aac1))
+- generate pixel art only once closes [#23](https://github.com/mdsanima-lab/mdsanima-cli/issues/23) ([6ef48ec](https://github.com/mdsanima-lab/mdsanima-cli/commit/6ef48ec08424464c91252b4ae0c76d62ff40d7d1))
+
+### 📚 Documentation
+
+- add documentation for `number` command ([a1f4415](https://github.com/mdsanima-lab/mdsanima-cli/commit/a1f4415e305d175fc3696c2834b6415210d605e9))
+- add documentation for `uuid` command ([81fbc91](https://github.com/mdsanima-lab/mdsanima-cli/commit/81fbc91dfac9c533b413829e6634981bde60a229))
+- adding command ideas and fixing some typos ([28f91ff](https://github.com/mdsanima-lab/mdsanima-cli/commit/28f91ffbcdc0c7c43f6582c7dee2c8674c10501e))
+- fixing typo ([a0416b3](https://github.com/mdsanima-lab/mdsanima-cli/commit/a0416b3a7893421e277c56d16d9e740aeca3cf01))
+- info about always printed in upper caase ([cd0a9e9](https://github.com/mdsanima-lab/mdsanima-cli/commit/cd0a9e9556906237f4c9b27726f2d46be4e2b3f4))
+- more command ideas ([fe56c2b](https://github.com/mdsanima-lab/mdsanima-cli/commit/fe56c2b52dd56939548ca11fca218903e2335545))
+- new commands ideas and fixing some documentation string ([8731ba6](https://github.com/mdsanima-lab/mdsanima-cli/commit/8731ba6a29bec11c0189a606a50fa3398fc7fef6))
+
+
+## [v0.1.3](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.2...v0.1.3) _2023-02-14_
+
+### 🐱‍👤 Features
 
 - checking directory and get information closes [#8](https://github.com/mdsanima-lab/mdsanima-cli/issues/8) ([3c098f3](https://github.com/mdsanima-lab/mdsanima-cli/commit/3c098f3f2c6447c286842c30c0127010c1b86189))
 - detecting only `.jpg` and `.png` files closes [#7](https://github.com/mdsanima-lab/mdsanima-cli/issues/7) ([7018793](https://github.com/mdsanima-lab/mdsanima-cli/commit/7018793b3c2eecff09eafe49293dab5af2a05e83))
 - print color info for `compute_pixelart` function closes [#6](https://github.com/mdsanima-lab/mdsanima-cli/issues/6) ([91e1789](https://github.com/mdsanima-lab/mdsanima-cli/commit/91e1789a65c67a401b014531fee16292ffeab624))
 
-### BUG FIXES
+### 🐛 Bug Fixes
 
 - directory info counting files closes [#9](https://github.com/mdsanima-lab/mdsanima-cli/issues/9) ([577f8c5](https://github.com/mdsanima-lab/mdsanima-cli/commit/577f8c56512f38230b84deb2078c316f7a870a1a))
 
-### DOCUMENTATION
+### 📚 Documentation
 
 - fixing command for pushing tag to origin ([91b78a3](https://github.com/mdsanima-lab/mdsanima-cli/commit/91b78a3cd705820b6913321e1351b6ce47d82455))
 - fixing information for updating to pypi ([68d1912](https://github.com/mdsanima-lab/mdsanima-cli/commit/68d1912a26cc93d22cd0804bcdd80f70d9d86d16))
 - info for updating to latest version ([3188ed5](https://github.com/mdsanima-lab/mdsanima-cli/commit/3188ed599592af16143a31f4c0d3f7f51778b866))
 
-### 0.1.2 (2023-02-13)
 
-### FEATURES
+## [v0.1.2](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.1...v0.1.2) _2023-02-13_
+
+### 🐱‍👤 Features
 
 - first stage of generate pixelart from images closes [#5](https://github.com/mdsanima-lab/mdsanima-cli/issues/5) ([cffb8db](https://github.com/mdsanima-lab/mdsanima-cli/commit/cffb8db05771742e301963d1578ef332a66f0c11))
 
-### BUG FIXES
+### 🐛 Bug Fixes
 
 - add specific version and keywords typo ([3264da9](https://github.com/mdsanima-lab/mdsanima-cli/commit/3264da983027df9b1c568130d0def5b309113a52))
 - adding dev python requirements ([53f9c76](https://github.com/mdsanima-lab/mdsanima-cli/commit/53f9c7636e703157e08250c3fb280f88243ce94f))
 
-### DOCUMENTATION
+### 📚 Documentation
 
 - add documentation for creating release version and deploying ([32814c3](https://github.com/mdsanima-lab/mdsanima-cli/commit/32814c3cd477643a1f9f60eac561ca0f70ad5ff1))
 - first cli command `mdsanima pixelart` documentation info ([09bfd68](https://github.com/mdsanima-lab/mdsanima-cli/commit/09bfd683e259cf7eaa3b97f5c93eb209bd23f46e))
 
-### 0.1.1 (2023-02-12)
 
-### DOCUMENTATION
+## [v0.1.1](https://github.com/mdsanima-lab/mdsanima-cli/compare/v0.1.0...v0.1.1) _2023-02-12_
 
-- commands idea and info before build ([54273aa](https://github.com/mdsanima-lab/mdsanima-cli/commit/54273aac2f67dba808f76d1b3a283bb3dc05bb64))
-
-### FEATURES
+### 🐱‍👤 Features
 
 - add help for commands closes [#3](https://github.com/mdsanima-lab/mdsanima-cli/issues/3) ([48f3a5b](https://github.com/mdsanima-lab/mdsanima-cli/commit/48f3a5beff1a785e5690b07a01ede87c8dd479af))
 - initial parser for pixelart and gifmaker command closes [#1](https://github.com/mdsanima-lab/mdsanima-cli/issues/1) ([fe93d2d](https://github.com/mdsanima-lab/mdsanima-cli/commit/fe93d2d0b926517cd37821f87a189372e3a834d7))
 
-### BUG FIXES
+### 🐛 Bug Fixes
 
 - color print closes [#2](https://github.com/mdsanima-lab/mdsanima-cli/issues/2) ([4751202](https://github.com/mdsanima-lab/mdsanima-cli/commit/47512022c47756d026c58d11c4847b9e1d51a9d1))
 - crlf to lf ([b00e68a](https://github.com/mdsanima-lab/mdsanima-cli/commit/b00e68a1552e947196171ab2e0ad1838727b9134))
 - main cli entry point ([d126691](https://github.com/mdsanima-lab/mdsanima-cli/commit/d1266918e5ccb3afe7ce83a35339feca6a722bf5))
 
-## 0.1.0 (2023-02-07)
+### 📚 Documentation
 
-### BUG FIXES
+- commands idea and info before build ([54273aa](https://github.com/mdsanima-lab/mdsanima-cli/commit/54273aac2f67dba808f76d1b3a283bb3dc05bb64))
+
+
+## [v0.1.0](https://github.com/mdsanima-lab/mdsanima-cli/releases/tag/v0.1.0) _2023-02-07_
+
+### 🐱‍👤 Features
+
+- add codeowners file ([f0976fd](https://github.com/mdsanima-lab/mdsanima-cli/commit/f0976fd8bdbd9e5efb1d0c97a7619f822c6fb062))
+- first `mdsanima` test terminal command ([7b986c3](https://github.com/mdsanima-lab/mdsanima-cli/commit/7b986c3d438e2f2732668926fb46fe6fd98c003f))
+
+### 🐛 Bug Fixes
 
 - add build setup python toml and requirements ([7c29973](https://github.com/mdsanima-lab/mdsanima-cli/commit/7c299738195db54de58016dd3d87b94a16ee901e))
 - add year and name ([c5ea0ff](https://github.com/mdsanima-lab/mdsanima-cli/commit/c5ea0ff02f6fea87be7d943df2bad071f3ad4ef7))
@@ -149,14 +159,9 @@ Docomentation for _MDSANIMA-CLI_ is available at this repository on [README.md](
 - ignore `_version.py` file for setuptools_scm ([6105ba8](https://github.com/mdsanima-lab/mdsanima-cli/commit/6105ba88dfd2e83994705ccc9a93d70753671762))
 - setup toml and init file ([7066cd3](https://github.com/mdsanima-lab/mdsanima-cli/commit/7066cd397d9719fa9ef86a772803319cbcfbddf8))
 
-### DOCUMENTATION
+### 📚 Documentation
 
 - build install and testing package info for development ([a12f572](https://github.com/mdsanima-lab/mdsanima-cli/commit/a12f57281f98ff16768e0c62d7bafca57b1e49c6))
 - development setup info ([5c23718](https://github.com/mdsanima-lab/mdsanima-cli/commit/5c2371801c5b571c4f85bcd2dbaa9e72402b3f8a))
 - extracts version package from git ([1cb83ee](https://github.com/mdsanima-lab/mdsanima-cli/commit/1cb83ee1626d99f6b07935b84adbccbe9463ff12))
 - installation info for first test command ([0a33a76](https://github.com/mdsanima-lab/mdsanima-cli/commit/0a33a76ad6fdbc1ad990b982359435f7cbfce266))
-
-### FEATURES
-
-- add codeowners file ([f0976fd](https://github.com/mdsanima-lab/mdsanima-cli/commit/f0976fd8bdbd9e5efb1d0c97a7619f822c6fb062))
-- first `mdsanima` test terminal command ([7b986c3](https://github.com/mdsanima-lab/mdsanima-cli/commit/7b986c3d438e2f2732668926fb46fe6fd98c003f))
