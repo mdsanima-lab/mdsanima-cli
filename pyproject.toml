@@ -119,8 +119,8 @@ Tracker = "https://github.com/mdsanima-lab/mdsanima-cli/issues"
 
 
 [project.scripts]
-mdsanima = "mdsanima_cli:main_cli"
-mds = "mdsanima_cli:main_cli"
+mdsanima = "mdsanima_cli:cli"
+mds = "mdsanima_cli:cli"
 
 
 [tool.black]

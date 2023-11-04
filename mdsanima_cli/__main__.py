@@ -5,8 +5,8 @@
 
 from __future__ import annotations
 
-from mdsanima_cli import main_cli
+from mdsanima_cli import cli
 
 
 if __name__ == "__main__":
-    raise SystemExit(main_cli())
+    raise SystemExit(cli())
