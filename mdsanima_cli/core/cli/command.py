@@ -21,21 +21,24 @@ class _SubCommandAction(Enum):
     def add_parser(self, subparsers):
         """Create and add a subparser for the command."""
         _desc = self.value.description
-        return subparsers.add_parser(name=self.value.cli, help=self.value.help, description=_desc, add_help=False)
+        return subparsers.add_parser(name=self.value.cmd, help=self.value.help, description=_desc, add_help=False)
 
     @property
-    def show_cli(self) -> str:
-        """Returning the string value of the `CLI` subcommand name as a property."""
-        return self.value.cli
+    def show(self) -> str:
+        """Returning the string value of the `cmd` subcommand name as a property."""
+        return self.value.cmd
 
 
 @dataclass
 class SubCommandDataMixin:
-    """Mixin for subcommand data types used in subparsers, displayed in command-line help."""
+    """Mixin for subcommand data types used in subparsers, displayed in the command-line interface help."""
 
-    cli: str
+    cmd: str
+    """The name of the `CLI` command used for dataset processing."""
     help: str
+    """The short help text about the `CLI` command that is displayed in the command-line interface help."""
     description: str
+    """The long help description text that provides detailed information about the `CLI` command."""
 
 
 class Command(SubCommandDataMixin, _SubCommandAction, AutoNameLower):

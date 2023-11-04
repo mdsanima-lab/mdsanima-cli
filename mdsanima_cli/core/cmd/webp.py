@@ -1,9 +1,6 @@
 # Copyright (c) 2023 MDSANIMA
 
-
-"""Converting images to WebP format from all images in the curreny directory. It operates within a specified folder and
-can process all images at once.
-"""
+"""Convert image to WebP format. It operates within a specified folder and can process all images at once."""
 
 
 from __future__ import annotations
@@ -12,14 +9,13 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.commands.check import directory_statistic
-from mdsanima_cli.parser import WEBP_COMD
-from mdsanima_cli.parser import WEBP_HELP
-from mdsanima_cli.utils.ascii import ascii_title
-from mdsanima_cli.utils.exif import get_exif_bytes
-from mdsanima_cli.utils.print import print_cli_done
-from mdsanima_cli.utils.print import print_cli_proc
-from mdsanima_cli.utils.timer import timer
+from mdsanima_cli.core.cli import Command
+from mdsanima_cli.core.cmd.check import directory_statistic
+from mdsanima_cli.core.utils.ascii import ascii_title
+from mdsanima_cli.core.utils.exif import get_exif_bytes
+from mdsanima_cli.core.utils.print import print_cli_done
+from mdsanima_cli.core.utils.print import print_cli_proc
+from mdsanima_cli.core.utils.timer import timer
 
 
 @timer
@@ -30,7 +26,7 @@ def convert_to_webp(image_path: str, new_name: str) -> None:
     image = Image.open(image_path)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(WEBP_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.WEBP.help}")
 
     # Save the result.
     image.save(new_name, exif=exif_bytes)
@@ -69,9 +65,9 @@ def compute_webp() -> None:
             count += 1
 
 
-def cli_webp() -> None:
-    """Main function for `webp` command."""
-    directory_statistic(WEBP_COMD, WEBP_HELP)
+def webp() -> None:
+    """The main functionality for the `webp` command."""
+    directory_statistic(f"{Command.WEBP.cmd}", f"{Command.WEBP.help}")
     ascii_title("processing")
     time_taken = compute_webp()
     ascii_title("completed")

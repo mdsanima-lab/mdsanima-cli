@@ -1,9 +1,6 @@
 # Copyright (c) 2023 MDSANIMA
 
-
-"""Appendign a logo to all images in the current directory. It operates within a specified folder and can process all
-images at once.
-"""
+"""Append a logo to image. It operates within a specified folder and can process all images at once."""
 
 
 from __future__ import annotations
@@ -12,15 +9,14 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.commands.check import directory_statistic
-from mdsanima_cli.parser import LOGO_COMD
-from mdsanima_cli.parser import LOGO_HELP
-from mdsanima_cli.utils.ascii import ascii_title
-from mdsanima_cli.utils.exif import get_exif_bytes
-from mdsanima_cli.utils.print import print_cli_data
-from mdsanima_cli.utils.print import print_cli_done
-from mdsanima_cli.utils.print import print_cli_proc
-from mdsanima_cli.utils.timer import timer
+from mdsanima_cli.core.cli import Command
+from mdsanima_cli.core.cmd.check import directory_statistic
+from mdsanima_cli.core.utils.ascii import ascii_title
+from mdsanima_cli.core.utils.exif import get_exif_bytes
+from mdsanima_cli.core.utils.print import print_cli_data
+from mdsanima_cli.core.utils.print import print_cli_done
+from mdsanima_cli.core.utils.print import print_cli_proc
+from mdsanima_cli.core.utils.timer import timer
 
 
 LOGO_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/logo.png")
@@ -49,7 +45,7 @@ def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
     position_y = image_height - new_logo_height
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(LOGO_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.LOGO.help}")
 
     # Append logo to image and save.
     image.paste(logo, (position_x, position_y), logo)
@@ -89,9 +85,9 @@ def compute_logo() -> None:
             count += 1
 
 
-def cli_logo() -> None:
-    """Main function for `logo` command."""
-    directory_statistic(LOGO_COMD, LOGO_HELP)
+def logo() -> None:
+    """The main functionality for the `logo` command."""
+    directory_statistic(f"{Command.LOGO.cmd}", f"{Command.LOGO.help}")
 
     try:
         ascii_title("processing")

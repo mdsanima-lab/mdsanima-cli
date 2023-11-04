@@ -9,7 +9,7 @@ from enum import Enum
 from enum import unique
 
 from mdsanima_cli._version import __version__
-from mdsanima_cli.core.enums.target import Target
+from mdsanima_cli.core.enums import Target
 
 
 @unique
@@ -29,15 +29,15 @@ class Config(Enum):
     """The description of what the program does."""
 
     CLI_EPILOG = f"Copyright (c) 2023 {Target.MDSANIMA}"
-    """The text at the bottom of CLI program."""
+    """The text at the bottom of `CLI` program."""
 
     CLI_VERSION = f"{CLI_NAME}-cli v{__version__}"
-    """The CLI name and the version of the program."""
+    """The `CLI` name and the version of the program."""
 
-    OPT_INFO_VERSION = "Show version"
+    OPT_INFO = "Show version"
     """The help information thats is show on version action."""
 
-    OPT_INFO_HELP = "Show help"
+    OPT_HELP = "Show help"
     """The help information thats is show on help action."""
 
     TITLE_CMD = "Commands"

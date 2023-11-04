@@ -9,22 +9,16 @@ import argparse
 
 from mdsanima_cli.core.cli import Command
 from mdsanima_cli.core.cli import Config
-from mdsanima_cli.core.cli import PrettyHelpFormatter
+from mdsanima_cli.core.cli import PrettyHelp
 from mdsanima_cli.core.enums import Target
 
 
 def create_parser() -> argparse.ArgumentParser:
     """Create an argument parser for all available commands."""
 
-    # The initial variables.
-    _version = f"{Config.CLI_VERSION}"
-    _info_version = f"{Config.OPT_INFO_VERSION}"
-    _info_help = f"{Config.OPT_INFO_HELP}"
-    _metavar = f"{Config.TITLE_CMD}"
-
     # Create the top-level parser.
-    parser = argparse.ArgumentParser(formatter_class=PrettyHelpFormatter, add_help=False, allow_abbrev=False)
-    subparsers = parser.add_subparsers(dest=f"{Target.COMMAND}", metavar=f"\r{_metavar}:")
+    parser = argparse.ArgumentParser(formatter_class=PrettyHelp, add_help=False, allow_abbrev=False)
+    subparsers = parser.add_subparsers(dest=f"{Target.COMMAND}", metavar=f"\r{Config.TITLE_CMD}:")
 
     # The new titles for the parser.
     parser._subparsers.title = None
@@ -36,15 +30,15 @@ def create_parser() -> argparse.ArgumentParser:
     parser.description = f"{Config.CLI_DESCRIPTION}"
     parser.epilog = f"{Config.CLI_RUN}"
 
-    # Adding the optionals artument with the new config.
-    parser.add_argument("-v", "--version", action="version", help=_info_version, version=_version)
-    parser.add_argument("-h", "--help", action="help", help=_info_help)
-
     # Create the parsers for the commands.
     for cmd in list(Command):
         parser_cmd = cmd.add_parser(subparsers)
-        parser_cmd.formatter_class = PrettyHelpFormatter
-        parser_cmd.set_defaults(command=cmd.show_cli)
+        parser_cmd.formatter_class = PrettyHelp
+        parser_cmd.set_defaults(command=cmd.show)
         parser_cmd.add_argument("--help", action="help", help=argparse.SUPPRESS)
+
+    # Adding the optionals artument with the new config.
+    parser.add_argument("-v", "--version", action="version", help=f"{Config.OPT_INFO}", version=f"{Config.CLI_VERSION}")
+    parser.add_argument("-h", "--help", action="help", help=f"{Config.OPT_HELP}")
 
     return parser

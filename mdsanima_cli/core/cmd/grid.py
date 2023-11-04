@@ -1,9 +1,6 @@
 # Copyright (c) 2023 MDSANIMA
 
-
-"""Generating a grid from all images in the current directory. It operates within a specified folder and can process all
-images at once.
-"""
+"""Generate 2x2 grid from four images. It operates within a specified folder and can process all images at once."""
 
 
 from __future__ import annotations
@@ -12,15 +9,14 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.commands.check import directory_statistic
-from mdsanima_cli.parser import GRID_COMD
-from mdsanima_cli.parser import GRID_HELP
-from mdsanima_cli.utils.ascii import ascii_title
-from mdsanima_cli.utils.exif import get_exif_bytes
-from mdsanima_cli.utils.print import print_cli_comp
-from mdsanima_cli.utils.print import print_cli_done
-from mdsanima_cli.utils.print import print_cli_proc
-from mdsanima_cli.utils.timer import timer
+from mdsanima_cli.core.cli import Command
+from mdsanima_cli.core.cmd.check import directory_statistic
+from mdsanima_cli.core.utils.ascii import ascii_title
+from mdsanima_cli.core.utils.exif import get_exif_bytes
+from mdsanima_cli.core.utils.print import print_cli_comp
+from mdsanima_cli.core.utils.print import print_cli_done
+from mdsanima_cli.core.utils.print import print_cli_proc
+from mdsanima_cli.core.utils.timer import timer
 
 
 @timer
@@ -46,7 +42,7 @@ def generate_grid(image_1_path: str, image_2_path: str, image_3_path: str, image
     grid_image.paste(image_4, (image_1.size[0], image_1.size[1]))
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(GRID_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.GRID.help}")
 
     # Save the result.
     grid_image.save(grid_name, exif=exif_bytes)
@@ -105,9 +101,9 @@ def compute_grid() -> None:
             count += 1
 
 
-def cli_grid() -> None:
-    """Main function for `grid` command."""
-    directory_statistic(GRID_COMD, GRID_HELP)
+def grid() -> None:
+    """The main functionality for the `grid` command."""
+    directory_statistic(f"{Command.GRID.cmd}", f"{Command.GRID.help}")
     ascii_title("processing")
     time_taken = compute_grid()
     ascii_title("completed")

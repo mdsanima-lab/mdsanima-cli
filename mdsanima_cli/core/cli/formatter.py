@@ -8,7 +8,7 @@ from __future__ import annotations
 import argparse
 
 
-class PrettyHelpFormatter(argparse.HelpFormatter):
+class PrettyHelp(argparse.HelpFormatter):
     """Custom help formatter for adjusting help strings that are generated on argparse."""
 
     def _format_usage(self, usage, actions, groups, prefix):

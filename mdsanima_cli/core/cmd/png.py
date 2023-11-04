@@ -1,9 +1,6 @@
 # Copyright (c) 2023 MDSANIMA
 
-
-"""Converting images to PNG format from all images in the curreny directory. It operates within a specified folder and
-can process all images at once.
-"""
+"""Convert image to PNG format. It operates within a specified folder and can process all images at once."""
 
 
 from __future__ import annotations
@@ -12,14 +9,13 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.commands.check import directory_statistic
-from mdsanima_cli.parser import PNG_COMD
-from mdsanima_cli.parser import PNG_HELP
-from mdsanima_cli.utils.ascii import ascii_title
-from mdsanima_cli.utils.exif import get_exif_bytes
-from mdsanima_cli.utils.print import print_cli_done
-from mdsanima_cli.utils.print import print_cli_proc
-from mdsanima_cli.utils.timer import timer
+from mdsanima_cli.core.cli import Command
+from mdsanima_cli.core.cmd.check import directory_statistic
+from mdsanima_cli.core.utils.ascii import ascii_title
+from mdsanima_cli.core.utils.exif import get_exif_bytes
+from mdsanima_cli.core.utils.print import print_cli_done
+from mdsanima_cli.core.utils.print import print_cli_proc
+from mdsanima_cli.core.utils.timer import timer
 
 
 @timer
@@ -30,7 +26,7 @@ def convert_to_png(image_path: str, new_name: str) -> None:
     image = Image.open(image_path)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(PNG_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.PNG.help}")
 
     # Save the result.
     image.save(new_name, "PNG", exif=exif_bytes)
@@ -69,9 +65,9 @@ def compute_png() -> None:
             count += 1
 
 
-def cli_png() -> None:
-    """Main function for `png` command."""
-    directory_statistic(PNG_COMD, PNG_HELP)
+def png() -> None:
+    """The main functionality for the `png` command."""
+    directory_statistic(f"{Command.PNG.cmd}", f"{Command.PNG.help}")
     ascii_title("processing")
     time_taken = compute_png()
     ascii_title("completed")

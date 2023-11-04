@@ -1,9 +1,6 @@
 # Copyright (c) 2023 MDSANIMA
 
-
-"""This module is designed to adding a watermark to all images in the current directory. It operates within a specified
-folder and can process all images at once.
-"""
+"""Append a watermark to image. It operates within a specified folder and can process all images at once."""
 
 
 from __future__ import annotations
@@ -12,15 +9,14 @@ import os
 
 from PIL import Image
 
-from mdsanima_cli.commands.check import directory_statistic
-from mdsanima_cli.parser import WATERMARK_COMD
-from mdsanima_cli.parser import WATERMARK_HELP
-from mdsanima_cli.utils.ascii import ascii_title
-from mdsanima_cli.utils.exif import get_exif_bytes
-from mdsanima_cli.utils.print import print_cli_data
-from mdsanima_cli.utils.print import print_cli_done
-from mdsanima_cli.utils.print import print_cli_proc
-from mdsanima_cli.utils.timer import timer
+from mdsanima_cli.core.cli import Command
+from mdsanima_cli.core.cmd.check import directory_statistic
+from mdsanima_cli.core.utils.ascii import ascii_title
+from mdsanima_cli.core.utils.exif import get_exif_bytes
+from mdsanima_cli.core.utils.print import print_cli_data
+from mdsanima_cli.core.utils.print import print_cli_done
+from mdsanima_cli.core.utils.print import print_cli_proc
+from mdsanima_cli.core.utils.timer import timer
 
 
 WATERMARK_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
@@ -71,7 +67,7 @@ def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
             image.paste(watermark_bg, (width, height), watermark_bg)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(WATERMARK_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.WATERMARK.help}")
 
     # Save the result.
     image.save(new_name, exif=exif_bytes)
@@ -110,9 +106,9 @@ def compute_watermark() -> None:
             count += 1
 
 
-def cli_watermark() -> None:
-    """Main function for `watermark` command."""
-    directory_statistic(WATERMARK_COMD, WATERMARK_HELP)
+def watermark() -> None:
+    """The main functionality for the `watermark` command."""
+    directory_statistic(f"{Command.WATERMARK.cmd}", f"{Command.WATERMARK.help}")
 
     try:
         ascii_title("processing")
