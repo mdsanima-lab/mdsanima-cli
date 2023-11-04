@@ -6,9 +6,9 @@
 from __future__ import annotations
 
 from mdsanima_cli.core.cli import Command
-from mdsanima_cli.utils.print import print_cli_data
-from mdsanima_cli.utils.print import print_cli_info
-from mdsanima_cli.utils.stats import get_directory_statistic
+from mdsanima_cli.core.utils.print import print_cli_data
+from mdsanima_cli.core.utils.print import print_cli_info
+from mdsanima_cli.core.utils.stats import get_directory_statistic
 
 
 def directory_statistic(cli_command: str, cli_help: str) -> str:

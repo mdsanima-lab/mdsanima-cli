@@ -14,12 +14,12 @@ from mdsanima_cli.core.cli import Command
 from mdsanima_cli.core.cmd.check import directory_statistic
 from mdsanima_cli.core.cmd.pixelart import generate_pixelart
 from mdsanima_cli.core.cmd.resize import generate_resize
-from mdsanima_cli.utils.ascii import ascii_title
-from mdsanima_cli.utils.exif import get_exif_bytes
-from mdsanima_cli.utils.print import print_cli_comp
-from mdsanima_cli.utils.print import print_cli_done
-from mdsanima_cli.utils.print import print_cli_proc
-from mdsanima_cli.utils.timer import timer
+from mdsanima_cli.core.utils.ascii import ascii_title
+from mdsanima_cli.core.utils.exif import get_exif_bytes
+from mdsanima_cli.core.utils.print import print_cli_comp
+from mdsanima_cli.core.utils.print import print_cli_done
+from mdsanima_cli.core.utils.print import print_cli_proc
+from mdsanima_cli.core.utils.timer import timer
 
 
 TMP_PATH = os.path.expanduser("~/.mdsanima-cli/tmp/gifmaker")

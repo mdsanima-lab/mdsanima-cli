@@ -8,7 +8,7 @@ from __future__ import annotations
 from mdsanima_cli.core import cmd
 from mdsanima_cli.core.cli import Command
 from mdsanima_cli.core.cli import create_parser
-from mdsanima_cli.utils.ascii import ascii_title
+from mdsanima_cli.core.utils.ascii import ascii_title
 
 
 def cli():
