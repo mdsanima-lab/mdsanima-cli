@@ -5,6 +5,7 @@
 
 from mdsanima_cli.core.cli.command import Command
 from mdsanima_cli.core.cli.config import Config
+from mdsanima_cli.core.cli.formatter import PrettyHelpFormatter
 
 
-__all__ = ["Command", "Config"]
+__all__ = ["Command", "Config", "PrettyHelpFormatter"]
