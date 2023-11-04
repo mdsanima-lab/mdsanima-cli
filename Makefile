@@ -16,3 +16,6 @@ build:
 
 install:
 	pip install .
+
+wheel:
+	pip wheel --wheel-dir dist --no-deps .
