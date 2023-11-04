@@ -9,7 +9,7 @@ from __future__ import annotations
 import os
 import shutil
 
-from mdsanima_cli.commands.check import directory_statistic
+from mdsanima_cli.core.cmd.check import directory_statistic
 from mdsanima_cli.parser import NUMBER_COMD
 from mdsanima_cli.parser import NUMBER_HELP
 from mdsanima_cli.utils.ascii import ascii_title

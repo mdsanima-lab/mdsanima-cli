@@ -5,20 +5,20 @@
 
 from __future__ import annotations
 
-from mdsanima_cli.commands.check import cli_check
-from mdsanima_cli.commands.gifmaker import cli_gifmaker
-from mdsanima_cli.commands.grid import cli_grid
-from mdsanima_cli.commands.jpg import cli_jpg
-from mdsanima_cli.commands.logo import cli_logo
-from mdsanima_cli.commands.number import cli_number
-from mdsanima_cli.commands.pixelart import cli_pixelart
-from mdsanima_cli.commands.png import cli_png
-from mdsanima_cli.commands.resize import cli_resize
-from mdsanima_cli.commands.thumbnail import cli_thumbnail
-from mdsanima_cli.commands.uuids import cli_uuid
-from mdsanima_cli.commands.watermark import cli_watermark
-from mdsanima_cli.commands.webp import cli_webp
 from mdsanima_cli.core.cli import create_parser
+from mdsanima_cli.core.cmd.check import cli_check
+from mdsanima_cli.core.cmd.gifmaker import cli_gifmaker
+from mdsanima_cli.core.cmd.grid import cli_grid
+from mdsanima_cli.core.cmd.jpg import cli_jpg
+from mdsanima_cli.core.cmd.logo import cli_logo
+from mdsanima_cli.core.cmd.number import cli_number
+from mdsanima_cli.core.cmd.pixelart import cli_pixelart
+from mdsanima_cli.core.cmd.png import cli_png
+from mdsanima_cli.core.cmd.resize import cli_resize
+from mdsanima_cli.core.cmd.thumbnail import cli_thumbnail
+from mdsanima_cli.core.cmd.uuid import cli_uuid
+from mdsanima_cli.core.cmd.watermark import cli_watermark
+from mdsanima_cli.core.cmd.webp import cli_webp
 from mdsanima_cli.utils.ascii import ascii_title
 
 
