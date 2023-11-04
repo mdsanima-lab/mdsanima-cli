@@ -1,7 +1,6 @@
 # Copyright (c) 2023 MDSANIMA
 
-
-"""Initial main functionality for command-line tools."""
+"""A command-line tool for image processing, generating pixel art, adding logos to images, and much more."""
 
 
 from __future__ import annotations
@@ -19,46 +18,48 @@ from mdsanima_cli.commands.thumbnail import cli_thumbnail
 from mdsanima_cli.commands.uuids import cli_uuid
 from mdsanima_cli.commands.watermark import cli_watermark
 from mdsanima_cli.commands.webp import cli_webp
-from mdsanima_cli.parser import create_parser
+from mdsanima_cli.core.cli import create_parser
 from mdsanima_cli.utils.ascii import ascii_title
 
 
 def main_cli():
-    """The main command-line function responsible for sub-functions and allocation separation."""
+    """The main command-line functionality responsible for sub-functions and allocation separation."""
 
-    # Argument parser and color print.
+    # Creating argument parser.
     parser = create_parser()
     args = parser.parse_args()
 
-    # Print nice asci text.
+    # Printing nice color ascii title.
     ascii_title("mdsanima cli")
 
     try:
-        if args.command == "check":
+        if args.COMMAND is None:
+            parser.print_help()
+        if args.COMMAND == "check":
             cli_check()
-        if args.command == "uuid":
-            cli_uuid()
-        if args.command == "number":
-            cli_number()
-        if args.command == "logo":
+        if args.COMMAND == "logo":
             cli_logo()
-        if args.command == "watermark":
+        if args.COMMAND == "watermark":
             cli_watermark()
-        if args.command == "jpg":
-            cli_jpg()
-        if args.command == "png":
-            cli_png()
-        if args.command == "webp":
-            cli_webp()
-        if args.command == "pixelart":
-            cli_pixelart()
-        if args.command == "grid":
-            cli_grid()
-        if args.command == "thumbnail":
-            cli_thumbnail()
-        if args.command == "gifmaker":
-            cli_gifmaker()
-        if args.command == "resize":
+        if args.COMMAND == "number":
+            cli_number()
+        if args.COMMAND == "uuid":
+            cli_uuid()
+        if args.COMMAND == "resize":
             cli_resize()
+        if args.COMMAND == "jpg":
+            cli_jpg()
+        if args.COMMAND == "png":
+            cli_png()
+        if args.COMMAND == "webp":
+            cli_webp()
+        if args.COMMAND == "grid":
+            cli_grid()
+        if args.COMMAND == "pixelart":
+            cli_pixelart()
+        if args.COMMAND == "gifmaker":
+            cli_gifmaker()
+        if args.COMMAND == "thumbnail":
+            cli_thumbnail()
     except AttributeError:
         parser.print_help()
