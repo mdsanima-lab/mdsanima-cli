@@ -1,6 +1,5 @@
 # Copyright (c) 2023 MDSANIMA
 
-
 """Generating images into pixel art. It operates within a specified folder and can process all images at once. The first
 step is to open the original image, scale it to 32 pixels, scale it back to its original size, and then save it.
 """
@@ -12,9 +11,8 @@ import os
 
 from PIL import Image
 
+from mdsanima_cli.core.cli import Command
 from mdsanima_cli.core.cmd.check import directory_statistic
-from mdsanima_cli.parser import PIXELART_COMD
-from mdsanima_cli.parser import PIXELART_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
 from mdsanima_cli.utils.print import print_cli_done
@@ -43,7 +41,7 @@ def generate_pixelart(image_path: str, new_name: str, resolution: int) -> None:
     result = small_image.resize(image.size, Image.Resampling.NEAREST)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(PIXELART_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.PIXELART.help}")
 
     # Save the result.
     result.save(new_name, exif=exif_bytes)
@@ -82,9 +80,9 @@ def compute_pixelart() -> None:
             count += 1
 
 
-def cli_pixelart() -> None:
-    """Main function for `pixelart` command."""
-    directory_statistic(PIXELART_COMD, PIXELART_HELP)
+def pixelart() -> None:
+    """The main functionality for the `pixelart` command."""
+    directory_statistic(f"{Command.PIXELART.cmd}", f"{Command.PIXELART.help}")
     ascii_title("processing")
     time_taken = compute_pixelart()
     ascii_title("completed")

@@ -12,9 +12,8 @@ import os
 
 from PIL import Image
 
+from mdsanima_cli.core.cli import Command
 from mdsanima_cli.core.cmd.check import directory_statistic
-from mdsanima_cli.parser import THUMBNAIL_COMD
-from mdsanima_cli.parser import THUMBNAIL_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
 from mdsanima_cli.utils.print import print_cli_done
@@ -39,7 +38,7 @@ def generate_jpeg_thumbnail(image_path: str, new_name: str, resolution: int) -> 
     thumbnail_size = (thumbnail_width, thumbnail_height)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(THUMBNAIL_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.THUMBNAIL.help}")
 
     # Create JPEG thumbnail and save the result.
     image.thumbnail(thumbnail_size)
@@ -79,9 +78,9 @@ def compute_thumbnail() -> None:
             count += 1
 
 
-def cli_thumbnail() -> None:
-    """Main function for `thumbnail` command."""
-    directory_statistic(THUMBNAIL_COMD, THUMBNAIL_HELP)
+def thumbnail() -> None:
+    """The main functionality for the `thumbnail` command."""
+    directory_statistic(f"{Command.THUMBNAIL.cmd}", f"{Command.THUMBNAIL.help}")
     ascii_title("processing")
     time_taken = compute_thumbnail()
     ascii_title("completed")

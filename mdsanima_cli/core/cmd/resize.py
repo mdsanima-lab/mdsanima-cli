@@ -1,9 +1,6 @@
 # Copyright (c) 2023 MDSANIMA
 
-
-"""Resizing all images in the curreny directory. It operates within a specified folder and can process all images at
-once.
-"""
+"""Change the width of image to 512 pixels. It operates within a specified folder and can process all images at once."""
 
 
 from __future__ import annotations
@@ -12,9 +9,8 @@ import os
 
 from PIL import Image
 
+from mdsanima_cli.core.cli import Command
 from mdsanima_cli.core.cmd.check import directory_statistic
-from mdsanima_cli.parser import RESIZE_COMD
-from mdsanima_cli.parser import RESIZE_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
 from mdsanima_cli.utils.print import print_cli_done
@@ -42,7 +38,7 @@ def generate_resize(image_path: str, new_name: str, resolution_width: int) -> No
     image_resized = image.resize(resize_size)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(RESIZE_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.RESIZE.help}")
 
     # Save the result.
     image_resized.save(new_name, exif=exif_bytes)
@@ -81,9 +77,9 @@ def compute_resize() -> None:
             count += 1
 
 
-def cli_resize() -> None:
-    """Main function for `resize` command."""
-    directory_statistic(RESIZE_COMD, RESIZE_HELP)
+def resize() -> None:
+    """The main functionality for the `resize` command."""
+    directory_statistic(f"{Command.RESIZE.cmd}", f"{Command.RESIZE.help}")
     ascii_title("processing")
     time_taken = compute_resize()
     ascii_title("completed")

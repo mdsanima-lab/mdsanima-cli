@@ -1,7 +1,6 @@
 # Copyright (c) 2023 MDSANIMA
 
-
-"""Generating pixel art animation GIF. It operates within a specified folder and can process all images at once."""
+"""Generate GIF pixel art animation. It operates within a specified folder and can process all images at once."""
 
 
 from __future__ import annotations
@@ -11,11 +10,10 @@ import os
 
 from PIL import Image
 
+from mdsanima_cli.core.cli import Command
 from mdsanima_cli.core.cmd.check import directory_statistic
 from mdsanima_cli.core.cmd.pixelart import generate_pixelart
 from mdsanima_cli.core.cmd.resize import generate_resize
-from mdsanima_cli.parser import GIFMAKER_COMD
-from mdsanima_cli.parser import GIFMAKER_HELP
 from mdsanima_cli.utils.ascii import ascii_title
 from mdsanima_cli.utils.exif import get_exif_bytes
 from mdsanima_cli.utils.print import print_cli_comp
@@ -56,7 +54,7 @@ def generate_tmp_images(image_path: str) -> None:
 
 @timer
 def generate_gifmaker(image_path: str, gif_name: str, gif_duration: int, count: int) -> None:
-    """Generate one pixel art animation GIF from temporary images, then save the result with a new name and exif data.
+    """Generate one GIF pixel art animation from temporary images, then save the result with a new name and exif data.
     Original image is resized to 512px width. Printing color info.
     """
 
@@ -91,17 +89,10 @@ def generate_gifmaker(image_path: str, gif_name: str, gif_duration: int, count: 
     durations = [gif_duration] * len(images)
 
     # Add exif data.
-    exif_bytes = get_exif_bytes(GIFMAKER_HELP)
+    exif_bytes = get_exif_bytes(f"{Command.GIFMAKER.help}")
 
     # Save the result.
-    image.save(
-        gif_name,
-        save_all=True,
-        append_images=images[1:],
-        duration=durations,
-        loop=0,
-        exif=exif_bytes,
-    )
+    image.save(gif_name, save_all=True, append_images=images[1:], duration=durations, loop=0, exif=exif_bytes)
 
 
 @timer
@@ -141,9 +132,9 @@ def compute_gifmaker() -> None:
             count += 1
 
 
-def cli_gifmaker() -> None:
-    """Main function for `gifmaker` command."""
-    directory_statistic(GIFMAKER_COMD, GIFMAKER_HELP)
+def gifmaker() -> None:
+    """The main functionality for the `gifmaker` command."""
+    directory_statistic(f"{Command.GIFMAKER.cmd}", f"{Command.GIFMAKER.help}")
     ascii_title("processing")
     time_taken = compute_gifmaker()
     ascii_title("completed")
