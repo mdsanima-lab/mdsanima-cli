@@ -22,13 +22,8 @@ from mdsanima_cli.core.utils.timer import timer
 def convert_to_png(image_path: str, new_name: str) -> None:
     """Convert a image to PNG format, and then save the result with a new name and exif data."""
 
-    # Open image file.
     image = Image.open(image_path)
-
-    # Add exif data.
     exif_bytes = get_exif_bytes(f"{Command.PNG.help}")
-
-    # Save the result.
     image.save(new_name, "PNG", exif=exif_bytes)
 
 
@@ -36,30 +31,27 @@ def convert_to_png(image_path: str, new_name: str) -> None:
 def compute_png() -> None:
     """Computing all images in the current directory to PNG format."""
 
-    # Get directory stats info.
     directory = os.listdir()
     count = 1
 
-    # New file name suffix for generated files.
-    suffix = "_converted"
-    png = ".png"
-    jpg = ".jpg"
-    webp = ".webp"
+    _suffix = "_converted"
+    _png = ".png"
+    _jpg = ".jpg"
+    _webp = ".webp"
 
-    # Checking extension and compute convert png from all images in directory.
     for file in directory:
-        if file.endswith(png) and not file.endswith(suffix + png):
-            new_name = file[:-4] + suffix + png
+        if file.endswith(_png) and not file.endswith(_suffix + _png):
+            new_name = file[:-4] + _suffix + _png
             time_taken = convert_to_png(file, new_name)
             print_cli_proc("converting", count, file, new_name, time_taken)
             count += 1
-        if file.endswith(jpg) and not file.endswith(suffix + png):
-            new_name = file[:-4] + suffix + png
+        if file.endswith(_jpg) and not file.endswith(_suffix + _png):
+            new_name = file[:-4] + _suffix + _png
             time_taken = convert_to_png(file, new_name)
             print_cli_proc("converting", count, file, new_name, time_taken)
             count += 1
-        if file.endswith(webp) and not file.endswith(suffix + png):
-            new_name = file[:-5] + suffix + png
+        if file.endswith(_webp) and not file.endswith(_suffix + _png):
+            new_name = file[:-5] + _suffix + _png
             time_taken = convert_to_png(file, new_name)
             print_cli_proc("converting", count, file, new_name, time_taken)
             count += 1
@@ -67,7 +59,9 @@ def compute_png() -> None:
 
 def png() -> None:
     """The main functionality for the `png` command."""
+
     directory_statistic(f"{Command.PNG.cmd}", f"{Command.PNG.help}")
+
     ascii_title("processing")
     time_taken = compute_png()
     ascii_title("completed")

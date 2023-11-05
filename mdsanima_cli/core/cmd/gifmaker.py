@@ -31,20 +31,20 @@ def generate_tmp_images(image_path: str) -> None:
     This images is for generating GIF animation. Printing color info.
     """
 
-    # Create tmp folder for images.
+    # create tmp folder for images
     if not os.path.exists(TMP_PATH):
         os.makedirs(TMP_PATH)
 
-    # Resizing original image to 512px width.
+    # resizing original image to 512px width
     count = 1
     resized_name = f"{TMP_PATH}/{str(count).zfill(2)}_resized.jpg"
     time_taken = generate_resize(image_path, resized_name, 512)
     print_cli_proc("computing", count, image_path, "512px", time_taken)
 
-    # List of pixel art resolutions to generate.
+    # list of pixel art resolutions to generate
     resolutions = [256, 128, 64, 32, 16, 8, 4]
 
-    # Generate pixel art resolutions.
+    # generate pixel art resolutions
     for resolution in resolutions:
         count += 1
         pixelart_name = f"{TMP_PATH}/{str(count).zfill(2)}_pixelart.jpg"
@@ -58,24 +58,25 @@ def generate_gifmaker(image_path: str, gif_name: str, gif_duration: int, count: 
     Original image is resized to 512px width. Printing color info.
     """
 
-    # Generate temporary images.
+    # generate temporary images
     time_taken = generate_tmp_images(image_path)
     print_cli_comp("computing", count, image_path, str("tmp").ljust(5), time_taken)
 
-    # List of tmp images file names.
+    # list of tmp images file names
     tmp_images = glob.glob(f"{TMP_PATH}/*.jpg")
 
-    # Sorted and reversed list.
+    # sorted and reversed list
     tmp_images.sort()
     tmp_reversed = tmp_images[::-1]
 
-    # Open first tmp image file.
+    # open first tmp image file
     image = Image.open(tmp_images[0])
 
-    # Create list of tmp images file.
+    # create list of tmp images file
     len_tmp = len(TMP_PATH) + 2
     count_img = 1
     images = []
+
     for tmp_img in tmp_images:
         images.append(Image.open(tmp_img))
         print_cli_proc("appending", count_img, str(tmp_img)[len_tmp:].ljust(14), gif_name, 0.001)
@@ -85,13 +86,9 @@ def generate_gifmaker(image_path: str, gif_name: str, gif_duration: int, count: 
         print_cli_proc("appending", count_img, str(tmp_rev)[len_tmp:].ljust(14), gif_name, 0.001)
         count_img += 1
 
-    # Set the duration for each image.
+    # set the duration for each image
     durations = [gif_duration] * len(images)
-
-    # Add exif data.
     exif_bytes = get_exif_bytes(f"{Command.GIFMAKER.help}")
-
-    # Save the result.
     image.save(gif_name, save_all=True, append_images=images[1:], duration=durations, loop=0, exif=exif_bytes)
 
 
@@ -99,33 +96,30 @@ def generate_gifmaker(image_path: str, gif_name: str, gif_duration: int, count: 
 def compute_gifmaker() -> None:
     """Computing pixel art animation GIF for all images in the directory. GIF durations is 100 ms."""
 
-    # Get directory stats info.
     directory = os.listdir()
     count = 1
 
-    # New file name end for generated files.
-    suffix = "_gifmaker"
-    png = ".png"
-    jpg = ".jpg"
-    webp = ".webp"
-    gif = ".gif"
+    _suffix = "_gifmaker"
+    _png = ".png"
+    _jpg = ".jpg"
+    _webp = ".webp"
+    _gif = ".gif"
 
-    # Checking extension and generate pixel art for all images in directory.
     for file in directory:
-        if file.endswith(png) and not file.endswith(suffix + png):
-            gif_name = file[:-4] + suffix + gif
+        if file.endswith(_png) and not file.endswith(_suffix + _png):
+            gif_name = file[:-4] + _suffix + _gif
             time_taken = generate_gifmaker(file, gif_name, 100, count)
             print_cli_comp("computing", count, file, gif_name, time_taken)
             print_cli_done(time_taken)
             count += 1
-        if file.endswith(jpg) and not file.endswith(suffix + jpg):
-            gif_name = file[:-4] + suffix + gif
+        if file.endswith(_jpg) and not file.endswith(_suffix + _jpg):
+            gif_name = file[:-4] + _suffix + _gif
             time_taken = generate_gifmaker(file, gif_name, 100, count)
             print_cli_comp("computing", count, file, gif_name, time_taken)
             print_cli_done(time_taken)
             count += 1
-        if file.endswith(webp) and not file.endswith(suffix + webp):
-            gif_name = file[:-5] + suffix + gif
+        if file.endswith(_webp) and not file.endswith(_suffix + _webp):
+            gif_name = file[:-5] + _suffix + _gif
             time_taken = generate_gifmaker(file, gif_name, 100, count)
             print_cli_comp("computing", count, file, gif_name, time_taken)
             print_cli_done(time_taken)
@@ -134,7 +128,9 @@ def compute_gifmaker() -> None:
 
 def gifmaker() -> None:
     """The main functionality for the `gifmaker` command."""
+
     directory_statistic(f"{Command.GIFMAKER.cmd}", f"{Command.GIFMAKER.help}")
+
     ascii_title("processing")
     time_taken = compute_gifmaker()
     ascii_title("completed")

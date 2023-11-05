@@ -26,29 +26,22 @@ LOGO_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/logo.png")
 def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
     """Append a logo to one image in the bottom right position, then save the result with a new name and exif data."""
 
-    # Open image and logo file.
     image = Image.open(image_path)
-    logo = Image.open(logo_path)
+    _logo = Image.open(logo_path)
 
-    # Image and logo size.
     image_width, image_height = image.size
-    logo_width, logo_height = logo.size
+    logo_width, logo_height = _logo.size
 
-    # Calculating size for logo.
     resize_ratio = 0.05
     new_logo_width = int(image_width * resize_ratio)
     new_logo_height = int(logo_height * new_logo_width / logo_width)
-    logo = logo.resize((new_logo_width, new_logo_height))
+    _logo = _logo.resize((new_logo_width, new_logo_height))
 
-    # Calculating position for appending logo.
     position_x = image_width - new_logo_width
     position_y = image_height - new_logo_height
 
-    # Add exif data.
     exif_bytes = get_exif_bytes(f"{Command.LOGO.help}")
-
-    # Append logo to image and save.
-    image.paste(logo, (position_x, position_y), logo)
+    image.paste(_logo, (position_x, position_y), _logo)
     image.save(new_name, exif=exif_bytes)
 
 
@@ -56,30 +49,27 @@ def append_logo(image_path: str, logo_path: str, new_name: str) -> None:
 def compute_logo() -> None:
     """Computing all images in the current directory with appending a logo."""
 
-    # Get directory stats info.
     directory = os.listdir()
     count = 1
 
-    # New file name suffix for generated files.
-    suffix = "_logo"
-    png = ".png"
-    jpg = ".jpg"
-    webp = ".webp"
+    _suffix = "_logo"
+    _png = ".png"
+    _jpg = ".jpg"
+    _webp = ".webp"
 
-    # Checking extension and appending logo to all images in directory.
     for file in directory:
-        if file.endswith(png) and not file.endswith(suffix + png):
-            new_name = file[:-4] + suffix + png
+        if file.endswith(_png) and not file.endswith(_suffix + _png):
+            new_name = file[:-4] + _suffix + _png
             time_taken = append_logo(file, LOGO_PATH, new_name)
             print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
-        if file.endswith(jpg) and not file.endswith(suffix + jpg):
-            new_name = file[:-4] + suffix + jpg
+        if file.endswith(_jpg) and not file.endswith(_suffix + _jpg):
+            new_name = file[:-4] + _suffix + _jpg
             time_taken = append_logo(file, LOGO_PATH, new_name)
             print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
-        if file.endswith(webp) and not file.endswith(suffix + webp):
-            new_name = file[:-5] + suffix + webp
+        if file.endswith(_webp) and not file.endswith(_suffix + _webp):
+            new_name = file[:-5] + _suffix + _webp
             time_taken = append_logo(file, LOGO_PATH, new_name)
             print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
@@ -87,6 +77,7 @@ def compute_logo() -> None:
 
 def logo() -> None:
     """The main functionality for the `logo` command."""
+
     directory_statistic(f"{Command.LOGO.cmd}", f"{Command.LOGO.help}")
 
     try:

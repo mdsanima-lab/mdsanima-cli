@@ -24,52 +24,48 @@ WATERMARK_PATH = os.path.expanduser("~/.mdsanima-cli/config/img/watermark.png")
 
 @timer
 def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
-    """Append a watermark to one image, and then save the result with a new name and exif data. The watermark is
-    a rotated on 45 degrees and shifted.
-    """
+    """Append a watermark to one image. The watermark is a rotated on 45 degrees and shifted."""
 
-    # Open image and watermark file.
+    # open image and watermark file
     image = Image.open(image_path)
-    watermark = Image.open(waterm_path)
+    _watermark = Image.open(waterm_path)
 
-    # Image and watermark size.
+    # image and watermark size
     image_width, _image_height = image.size
-    watermark_width, watermark_height = watermark.size
+    watermark_width, watermark_height = _watermark.size
 
-    # Calculating size for watermark.
+    # calculating size for watermark
     resize_ratio = 0.25
     new_watermark_width = int(image_width * resize_ratio)
     new_watermark_height = int(watermark_height * new_watermark_width / watermark_width)
 
-    # Resizing and rotating watermark.
-    watermark = watermark.resize((new_watermark_width, new_watermark_height)).rotate(45, expand=1)
+    # resizing and rotating watermark
+    _watermark = _watermark.resize((new_watermark_width, new_watermark_height)).rotate(45, expand=1)
 
-    # Rotate watermark size.
-    rotate_watermark_width, rotate_watermark_height = watermark.size
+    # rotate watermark size
+    rotate_watermark_width, rotate_watermark_height = _watermark.size
 
-    # Background helper size.
+    # background helper size
     bg_size = int(image_width * resize_ratio)
     bg_half = int(bg_size / 2)
 
-    # Calculating position for background helper.
+    # calculating position for background helper
     position_x = int(bg_half - rotate_watermark_width / 2)
     position_y = int(bg_half - rotate_watermark_height / 2)
 
-    # New background helper for watermark position.
+    # new background helper for watermark position
     watermark_bg = Image.new("RGBA", (bg_size, bg_size), (0, 0, 0, 0))
-    watermark_bg.paste(watermark, (position_x, position_y), watermark)
+    watermark_bg.paste(_watermark, (position_x, position_y), _watermark)
 
-    # Append and shift rotated watermakr to image.
+    # append and shift rotated watermakr to image
     for row in range(10):
         for col in range(10):
             width = int(-bg_half + bg_size * row)
             height = int(-bg_half + bg_size * col)
             image.paste(watermark_bg, (width, height), watermark_bg)
 
-    # Add exif data.
+    # add exif data and save
     exif_bytes = get_exif_bytes(f"{Command.WATERMARK.help}")
-
-    # Save the result.
     image.save(new_name, exif=exif_bytes)
 
 
@@ -77,30 +73,27 @@ def append_watermark(image_path: str, waterm_path: str, new_name: str) -> None:
 def compute_watermark() -> None:
     """Add a watermark to all images in the current directory that includes the watermark."""
 
-    # Get directory stats info.
     directory = os.listdir()
     count = 1
 
-    # New file name suffix for generated files.
-    suffix = "_watermark"
-    png = ".png"
-    jpg = ".jpg"
-    webp = ".webp"
+    _suffix = "_watermark"
+    _png = ".png"
+    _jpg = ".jpg"
+    _webp = ".webp"
 
-    # Checking extension and appending watermark to all images in directory.
     for file in directory:
-        if file.endswith(png) and not file.endswith(suffix + png):
-            new_name = file[:-4] + suffix + png
+        if file.endswith(_png) and not file.endswith(_suffix + _png):
+            new_name = file[:-4] + _suffix + _png
             time_taken = append_watermark(file, WATERMARK_PATH, new_name)
             print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
-        if file.endswith(jpg) and not file.endswith(suffix + jpg):
-            new_name = file[:-4] + suffix + jpg
+        if file.endswith(_jpg) and not file.endswith(_suffix + _jpg):
+            new_name = file[:-4] + _suffix + _jpg
             time_taken = append_watermark(file, WATERMARK_PATH, new_name)
             print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
-        if file.endswith(webp) and not file.endswith(suffix + webp):
-            new_name = file[:-5] + suffix + webp
+        if file.endswith(_webp) and not file.endswith(_suffix + _webp):
+            new_name = file[:-5] + _suffix + _webp
             time_taken = append_watermark(file, WATERMARK_PATH, new_name)
             print_cli_proc("computing", count, file, new_name, time_taken)
             count += 1
@@ -108,6 +101,7 @@ def compute_watermark() -> None:
 
 def watermark() -> None:
     """The main functionality for the `watermark` command."""
+
     directory_statistic(f"{Command.WATERMARK.cmd}", f"{Command.WATERMARK.help}")
 
     try:
