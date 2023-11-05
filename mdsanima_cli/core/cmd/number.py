@@ -19,39 +19,31 @@ from mdsanima_cli.core.utils.timer import timer
 @timer
 def rename_to_seq_number(image_path: str, new_name: str) -> None:
     """Rename image file to sequential number."""
-
-    # Renaming.
     shutil.move(image_path, new_name)
 
 
 @timer
 def compute_seq_number() -> None:
-    """Renaming all images file to sequential number in the current directory. Starting from 1.
+    """Renaming all images file to sequential number in the current directory. Starting from 00001."""
 
-    Example file name: `00001.jpg`
-    """
-
-    # Get directory stats info.
     directory = os.listdir()
     count = 1
 
-    # Files to rename.
-    png = ".png"
-    jpg = ".jpg"
-    webp = ".webp"
+    _png = ".png"
+    _jpg = ".jpg"
+    _webp = ".webp"
 
-    # Checking extension and rename images in directory.
     for file in directory:
-        if file.endswith(png):
-            new_name = str(count).zfill(5) + png
+        if file.endswith(_png):
+            new_name = str(count).zfill(5) + _png
             time_taken = rename_to_seq_number(file, new_name)
             print_cli_proc("renaming", count, file, new_name, time_taken)
-        if file.endswith(jpg):
-            new_name = str(count).zfill(5) + jpg
+        if file.endswith(_jpg):
+            new_name = str(count).zfill(5) + _jpg
             time_taken = rename_to_seq_number(file, new_name)
             print_cli_proc("renaming", count, file, new_name, time_taken)
-        if file.endswith(webp):
-            new_name = str(count).zfill(5) + webp
+        if file.endswith(_webp):
+            new_name = str(count).zfill(5) + _webp
             time_taken = rename_to_seq_number(file, new_name)
             print_cli_proc("renaming", count, file, new_name, time_taken)
         count += 1
@@ -59,7 +51,9 @@ def compute_seq_number() -> None:
 
 def number() -> None:
     """The main functionality for the `number` command."""
+
     directory_statistic(f"{Command.NUMBER.cmd}", f"{Command.NUMBER.help}")
+
     ascii_title("processing")
     time_taken = compute_seq_number()
     ascii_title("completed")

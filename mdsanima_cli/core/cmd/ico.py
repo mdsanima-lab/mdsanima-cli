@@ -20,6 +20,7 @@ from mdsanima_cli.core.utils.timer import timer
 @timer
 def convert_to_ico(image_path: str, new_name: str) -> None:
     """Convert an image to ICO format, ensuring its square, and then save the result."""
+
     image = Image.open(image_path)
 
     if image.width != image.height:
@@ -38,6 +39,7 @@ def convert_to_ico(image_path: str, new_name: str) -> None:
 @timer
 def compute_ico() -> None:
     """Computing all image files in the current directory to ICO format."""
+
     directory = os.listdir()
     count = 1
 
@@ -67,7 +69,9 @@ def compute_ico() -> None:
 
 def ico() -> None:
     """The main functionality for the `ico` command."""
+
     directory_statistic(f"{Command.ICO.cmd}", f"{Command.ICO.help}")
+
     ascii_title("processing")
     time_taken = compute_ico()
     ascii_title("completed")

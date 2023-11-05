@@ -14,10 +14,8 @@ from mdsanima_cli.core.utils.stats import get_directory_statistic
 def directory_statistic(cli_command: str, cli_help: str) -> str:
     """Printing info about all image files inside the current directory."""
 
-    # Get directory stats info and color print.
     info = get_directory_statistic()
 
-    # Printing color information statistics for image files.
     print_cli_info("mdsanima cli", cli_command, 40, 34, 12)
     print_cli_info("info cli", cli_help, 40, 34, 5)
     print_cli_data("path", info["path"], 34, 26, 38)
