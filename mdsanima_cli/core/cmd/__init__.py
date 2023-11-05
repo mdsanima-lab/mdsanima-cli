@@ -6,6 +6,7 @@
 from mdsanima_cli.core.cmd.check import check
 from mdsanima_cli.core.cmd.gifmaker import gifmaker
 from mdsanima_cli.core.cmd.grid import grid
+from mdsanima_cli.core.cmd.ico import ico
 from mdsanima_cli.core.cmd.jpg import jpg
 from mdsanima_cli.core.cmd.logo import logo
 from mdsanima_cli.core.cmd.number import number
@@ -22,6 +23,7 @@ __all__ = [
     "check",
     "gifmaker",
     "grid",
+    "ico",
     "jpg",
     "logo",
     "number",

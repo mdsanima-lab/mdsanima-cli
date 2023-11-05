@@ -20,7 +20,7 @@ def create_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(formatter_class=PrettyHelp, add_help=False, allow_abbrev=False)
     subparsers = parser.add_subparsers(dest=f"{Target.COMMAND}", metavar=f"\r{Config.TITLE_CMD}:")
 
-    # The new titles for the parser.
+    # The new titles for the parser. pylint: disable=W0212
     parser._subparsers.title = None
     parser._optionals.title = f"{Config.TITLE_OPT}"
 
