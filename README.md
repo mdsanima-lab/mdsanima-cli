@@ -31,7 +31,7 @@ Below are the available commands that have been marked as completed, along with 
 - [x] `mdsanima number` rename to seq numbers
 - [x] `mdsanima logo` append a logo
 - [x] `mdsanima watermark` append a watermark
-- [ ] `mdsanima ico` convert to ico
+- [x] `mdsanima ico` convert to ico
 - [x] `mdsanima jpg` convert to jpg
 - [x] `mdsanima png` convert to png
 - [x] `mdsanima webp` convert to webp

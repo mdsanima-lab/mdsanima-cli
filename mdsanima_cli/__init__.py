@@ -36,6 +36,8 @@ def cli():
             cmd.uuid()
         if args.COMMAND == f"{Command.RESIZE.cmd}":
             cmd.resize()
+        if args.COMMAND == f"{Command.ICO.cmd}":
+            cmd.ico()
         if args.COMMAND == f"{Command.JPG.cmd}":
             cmd.jpg()
         if args.COMMAND == f"{Command.PNG.cmd}":

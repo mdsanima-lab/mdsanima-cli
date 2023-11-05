@@ -50,6 +50,7 @@ class Command(SubCommandDataMixin, _SubCommandAction, AutoNameLower):
     NUMBER = auto(), "Rename to seq numbers", f"Rename to sequential numbers {IMAGES}."
     UUID = auto(), "Rename to UUID", f"Rename to universally unique identifiers UUID {IMAGES}."
     RESIZE = auto(), "Resize to 512px", f"Change the width of {IMAGES} to 512 pixels."
+    ICO = auto(), "Convert to ICO", f"Convert to ICO format 256 pixels size from {IMAGES}."
     JPG = auto(), "Convert to JPG", f"Convert to JPG format {IMAGES}."
     PNG = auto(), "Convert to PNG", f"Convert to PNG format {IMAGES}."
     WEBP = auto(), "Convert to WebP", f"Convert to WebP format {IMAGES}."
