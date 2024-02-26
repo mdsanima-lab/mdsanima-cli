@@ -99,7 +99,7 @@ dev = [
     "flake8==7.0.0",
     "ipython==8.22.1",
     "isort==5.13.2",
-    "pylint==3.0.3",
+    "pylint==3.1.0",
     "pytest-cov==4.1.0",
     "pytest==8.0.1",
     "setuptools-scm==8.0.4",
