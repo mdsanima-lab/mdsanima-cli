@@ -95,7 +95,7 @@ dependencies = ["mdsanima-dev==0.2.0", "piexif==1.1.3", "pillow==10.2.0"]
 [project.optional-dependencies]
 dev = [
     "black==24.3.0",
-    "build==1.1.1",
+    "build==1.2.1",
     "flake8==7.0.0",
     "ipython==8.22.2",
     "isort==5.13.2",
