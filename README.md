@@ -68,7 +68,7 @@ python3 -m pip install --upgrade virtualenv
 Creating and activating the development environment, and then installing the necessary packages, enter the following commands in the terminal:
 
 ```shell
-virtualenv --pip=23.3.1 --python=python3.12 .venv
+virtualenv --pip=24.2 --python=python3.12 .venv
 source .venv/bin/activate
 pip install ".[dev]"
 ```
@@ -168,7 +168,7 @@ In this project, we use [Conventional Commits](https://www.conventionalcommits.o
 Therefore, a crucial step is to commit your code changes using this specification. A commit message should look like this:
 
 ```shell
-git commit -m "feat: added generating pixel art command"
+git commit -m "feat: Add generating pixel art command"
 ```
 
 Always use this format for committing to Git, as it enables generating a changelog from the commit message.
@@ -193,7 +193,7 @@ Now, after you've confirmed that it's working correctly, you can execute the fol
 
 ```shell
 standard-version
-git commit -am "chore(release): v0.3.0"
+git commit -am "chore(release): 0.3.0"
 ```
 
 The version above is the result of the `standard-version` command, and this is just an example version. The version must always be changed when a new release is made.
@@ -233,7 +233,7 @@ To perform a local check, you should install the required packages and then run 
 
 ```shell
 npm install --save-dev @commitlint/{cli,config-conventional}
-npx commitlint --from HEAD~1 --to HEAD --verbose --config .commitlintrc
+npx commitlint --from HEAD~1 --to HEAD --verbose --config .commitlintrc.mjs
 ```
 
 This will validate the last commit and return an error if it's invalid or success if it's valid.
@@ -264,7 +264,7 @@ npm install -g github-label-sync
 github-label-sync --access-token xxxxxx --labels ./.github/labels.yaml --dry-run mdsanima-lab/mdsanima-cli
 ```
 
-Here is the [documentation](https://github.com/Financial-Times/github-label-sync) if you want to check the details.
+Here is the [documentation](https://github.com/Financial-Times/github-label-sync) if you want to check the details. You can [generate an access token here](https://github.com/settings/tokens), be sure to allow the _repo_ scope.
 
 ## License
 
