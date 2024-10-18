@@ -1,17 +1,13 @@
-# Copyright (c) 2023 MDSANIMA
-
-# This is a configuration file for this Python package. Published on PyPI using Twine.
-
+# Configuration file for Python package thats is published on PyPI using Twine.
 
 [build-system]
-requires = ["setuptools>=68.2", "wheel>=0.41", "setuptools_scm[toml]>=8.0"]
+requires = ["setuptools>=75.2", "wheel>=0.44", "setuptools_scm[toml]>=8.1"]
 build-backend = "setuptools.build_meta"
-
 
 [project]
 name = "mdsanima-cli"
 dynamic = ["version"]
-description = "A command-line tool for image processing, generating pixel art, adding logos to images, and much more."
+description = "A command-line tool for image processing, generating pixel art, adding logos to images, and much more"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -91,7 +87,6 @@ classifiers = [
 ]
 dependencies = ["mdsanima-dev==0.2.0", "piexif==1.1.3", "pillow==11.0.0"]
 
-
 [project.optional-dependencies]
 dev = [
     "black==24.4.2",
@@ -109,23 +104,19 @@ dev = [
     "wheel==0.44.0",
 ]
 
-
 [project.urls]
-Homepage = "https://github.com/mdsanima-lab/mdsanima-cli"
-Documentation = "https://github.com/mdsanima-lab/mdsanima-cli#readme"
+Homepage = "https://github.com/mdsanima-lab/mdsanima-cli/"
+Documentation = "https://github.com/mdsanima-lab/mdsanima-cli/#readme"
 Repository = "https://github.com/mdsanima-lab/mdsanima-cli.git"
 Changelog = "https://github.com/mdsanima-lab/mdsanima-cli/blob/main/CHANGELOG.md"
-Tracker = "https://github.com/mdsanima-lab/mdsanima-cli/issues"
-
+Tracker = "https://github.com/mdsanima-lab/mdsanima-cli/issues/"
 
 [project.scripts]
 mdsanima = "mdsanima_cli:cli"
 mds = "mdsanima_cli:cli"
 
-
 [tool.black]
 line-length = 120
-
 
 [tool.isort]
 profile = "black"
@@ -136,10 +127,8 @@ lines_after_imports = 2
 treat_all_comments_as_code = true
 extend_skip = [".md", ".json"]
 
-
 [tool.setuptools.package-dir]
 mdsanima_cli = "mdsanima_cli"
-
 
 [tool.setuptools_scm]
 write_to = "mdsanima_cli/_version.py"
