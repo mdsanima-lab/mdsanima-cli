@@ -5,6 +5,9 @@
 - name: bug
   color: B60205
   description: Something isn't working
+- name: build
+  color: E227B9
+  description: The build system related tools
 - name: ci
   color: 5AF3C0
   description: Pull requests that update a GitHub Actions Workflow deps
