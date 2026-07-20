@@ -1,7 +1,7 @@
 # Configuration file for Python package thats is published on PyPI using Twine.
 
 [build-system]
-requires = ["setuptools>=83.0.0", "wheel>=0.46.2", "setuptools_scm[toml]>=8.1"]
+requires = ["setuptools>=83.0.0", "wheel>=0.47.0", "setuptools_scm[toml]>=8.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -101,7 +101,7 @@ dev = [
     "setuptools==83.0.0",
     "twine==6.2.0",
     "virtualenv==20.36.1",
-    "wheel==0.46.2",
+    "wheel==0.47.0",
 ]
 
 [project.urls]
