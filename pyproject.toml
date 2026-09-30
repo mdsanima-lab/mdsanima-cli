@@ -100,7 +100,7 @@ dev = [
     "setuptools-scm==10.3.4",
     "setuptools==84.0.0",
     "twine==7.0.0",
-    "virtualenv==21.12.1",
+    "virtualenv==21.13.0",
     "wheel==0.48.0",
 ]
 
