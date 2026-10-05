@@ -94,7 +94,7 @@ dev = [
     "flake8==7.4.1",
     "ipython==8.39.0",
     "isort==9.0.2",
-    "pylint==4.0.9",
+    "pylint==4.1.1",
     "pytest-cov==7.1.0",
     "pytest==9.1.1",
     "setuptools-scm==10.3.4",
